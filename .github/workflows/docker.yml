@@ -77,7 +77,7 @@ jobs:
     if: github.event_name != 'pull_request'
     name: Semantic Release
     needs: docker
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@v0.1.0
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.1.1
   release-assets:
     if: startsWith(github.ref, 'refs/tags/')
     name: Release Assets
