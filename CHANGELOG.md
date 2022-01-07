@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/dargmuesli/github-actions/compare/0.1.0...0.1.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* improve naming ([5a4dabd](https://github.com/dargmuesli/github-actions/commit/5a4dabd209bbc66b8fec082791a5bd13f86a3bed))
+
 # [0.1.0](https://github.com/dargmuesli/github-actions/compare/0.0.0...0.1.0) (2022-01-07)
 
 
