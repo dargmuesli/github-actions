@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/dargmuesli/github-actions/compare/0.2.0...0.2.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **release-assets:** remove needs ([b3bc725](https://github.com/dargmuesli/github-actions/commit/b3bc7259b3520b9a4230655aceba583a18b7bd19))
+
 # [0.2.0](https://github.com/dargmuesli/github-actions/compare/0.1.2...0.2.0) (2022-01-07)
 
 
