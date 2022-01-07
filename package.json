@@ -1,15 +1,15 @@
 {
     "name": "@dargmuesli/github-actions",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "scheduleVersion": "0.0.0",
     "private": true,
     "devDependencies": {
-      "@commitlint/cli": "16.0.1",
-      "@commitlint/config-conventional": "16.0.0",
-      "husky": "7.0.4",
-      "shx": "0.3.3"
+        "@commitlint/cli": "16.0.1",
+        "@commitlint/config-conventional": "16.0.0",
+        "husky": "7.0.4",
+        "shx": "0.3.3"
     },
     "scripts": {
-      "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
+        "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
     }
-  }
+}
