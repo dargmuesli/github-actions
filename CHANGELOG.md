@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/dargmuesli/github-actions/compare/0.1.2...0.2.0) (2022-01-07)
+
+
+### Features
+
+* split asset release ([70cc28a](https://github.com/dargmuesli/github-actions/commit/70cc28a8e8351a30372f24d9c6615347478de1db))
+
 ## [0.1.2](https://github.com/dargmuesli/github-actions/compare/0.1.1...0.1.2) (2022-01-07)
 
 
