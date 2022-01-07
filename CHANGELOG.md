@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/dargmuesli/github-actions/compare/0.2.1...0.3.0) (2022-01-07)
+
+
+### Features
+
+* **release-semantic:** add npm token secret ([c03a13c](https://github.com/dargmuesli/github-actions/commit/c03a13ccc2c7a7e73fa55f24ca9563d03b1f28de))
+
 ## [0.2.1](https://github.com/dargmuesli/github-actions/compare/0.2.0...0.2.1) (2022-01-07)
 
 
