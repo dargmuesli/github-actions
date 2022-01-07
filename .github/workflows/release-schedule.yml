@@ -1,4 +1,4 @@
-name: Scheduled Release
+name: 'Release: Scheduled'
 
 on:
   workflow_call:

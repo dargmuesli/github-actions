@@ -1,4 +1,4 @@
-name: CI
+name: 'Release: Semantic'
 
 on:
   pull_request:
