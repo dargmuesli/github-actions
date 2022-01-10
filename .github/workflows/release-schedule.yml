@@ -53,6 +53,6 @@ jobs:
           KEY: scheduleVersion
           VALUE: ${{ steps.semvers.outputs.patch }}
           FILE: ${{ inputs.PACKAGE_JSON_PATH }}
-      - uses: stefanzweifel/git-auto-commit-action@abd87b7d94702070bef78dc1d56b6928b8fa9ecc # renovate: tag=v4.12.0
+      - uses: stefanzweifel/git-auto-commit-action@8040434425060bbf273c9bc1e108e8e61f4a1116 # renovate: tag=v4.13.0
         with:
           commit_message: 'fix(release): schedule release'
