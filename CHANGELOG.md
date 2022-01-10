@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/dargmuesli/github-actions/compare/0.3.0...0.4.0) (2022-01-10)
+
+
+### Features
+
+* **release-assets:** add input target ([8dac6c2](https://github.com/dargmuesli/github-actions/commit/8dac6c26b0370eb1931652d684fee0f4f406104b))
+
 # [0.3.0](https://github.com/dargmuesli/github-actions/compare/0.2.1...0.3.0) (2022-01-07)
 
 
