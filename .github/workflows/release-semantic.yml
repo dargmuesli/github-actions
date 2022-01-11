@@ -14,7 +14,7 @@ on:
 
 jobs:
   semantic-release:
-    if: github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/master'
     name: Semantic Release
     runs-on: ubuntu-latest
     steps:
