@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/dargmuesli/github-actions/compare/0.5.0...0.6.0) (2022-01-11)
+
+
+### Features
+
+* add ci ([0bd364f](https://github.com/dargmuesli/github-actions/commit/0bd364f55d2488c0d2a6fe2e838efc046fe6d28d))
+
 # [0.5.0](https://github.com/dargmuesli/github-actions/compare/0.4.0...0.5.0) (2022-01-11)
 
 
