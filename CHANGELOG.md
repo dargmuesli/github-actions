@@ -1,3 +1,10 @@
+## [0.6.2](https://github.com/dargmuesli/github-actions/compare/0.6.1...0.6.2) (2022-01-11)
+
+
+### Bug Fixes
+
+* **ci:** use yaml linter ([9243fb6](https://github.com/dargmuesli/github-actions/commit/9243fb6834a05303be3c8caef0fcf56a73951889))
+
 ## [0.6.1](https://github.com/dargmuesli/github-actions/compare/0.6.0...0.6.1) (2022-01-11)
 
 
