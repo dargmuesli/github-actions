@@ -11,7 +11,7 @@ on:
       GH_TOKEN:
         required: true
   schedule:
-    - cron:  '0 0 * * 1' # Every Monday at 00:00 AM UTC on the default branch
+    - cron: '0 0 * * 1' # Every Monday at 00:00 AM UTC on the default branch
 
 jobs:
   analyze-tags:
