@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/dargmuesli/github-actions/compare/0.4.0...0.5.0) (2022-01-11)
+
+
+### Features
+
+* add workflow linter ([137d82c](https://github.com/dargmuesli/github-actions/commit/137d82caed0130f01e90b5884c2d70749800c5f0))
+
 # [0.4.0](https://github.com/dargmuesli/github-actions/compare/0.3.0...0.4.0) (2022-01-10)
 
 
