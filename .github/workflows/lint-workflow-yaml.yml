@@ -16,4 +16,4 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
       - uses: cschleiden/actions-linter@v1
         with:
-          workflows: '[".github/workflows/*.yaml"]'
+          workflows: '[".github/workflows/*.yml", ".github/workflows/*.yaml"]'
