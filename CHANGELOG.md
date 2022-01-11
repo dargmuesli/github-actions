@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/dargmuesli/github-actions/compare/0.6.0...0.6.1) (2022-01-11)
+
+
+### Bug Fixes
+
+* **lint-workflow-yaml:** lint yml too ([404fba8](https://github.com/dargmuesli/github-actions/commit/404fba8cb1f50412058de3f6fce41670f68642fc))
+
 # [0.6.0](https://github.com/dargmuesli/github-actions/compare/0.5.0...0.6.0) (2022-01-11)
 
 
