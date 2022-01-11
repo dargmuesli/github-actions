@@ -7,9 +7,13 @@ on:
 jobs:
   lint:
     name: Lint
-    uses: dargmuesli/github-actions/.github/workflows/lint-workflow-yaml.yml@0.6.1
-    secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint yaml
+        uses: ibiqlik/action-yamllint@v3
+    # uses: dargmuesli/github-actions/.github/workflows/lint-workflow-yaml.yml@0.6.1
+    # secrets:
+    #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   release-semantic:
     needs: lint
     name: Semantic Release
