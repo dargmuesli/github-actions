@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Lint yaml
         uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: .github/workflows/*.yml .github/workflows/*.yaml
     # uses: dargmuesli/github-actions/.github/workflows/lint-workflow-yaml.yml@0.6.1
     # secrets:
     #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
