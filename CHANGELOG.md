@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/dargmuesli/github-actions/compare/0.6.2...0.6.3) (2022-01-24)
+
+
+### Bug Fixes
+
+* **release-schedule:** add fallback for input ([980b1b1](https://github.com/dargmuesli/github-actions/commit/980b1b12edf787939cf4e1ba1a415768d27461a3))
+
 ## [0.6.2](https://github.com/dargmuesli/github-actions/compare/0.6.1...0.6.2) (2022-01-11)
 
 
