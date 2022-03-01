@@ -20,7 +20,7 @@ jobs:
       previous-tag: ${{ steps.previoustag.outputs.tag }}
       timestamp-diff: ${{ steps.diff.outputs.timestamp-diff }}
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3.0.0
         with:
           fetch-depth: 0
       - name: Get previous tag
@@ -39,7 +39,7 @@ jobs:
     needs: analyze-tags
     if: needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+      - uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3.0.0
         with:
           token: ${{ secrets.GH_TOKEN }}
       - name: Get next minor version
