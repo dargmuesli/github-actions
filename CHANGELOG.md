@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/dargmuesli/github-actions/compare/0.6.9...0.7.0) (2022-04-14)
+
+
+### Features
+
+* **release-schedule:** add debounce input ([3f00c86](https://github.com/dargmuesli/github-actions/commit/3f00c86ea4489d03f4e72f24ddbe158e7e6f5cb7))
+
 ## [0.6.9](https://github.com/dargmuesli/github-actions/compare/0.6.8...0.6.9) (2022-04-11)
 
 
