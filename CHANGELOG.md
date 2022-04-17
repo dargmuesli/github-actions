@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/dargmuesli/github-actions/compare/0.7.0...0.8.0) (2022-04-17)
+
+
+### Features
+
+* **docker:** add attach head input ([58d964b](https://github.com/dargmuesli/github-actions/commit/58d964bccc1274f7e6d5da6f384f158183152a0f))
+
 # [0.7.0](https://github.com/dargmuesli/github-actions/compare/0.6.9...0.7.0) (2022-04-14)
 
 
