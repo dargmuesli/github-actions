@@ -1,3 +1,10 @@
+## [0.10.1](https://github.com/dargmuesli/github-actions/compare/0.10.0...0.10.1) (2022-04-17)
+
+
+### Bug Fixes
+
+* **docker:** add fetch depth 0 ([8a670cc](https://github.com/dargmuesli/github-actions/commit/8a670cc9c5d1c9a4c62994ea6826b9503fea91b0))
+
 # [0.10.0](https://github.com/dargmuesli/github-actions/compare/0.9.3...0.10.0) (2022-04-17)
 
 
