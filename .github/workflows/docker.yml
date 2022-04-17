@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Attach HEAD
         if: inputs.ATTACH_HEAD
