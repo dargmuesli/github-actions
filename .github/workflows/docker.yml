@@ -2,7 +2,7 @@ name: Docker
 
 on:
   workflow_call:
-    input:
+    inputs:
       ATTACH_HEAD:
         default: false
         required: false
