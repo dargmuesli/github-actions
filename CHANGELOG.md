@@ -1,3 +1,10 @@
+## [0.9.2](https://github.com/dargmuesli/github-actions/compare/0.9.1...0.9.2) (2022-04-17)
+
+
+### Bug Fixes
+
+* **docker:** set head ref on PR ([5604790](https://github.com/dargmuesli/github-actions/commit/5604790dfce48f3d675a3f31a032cad13eaae1d9))
+
 ## [0.9.1](https://github.com/dargmuesli/github-actions/compare/0.9.0...0.9.1) (2022-04-17)
 
 
