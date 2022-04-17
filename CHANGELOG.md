@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/dargmuesli/github-actions/compare/0.9.3...0.10.0) (2022-04-17)
+
+
+### Features
+
+* **docker:** remove head attachment ([7da4a9c](https://github.com/dargmuesli/github-actions/commit/7da4a9c2d612df607136017c44746d2d7bee2860))
+
 ## [0.9.3](https://github.com/dargmuesli/github-actions/compare/0.9.2...0.9.3) (2022-04-17)
 
 
