@@ -1,3 +1,15 @@
+# [0.9.0](https://github.com/dargmuesli/github-actions/compare/0.8.0...0.9.0) (2022-04-17)
+
+
+### Bug Fixes
+
+* **docker:** correct input notation ([3a1a6b9](https://github.com/dargmuesli/github-actions/commit/3a1a6b9795c9a9ece404894fa3be8fcbf83d8492))
+
+
+### Features
+
+* **docker:** checkout with fetch depth 0 ([81e9160](https://github.com/dargmuesli/github-actions/commit/81e916075c38aa76183169d59cd98a2d45b14335))
+
 # [0.8.0](https://github.com/dargmuesli/github-actions/compare/0.7.0...0.8.0) (2022-04-17)
 
 
