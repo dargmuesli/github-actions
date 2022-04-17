@@ -1,3 +1,10 @@
+## [0.9.3](https://github.com/dargmuesli/github-actions/compare/0.9.2...0.9.3) (2022-04-17)
+
+
+### Bug Fixes
+
+* **docker:** replace ref with sha ([b5755df](https://github.com/dargmuesli/github-actions/commit/b5755df6b95d46616b66a672cabe082d421be879))
+
 ## [0.9.2](https://github.com/dargmuesli/github-actions/compare/0.9.1...0.9.2) (2022-04-17)
 
 
