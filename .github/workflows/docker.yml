@@ -2,6 +2,11 @@ name: Docker
 
 on:
   workflow_call:
+    input:
+      ATTACH_HEAD:
+        default: false
+        required: false
+        type: boolean
     secrets:
       DOCKER_HUB_ACCESS_TOKEN:
         required: true
@@ -15,6 +20,11 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3.0.1
+
+      - name: Attach HEAD
+        if: inputs.ATTACH_HEAD
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
 
       - name: Docker Buildx setup
         id: buildx
