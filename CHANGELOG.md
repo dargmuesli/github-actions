@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/dargmuesli/github-actions/compare/0.10.3...0.11.0) (2022-04-18)
+
+
+### Features
+
+* **docker:** add ci build argument ([b48bfc2](https://github.com/dargmuesli/github-actions/commit/b48bfc2a8c4237c528568d8bbacd90575ceb7980))
+
 ## [0.10.3](https://github.com/dargmuesli/github-actions/compare/0.10.2...0.10.3) (2022-04-18)
 
 
