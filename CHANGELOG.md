@@ -1,3 +1,10 @@
+## [0.11.1](https://github.com/dargmuesli/github-actions/compare/0.11.0...0.11.1) (2022-04-18)
+
+
+### Bug Fixes
+
+* **docker:** add missing line connector ([ac3f430](https://github.com/dargmuesli/github-actions/commit/ac3f43035e6e044987c3d177d006fcd0bdc3f736))
+
 # [0.11.0](https://github.com/dargmuesli/github-actions/compare/0.10.3...0.11.0) (2022-04-18)
 
 
