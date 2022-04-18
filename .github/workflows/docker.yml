@@ -60,7 +60,7 @@ jobs:
           ]]
           then
             docker buildx build \
-              --build-arg CI=true
+              --build-arg CI=true \
               --cache-from=$IMAGE_ID:cache \
               --cache-to=$IMAGE_ID:cache \
               --push \
@@ -68,7 +68,7 @@ jobs:
               .
           else
             docker buildx build \
-              --build-arg CI=true
+              --build-arg CI=true \
               --cache-from=$IMAGE_ID:cache \
               -t $IMAGE_ID:$VERSION \
               .

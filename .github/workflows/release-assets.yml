@@ -24,6 +24,7 @@ jobs:
       - name: Build "${{ inputs.TARGET }}"
         run: |
           docker buildx build \
+            --build-arg CI=true \
             --cache-from=${{ github.repository }}:cache \
             -t stage_build \
             --target ${{ inputs.TARGET }} \
