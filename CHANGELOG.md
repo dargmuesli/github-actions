@@ -1,3 +1,10 @@
+## [0.11.4](https://github.com/dargmuesli/github-actions/compare/0.11.3...0.11.4) (2022-05-02)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([bd65b62](https://github.com/dargmuesli/github-actions/commit/bd65b62984e869301170635539299cac7cdb3e9d))
+
 ## [0.11.3](https://github.com/dargmuesli/github-actions/compare/0.11.2...0.11.3) (2022-04-25)
 
 
