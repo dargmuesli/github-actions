@@ -1,3 +1,10 @@
+# [0.12.0](https://github.com/dargmuesli/github-actions/compare/0.11.7...0.12.0) (2022-05-29)
+
+
+### Features
+
+* **workflows:** add browserslist-regex ([a1fd4b5](https://github.com/dargmuesli/github-actions/commit/a1fd4b51e34b421e53a83d46f614855f9bc8c3f0))
+
 ## [0.11.7](https://github.com/dargmuesli/github-actions/compare/0.11.6...0.11.7) (2022-05-23)
 
 
