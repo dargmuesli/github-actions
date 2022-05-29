@@ -1,3 +1,10 @@
+# [0.14.0](https://github.com/dargmuesli/github-actions/compare/0.13.0...0.14.0) (2022-05-29)
+
+
+### Features
+
+* **browserslist-regex:** make eslint configurable ([e7a18da](https://github.com/dargmuesli/github-actions/commit/e7a18da243dc9b8c44e8983eb7ae26fdc35aec35))
+
 # [0.13.0](https://github.com/dargmuesli/github-actions/compare/0.12.2...0.13.0) (2022-05-29)
 
 
