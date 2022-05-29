@@ -1,3 +1,10 @@
+## [0.12.1](https://github.com/dargmuesli/github-actions/compare/0.12.0...0.12.1) (2022-05-29)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** use environment variable ([24a3f49](https://github.com/dargmuesli/github-actions/commit/24a3f493ab06911d6010e5bae78c107db2555a4f))
+
 # [0.12.0](https://github.com/dargmuesli/github-actions/compare/0.11.7...0.12.0) (2022-05-29)
 
 
