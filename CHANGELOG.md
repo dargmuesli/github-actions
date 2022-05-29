@@ -1,3 +1,10 @@
+# [0.15.0](https://github.com/dargmuesli/github-actions/compare/0.14.0...0.15.0) (2022-05-29)
+
+
+### Features
+
+* **browserslist-regex:** use directory ([6a791b9](https://github.com/dargmuesli/github-actions/commit/6a791b9576fbbeeafa4d5fa5e22177ae3355f6d2))
+
 # [0.14.0](https://github.com/dargmuesli/github-actions/compare/0.13.0...0.14.0) (2022-05-29)
 
 
