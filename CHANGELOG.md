@@ -1,3 +1,10 @@
+## [0.15.1](https://github.com/dargmuesli/github-actions/compare/0.15.0...0.15.1) (2022-05-29)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** add missing yarn command ([fc083ad](https://github.com/dargmuesli/github-actions/commit/fc083ad3576b663f2bed83ceb00b0221a178d67e))
+
 # [0.15.0](https://github.com/dargmuesli/github-actions/compare/0.14.0...0.15.0) (2022-05-29)
 
 
