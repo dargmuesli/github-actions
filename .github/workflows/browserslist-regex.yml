@@ -37,9 +37,11 @@ jobs:
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
       - name: Update supported browsers file
+        env:
+          OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
         shell: bash
         run: |
-          echo "module.exports = $(browserslist-useragent-regexp --allowHigherVersions);" > ${{ inputs.FILE_PATH }}
+          echo "module.exports = $(browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
       - uses: stefanzweifel/git-auto-commit-action@49620cd3ed21ee620a48530e81dba0d139c9cb80 # tag=v4.14.1
         with:
           commit_message: 'chore(browserslist-regex): update supported browsers'
