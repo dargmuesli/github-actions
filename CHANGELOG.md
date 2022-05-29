@@ -1,3 +1,10 @@
+## [0.12.2](https://github.com/dargmuesli/github-actions/compare/0.12.1...0.12.2) (2022-05-29)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** add browserslist-useragent-regexp ([d37c04b](https://github.com/dargmuesli/github-actions/commit/d37c04b9a82c4a8c128369e9efdc89c18a89967c))
+
 ## [0.12.1](https://github.com/dargmuesli/github-actions/compare/0.12.0...0.12.1) (2022-05-29)
 
 
