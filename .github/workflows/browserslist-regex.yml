@@ -41,8 +41,9 @@ jobs:
           OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
         shell: bash
         run: |
-          yarn global add browserslist-useragent-regexp
+          yarn global add browserslist-useragent-regexp eslint
           echo "module.exports = $(browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
+          eslint --fix "$OUTPUT_PATH"
       - uses: stefanzweifel/git-auto-commit-action@49620cd3ed21ee620a48530e81dba0d139c9cb80 # tag=v4.14.1
         with:
           commit_message: 'chore(browserslist-regex): update supported browsers'
