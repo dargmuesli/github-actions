@@ -1,3 +1,10 @@
+## [0.15.2](https://github.com/dargmuesli/github-actions/compare/0.15.1...0.15.2) (2022-05-29)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** add yarn's silent flag ([9e1fc22](https://github.com/dargmuesli/github-actions/commit/9e1fc22b5395692d8fffb3c8836823dfc47d0b19))
+
 ## [0.15.1](https://github.com/dargmuesli/github-actions/compare/0.15.0...0.15.1) (2022-05-29)
 
 
