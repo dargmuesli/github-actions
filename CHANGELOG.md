@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/dargmuesli/github-actions/compare/0.12.2...0.13.0) (2022-05-29)
+
+
+### Features
+
+* **browserslist-regex:** add eslint ([1e65b0f](https://github.com/dargmuesli/github-actions/commit/1e65b0fc2d5076a9c3d655b8bd365b323c975824))
+
 ## [0.12.2](https://github.com/dargmuesli/github-actions/compare/0.12.1...0.12.2) (2022-05-29)
 
 
