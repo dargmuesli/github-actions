@@ -41,7 +41,7 @@ jobs:
   schedule-release:
     runs-on: ubuntu-latest
     needs: analyze-tags
-    if: ${{ !inputs.IS_DEBOUNCED }} || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
+    if: inputs.IS_DEBOUNCED == false || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
         with:
