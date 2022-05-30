@@ -1,3 +1,10 @@
+## [0.15.4](https://github.com/dargmuesli/github-actions/compare/0.15.3...0.15.4) (2022-05-30)
+
+
+### Bug Fixes
+
+* **release-schedule:** correct boolean input ([fe94d34](https://github.com/dargmuesli/github-actions/commit/fe94d348d081e54e7c1c6ba5030b43b2fdc2d7bb))
+
 ## [0.15.3](https://github.com/dargmuesli/github-actions/compare/0.15.2...0.15.3) (2022-05-30)
 
 
