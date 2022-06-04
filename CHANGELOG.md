@@ -1,3 +1,10 @@
+## [0.16.2](https://github.com/dargmuesli/github-actions/compare/0.16.1...0.16.2) (2022-06-04)
+
+
+### Bug Fixes
+
+* **docker2:** push when tags available ([98a3e16](https://github.com/dargmuesli/github-actions/commit/98a3e1601e6c186b292b86a96f6572f75919c591))
+
 ## [0.16.1](https://github.com/dargmuesli/github-actions/compare/0.16.0...0.16.1) (2022-06-04)
 
 
