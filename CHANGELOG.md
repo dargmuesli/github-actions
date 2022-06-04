@@ -1,3 +1,10 @@
+## [0.16.1](https://github.com/dargmuesli/github-actions/compare/0.16.0...0.16.1) (2022-06-04)
+
+
+### Bug Fixes
+
+* **docker2:** use int128/docker-build-cache-config-action ([7f0c2e3](https://github.com/dargmuesli/github-actions/commit/7f0c2e3513b9cfeade25e2f4e02381e2ca9e1213))
+
 # [0.16.0](https://github.com/dargmuesli/github-actions/compare/0.15.4...0.16.0) (2022-06-04)
 
 
