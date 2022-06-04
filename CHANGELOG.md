@@ -1,3 +1,10 @@
+## [0.16.3](https://github.com/dargmuesli/github-actions/compare/0.16.2...0.16.3) (2022-06-04)
+
+
+### Bug Fixes
+
+* **docker2:** use slash instead of colon ([140da19](https://github.com/dargmuesli/github-actions/commit/140da19e9c53213272c752bb5f69df038a60730a))
+
 ## [0.16.2](https://github.com/dargmuesli/github-actions/compare/0.16.1...0.16.2) (2022-06-04)
 
 
