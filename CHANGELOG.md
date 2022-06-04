@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/dargmuesli/github-actions/compare/0.15.4...0.16.0) (2022-06-04)
+
+
+### Features
+
+* **docker:** add version 2 ([694e31d](https://github.com/dargmuesli/github-actions/commit/694e31d4b47dc41e800982b56007a64669155b1a))
+
 ## [0.15.4](https://github.com/dargmuesli/github-actions/compare/0.15.3...0.15.4) (2022-05-30)
 
 
