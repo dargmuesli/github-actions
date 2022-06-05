@@ -1,3 +1,10 @@
+## [0.16.4](https://github.com/dargmuesli/github-actions/compare/0.16.3...0.16.4) (2022-06-05)
+
+
+### Bug Fixes
+
+* **docker2:** use tag prefix ([740be75](https://github.com/dargmuesli/github-actions/commit/740be75901458eb629787b8b8aef3f9054cfbe6f))
+
 ## [0.16.3](https://github.com/dargmuesli/github-actions/compare/0.16.2...0.16.3) (2022-06-04)
 
 
