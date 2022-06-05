@@ -36,7 +36,8 @@ jobs:
       - uses: int128/docker-build-cache-config-action@v1
         id: cache
         with:
-          image: ${{ github.repository }}/cache-${{ inputs.TARGET }}
+          image: ${{ github.repository }}
+          tag-prefix: ${{ inputs.TARGET }}
 
       - name: Docker Buildx setup
         id: buildx
