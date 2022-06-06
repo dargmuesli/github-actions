@@ -3,6 +3,9 @@ name: Docker
 on:
   workflow_call:
     inputs:
+      CACHE:
+        required: false
+        type: string
       TARGET:
         default: production
         required: false
@@ -37,7 +40,9 @@ jobs:
         id: cache
         with:
           image: ${{ github.repository }}
-          tag-prefix: ${{ inputs.TARGET }}_
+          tag-prefix: |
+            ${{ inputs.TARGET }}_
+            ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
 
       - name: Docker Buildx setup
         id: buildx
