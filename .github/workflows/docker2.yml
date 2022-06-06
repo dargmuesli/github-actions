@@ -33,11 +33,11 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
 
-      - uses: int128/docker-build-cache-config-action@v1
+      - uses: dargmuesli/docker-build-cache-config-action@v1.9.0
         id: cache
         with:
           image: ${{ github.repository }}
-          tag-prefix: ${{ inputs.TARGET }}
+          tag-prefix: ${{ inputs.TARGET }}_
 
       - name: Docker Buildx setup
         id: buildx
