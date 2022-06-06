@@ -1,3 +1,10 @@
+## [0.16.9](https://github.com/dargmuesli/github-actions/compare/0.16.8...0.16.9) (2022-06-06)
+
+
+### Bug Fixes
+
+* **docker2:** use multiple tag prefixes ([f0ced6f](https://github.com/dargmuesli/github-actions/commit/f0ced6fcfc8f5bacd039af5ff8fa3f6cc5b54760))
+
 ## [0.16.8](https://github.com/dargmuesli/github-actions/compare/0.16.7...0.16.8) (2022-06-06)
 
 
