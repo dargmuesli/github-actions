@@ -1,3 +1,10 @@
+## [0.16.11](https://github.com/dargmuesli/github-actions/compare/0.16.10...0.16.11) (2022-06-06)
+
+
+### Bug Fixes
+
+* **docker2:** update dargmuesli/docker-build-cache... to v1.13.0 ([b99faa6](https://github.com/dargmuesli/github-actions/commit/b99faa62dca6629ef4802da59239cd54ffd18f4e))
+
 ## [0.16.10](https://github.com/dargmuesli/github-actions/compare/0.16.9...0.16.10) (2022-06-06)
 
 
