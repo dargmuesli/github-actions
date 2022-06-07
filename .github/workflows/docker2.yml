@@ -6,6 +6,10 @@ on:
       CACHE:
         required: false
         type: string
+      IS_PUSH_ENABLED:
+        default: false
+        required: false
+        type: boolean
       TARGET:
         default: production
         required: false
@@ -61,6 +65,6 @@ jobs:
           cache-to: ${{ steps.cache.outputs.cache-to }}
           context: .
           labels: ${{ steps.meta.outputs.labels }}
-          push: ${{ steps.meta.outputs.tags != '' }}
+          push: ${{ steps.meta.outputs.tags != '' && inputs.IS_PUSH_ENABLED == true }}
           tags: ${{ steps.meta.outputs.tags }}
           target: ${{ inputs.TARGET }}
