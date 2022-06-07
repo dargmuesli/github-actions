@@ -1,3 +1,10 @@
+## [0.16.13](https://github.com/dargmuesli/github-actions/compare/0.16.12...0.16.13) (2022-06-07)
+
+
+### Bug Fixes
+
+* **docker2:** add push enabling flag ([07133fe](https://github.com/dargmuesli/github-actions/commit/07133feaa3e7d041fc2c90a5fb58a460c8879b0c))
+
 ## [0.16.12](https://github.com/dargmuesli/github-actions/compare/0.16.11...0.16.12) (2022-06-07)
 
 
