@@ -36,7 +36,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
 
-      - uses: dargmuesli/docker-build-cache-config-action@v1.13.0
+      - uses: dargmuesli/docker-build-cache-config-action@v1.14.0
         id: cache
         with:
           image: ${{ github.repository }}
