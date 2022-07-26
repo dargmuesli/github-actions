@@ -1,3 +1,10 @@
+## [0.17.1](https://github.com/dargmuesli/github-actions/compare/0.17.0...0.17.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* **browserslist:** add setup action ([4ff00b0](https://github.com/dargmuesli/github-actions/commit/4ff00b02b5240a40b8804fb0d57c3a119d5f8012))
+
 # [0.17.0](https://github.com/dargmuesli/github-actions/compare/0.16.20...0.17.0) (2022-07-26)
 
 
