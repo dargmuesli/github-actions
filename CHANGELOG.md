@@ -1,3 +1,10 @@
+# [0.17.0](https://github.com/dargmuesli/github-actions/compare/0.16.20...0.17.0) (2022-07-26)
+
+
+### Features
+
+* **browserslist-regex:** support (p)npm ([94446e4](https://github.com/dargmuesli/github-actions/commit/94446e4dda21ac1f460a296efb7b445836b9b768))
+
 ## [0.16.20](https://github.com/dargmuesli/github-actions/compare/0.16.19...0.16.20) (2022-07-25)
 
 
