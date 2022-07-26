@@ -35,6 +35,9 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - uses: actions/setup-node@v3
         with:
           cache: ${{ inputs.CACHE }}
