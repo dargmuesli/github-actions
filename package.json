@@ -1,6 +1,6 @@
 {
   "name": "@dargmuesli/github-actions",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "scheduleVersion": "0.17.4",
   "private": true,
   "devDependencies": {
