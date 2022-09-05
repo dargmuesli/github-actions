@@ -1,7 +1,7 @@
 {
   "name": "@dargmuesli/github-actions",
   "version": "0.17.6",
-  "scheduleVersion": "0.17.6",
+  "scheduleVersion": "0.17.7",
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
