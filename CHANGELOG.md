@@ -1,3 +1,10 @@
+## [0.17.12](https://github.com/dargmuesli/github-actions/compare/0.17.11...0.17.12) (2022-10-05)
+
+
+### Bug Fixes
+
+* **docker:** remove ref from checkout ([79642bc](https://github.com/dargmuesli/github-actions/commit/79642bcdd7851ce6f7057a2dfa7164d0bf0a1e11))
+
 ## [0.17.11](https://github.com/dargmuesli/github-actions/compare/0.17.10...0.17.11) (2022-10-03)
 
 
