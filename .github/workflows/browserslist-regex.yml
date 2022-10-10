@@ -64,6 +64,6 @@ jobs:
           if [ -f "./node_modules/.bin/eslint" ]; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
           fi
-      - uses: stefanzweifel/git-auto-commit-action@6c32682a4040e023c054b2fc60a7cf65cc77f7ad # tag=v4.15.0
+      - uses: stefanzweifel/git-auto-commit-action@fd157da78fa13d9383e5580d1fd1184d89554b51 # tag=v4.15.1
         with:
           commit_message: 'chore(browserslist-regex): update supported browsers'
