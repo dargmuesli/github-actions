@@ -1,3 +1,10 @@
+# [0.18.0](https://github.com/dargmuesli/github-actions/compare/0.17.14...0.18.0) (2022-10-17)
+
+
+### Features
+
+* **release-semantic:** allow more branch names ([edd64b0](https://github.com/dargmuesli/github-actions/commit/edd64b0e2c89e27670465407146424b6ae0a8edf))
+
 ## [0.17.14](https://github.com/dargmuesli/github-actions/compare/0.17.13...0.17.14) (2022-10-17)
 
 
