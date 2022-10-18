@@ -43,6 +43,11 @@ jobs:
           cache: ${{ inputs.CACHE }}
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
+      - name: Get module type
+        uses: sergeysova/jq-action@v2
+        id: type
+        with:
+          cmd: 'jq .type package.json -r'
       - name: Update supported browsers file
         env:
           DIRECTORY: ${{ inputs.DIRECTORY }}
@@ -56,10 +61,16 @@ jobs:
           "$PACKAGE_MANAGER" install --frozen-lockfile
 
           if [ "$PACKAGE_MANAGER" = "pnpm" ]; then
-            echo "module.exports = $("$PACKAGE_MANAGER" browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
-          else
-            echo "module.exports = $("$PACKAGE_MANAGER" --silent browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
+            args=--silent
           fi
+
+          if [ "${{ steps.version.outputs.value }}" = "module" ]; then
+            prefix="export default"
+          else
+            prefix="module.exports ="
+          fi
+
+          echo "$prefix $("$PACKAGE_MANAGER" $args browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
 
           if [ -f "./node_modules/.bin/eslint" ]; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
