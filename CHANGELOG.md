@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/dargmuesli/github-actions/compare/0.18.0...0.19.0) (2022-10-18)
+
+
+### Features
+
+* **browserlist-regex:** support module type ([8718b3f](https://github.com/dargmuesli/github-actions/commit/8718b3fc98390bbafb42aa5ca1fe5ae754a17edf))
+
 # [0.18.0](https://github.com/dargmuesli/github-actions/compare/0.17.14...0.18.0) (2022-10-17)
 
 
