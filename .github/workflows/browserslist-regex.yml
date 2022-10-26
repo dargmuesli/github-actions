@@ -57,14 +57,10 @@ jobs:
           PACKAGE_MANAGER: ${{ inputs.CACHE }}
         shell: bash
         run: |
-          cd $DIRECTORY
+          cd "$DIRECTORY" || exit
           corepack enable
 
           "$PACKAGE_MANAGER" install --frozen-lockfile
-
-          if [ "$PACKAGE_MANAGER" = "pnpm" ]; then
-            args=--silent
-          fi
 
           if [ "${{ steps.type.outputs.value }}" = "module" ]; then
             prefix="export default"
@@ -72,7 +68,7 @@ jobs:
             prefix="module.exports ="
           fi
 
-          echo "$prefix $("$PACKAGE_MANAGER" $args browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
+          echo "$prefix $("$PACKAGE_MANAGER" browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
 
           if [ -f "./node_modules/.bin/eslint" ]; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
