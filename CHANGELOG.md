@@ -1,3 +1,10 @@
+## [0.19.4](https://github.com/dargmuesli/github-actions/compare/0.19.3...0.19.4) (2022-10-26)
+
+
+### Bug Fixes
+
+* **browserlist-regex:** remove pnpm silent argument ([908f2d8](https://github.com/dargmuesli/github-actions/commit/908f2d8212d6daaad3c0d198bf6a881d0e9404e4))
+
 ## [0.19.3](https://github.com/dargmuesli/github-actions/compare/0.19.2...0.19.3) (2022-10-26)
 
 
