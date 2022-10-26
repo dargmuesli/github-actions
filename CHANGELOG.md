@@ -1,3 +1,10 @@
+## [0.19.3](https://github.com/dargmuesli/github-actions/compare/0.19.2...0.19.3) (2022-10-26)
+
+
+### Bug Fixes
+
+* **browserlist-regex:** correct step id ([3012f72](https://github.com/dargmuesli/github-actions/commit/3012f72c749638d0132403ff07843b04e681bc49))
+
 ## [0.19.2](https://github.com/dargmuesli/github-actions/compare/0.19.1...0.19.2) (2022-10-26)
 
 
