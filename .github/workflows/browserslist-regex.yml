@@ -66,7 +66,7 @@ jobs:
             args=--silent
           fi
 
-          if [ "${{ steps.version.outputs.value }}" = "module" ]; then
+          if [ "${{ steps.type.outputs.value }}" = "module" ]; then
             prefix="export default"
           else
             prefix="module.exports ="
