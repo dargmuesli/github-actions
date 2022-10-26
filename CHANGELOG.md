@@ -1,3 +1,10 @@
+## [0.19.2](https://github.com/dargmuesli/github-actions/compare/0.19.1...0.19.2) (2022-10-26)
+
+
+### Bug Fixes
+
+* **browserlist-regex:** support different directories for module type ([bb04058](https://github.com/dargmuesli/github-actions/commit/bb040580cc6cf81ca0227bcba2ea796905601fea))
+
 ## [0.19.1](https://github.com/dargmuesli/github-actions/compare/0.19.0...0.19.1) (2022-10-24)
 
 
