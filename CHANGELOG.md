@@ -1,3 +1,10 @@
+## [0.19.7](https://github.com/dargmuesli/github-actions/compare/0.19.6...0.19.7) (2022-11-08)
+
+
+### Bug Fixes
+
+* **docker:** login to docker hub only on master ([00496e4](https://github.com/dargmuesli/github-actions/commit/00496e4e85019b02d159fcc3d23fd8c5b9a4d9a6))
+
 ## [0.19.6](https://github.com/dargmuesli/github-actions/compare/0.19.5...0.19.6) (2022-11-07)
 
 
