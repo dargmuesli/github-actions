@@ -1,3 +1,10 @@
+## [0.19.10](https://github.com/dargmuesli/github-actions/compare/0.19.9...0.19.10) (2022-11-22)
+
+
+### Reverts
+
+* Revert "fix(docker): login to docker hub only on master" ([9598990](https://github.com/dargmuesli/github-actions/commit/95989905d3c3270d3cb059829f8736af8dfe0ad9))
+
 ## [0.19.9](https://github.com/dargmuesli/github-actions/compare/0.19.8...0.19.9) (2022-11-21)
 
 
