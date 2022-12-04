@@ -1,3 +1,10 @@
+## [0.19.12](https://github.com/dargmuesli/github-actions/compare/0.19.11...0.19.12) (2022-12-04)
+
+
+### Bug Fixes
+
+* use environment files ([62e2fa5](https://github.com/dargmuesli/github-actions/commit/62e2fa51906de1b2b5556a5869933e1444150108))
+
 ## [0.19.11](https://github.com/dargmuesli/github-actions/compare/0.19.10...0.19.11) (2022-11-28)
 
 
