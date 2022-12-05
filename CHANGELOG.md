@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/dargmuesli/github-actions/compare/0.19.12...0.20.0) (2022-12-05)
+
+
+### Features
+
+* **docker:** add architectures input ([9bc9ade](https://github.com/dargmuesli/github-actions/commit/9bc9ade2e868adfc1a78180c84a35e06a1dfe98d))
+
 ## [0.19.12](https://github.com/dargmuesli/github-actions/compare/0.19.11...0.19.12) (2022-12-04)
 
 
