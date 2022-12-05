@@ -2,6 +2,11 @@ name: Docker
 
 on:
   workflow_call:
+    inputs:
+      ARCHITECTURES:
+        default: linux/amd64
+        required: false
+        type: string
     secrets:
       DOCKER_HUB_ACCESS_TOKEN:
         required: true
@@ -63,6 +68,7 @@ jobs:
               --build-arg CI=true \
               --cache-from=$IMAGE_ID:cache \
               --cache-to=$IMAGE_ID:cache \
+              --platform=${{ inputs.ARCHITECTURES }} \
               --push \
               -t $IMAGE_ID:$VERSION \
               .
