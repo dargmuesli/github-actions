@@ -1,3 +1,10 @@
+## [0.20.1](https://github.com/dargmuesli/github-actions/compare/0.20.0...0.20.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* **release-schedule:** revert removal of job outputs ([0ffeb23](https://github.com/dargmuesli/github-actions/commit/0ffeb230918ebbd874e42516c645ec1267a665e8))
+
 # [0.20.0](https://github.com/dargmuesli/github-actions/compare/0.19.12...0.20.0) (2022-12-05)
 
 
