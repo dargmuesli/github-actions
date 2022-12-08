@@ -1,3 +1,10 @@
+## [0.20.2](https://github.com/dargmuesli/github-actions/compare/0.20.1...0.20.2) (2022-12-08)
+
+
+### Bug Fixes
+
+* **release-semantic:** add quotation marks ([d3b04d1](https://github.com/dargmuesli/github-actions/commit/d3b04d1cc5ccb6435316b035465cd1911cb9a639))
+
 ## [0.20.1](https://github.com/dargmuesli/github-actions/compare/0.20.0...0.20.1) (2022-12-07)
 
 
