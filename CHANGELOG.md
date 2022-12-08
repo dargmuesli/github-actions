@@ -1,3 +1,10 @@
+## [0.20.3](https://github.com/dargmuesli/github-actions/compare/0.20.2...0.20.3) (2022-12-08)
+
+
+### Bug Fixes
+
+* **release-semantic:** install dependencies ([2d53050](https://github.com/dargmuesli/github-actions/commit/2d530505fd7bc35707c025274941fc605e8813a5))
+
 ## [0.20.2](https://github.com/dargmuesli/github-actions/compare/0.20.1...0.20.2) (2022-12-08)
 
 
