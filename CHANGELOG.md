@@ -1,3 +1,10 @@
+## [0.20.4](https://github.com/dargmuesli/github-actions/compare/0.20.3...0.20.4) (2022-12-08)
+
+
+### Bug Fixes
+
+* **release-semantic:** extract validation to separate job ([5705d17](https://github.com/dargmuesli/github-actions/commit/5705d172db0a36f3b9ab72716e8cd3da3286d2c4))
+
 ## [0.20.3](https://github.com/dargmuesli/github-actions/compare/0.20.2...0.20.3) (2022-12-08)
 
 
