@@ -1,6 +1,8 @@
 name: 'Release: Scheduled'
 
 on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 AM UTC on the default branch
   workflow_call:
     inputs:
       PACKAGE_JSON_PATH:
@@ -14,8 +16,7 @@ on:
     secrets:
       GH_TOKEN:
         required: true
-  schedule:
-    - cron: '0 0 * * 1' # Every Monday at 00:00 AM UTC on the default branch
+  workflow_dispatch:
 
 jobs:
   analyze-tags:
