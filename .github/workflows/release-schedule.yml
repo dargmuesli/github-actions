@@ -17,6 +17,15 @@ on:
       GH_TOKEN:
         required: true
   workflow_dispatch:
+    inputs:
+      PACKAGE_JSON_PATH:
+        default: package.json
+        required: false
+        type: string
+      IS_DEBOUNCED:
+        default: true
+        required: false
+        type: boolean
 
 jobs:
   analyze-tags:
@@ -51,13 +60,13 @@ jobs:
           TIMESTAMP_DIFF: ${{ needs.analyze-tags.outputs.timestamp-diff }}
         run: |
           echo "$TIMESTAMP_DIFF"
-          echo "{{ inputs.IS_DEBOUNCED }}"
-          echo "{{ inputs.IS_DEBOUNCED == false }}"
-          echo "{{ inputs.IS_DEBOUNCED == 'false' }}"
-          echo "{{ inputs.IS_DEBOUNCED == true }}"
-          echo "{{ inputs.IS_DEBOUNCED == 'true' }}"
-          echo "{{ needs.analyze-tags.outputs.timestamp-diff > 604800 }}"
-          echo "{{ inputs.IS_DEBOUNCED == false || needs.analyze-tags.outputs.timestamp-diff > 604800 }}"
+          echo "${{ inputs.IS_DEBOUNCED }}"
+          echo "${{ inputs.IS_DEBOUNCED == false }}"
+          echo "${{ inputs.IS_DEBOUNCED == 'false' }}"
+          echo "${{ inputs.IS_DEBOUNCED == true }}"
+          echo "${{ inputs.IS_DEBOUNCED == 'true' }}"
+          echo "${{ needs.analyze-tags.outputs.timestamp-diff > 604800 }}"
+          echo "${{ inputs.IS_DEBOUNCED == false || needs.analyze-tags.outputs.timestamp-diff > 604800 }}"
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
         with:
           token: ${{ secrets.GH_TOKEN }}
