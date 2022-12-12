@@ -31,16 +31,17 @@ jobs:
         os: [ubuntu-latest]
         node: [19]
     steps:
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Setup pnpm
         run: corepack enable
-      - name: Checkout
+      - name: Checkout git repository
         uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - name: cache node_modules
+      - name: Cache node_modules
         uses: actions/cache@v3
         with:
           path: node_modules
