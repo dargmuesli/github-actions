@@ -1,3 +1,10 @@
+## [0.20.6](https://github.com/dargmuesli/github-actions/compare/0.20.5...0.20.6) (2022-12-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** align names ([b528f63](https://github.com/dargmuesli/github-actions/commit/b528f63368c594aa5010539491dbcba35e4a7470))
+
 ## [0.20.5](https://github.com/dargmuesli/github-actions/compare/0.20.4...0.20.5) (2022-12-12)
 
 
