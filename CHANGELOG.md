@@ -1,3 +1,10 @@
+## [0.20.7](https://github.com/dargmuesli/github-actions/compare/0.20.6...0.20.7) (2022-12-13)
+
+
+### Bug Fixes
+
+* **commitlint:** allow long body lines on ci ([81e0831](https://github.com/dargmuesli/github-actions/commit/81e0831184db0df9d2332dbfb4850ac4672ea193))
+
 ## [0.20.6](https://github.com/dargmuesli/github-actions/compare/0.20.5...0.20.6) (2022-12-12)
 
 
