@@ -1,3 +1,11 @@
+# [0.21.0](https://github.com/dargmuesli/github-actions/compare/0.20.8...0.21.0) (2022-12-22)
+
+
+### Features
+
+* **browserslist-regex:** rename cache to package manager ([0548499](https://github.com/dargmuesli/github-actions/commit/0548499fac46f3054f5590fc2653c0eb97f3dc72))
+* **browserslist-regex:** update node to v19 ([f2503d4](https://github.com/dargmuesli/github-actions/commit/f2503d4a792689cbbe377f37ae4bb8d010463c79))
+
 ## [0.20.8](https://github.com/dargmuesli/github-actions/compare/0.20.7...0.20.8) (2022-12-19)
 
 
