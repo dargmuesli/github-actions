@@ -3,10 +3,6 @@ name: 'Browserslist: Regex'
 on:
   workflow_call:
     inputs:
-      CACHE:
-        default: yarn
-        required: false
-        type: string
       CACHE_PATH:
         default: yarn.lock
         required: false
@@ -23,6 +19,10 @@ on:
         default: supportedBrowsers.js
         required: false
         type: string
+      PACKAGE_MANAGER:
+        default: yarn
+        required: false
+        type: string
     secrets:
       GH_TOKEN:
         required: true
@@ -31,16 +31,14 @@ jobs:
   analyze-tags:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
+      - name: Checkout git repository
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ inputs.CACHE }}
+          cache: ${{ inputs.PACKAGE_MANAGER }}
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
       - name: Get module type
@@ -54,7 +52,7 @@ jobs:
         env:
           DIRECTORY: ${{ inputs.DIRECTORY }}
           OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
-          PACKAGE_MANAGER: ${{ inputs.CACHE }}
+          PACKAGE_MANAGER: ${{ inputs.PACKAGE_MANAGER }}
         shell: bash
         run: |
           cd "$DIRECTORY" || exit
