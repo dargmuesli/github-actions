@@ -1,3 +1,10 @@
+## [0.21.2](https://github.com/dargmuesli/github-actions/compare/0.21.1...0.21.2) (2022-12-22)
+
+
+### Bug Fixes
+
+* **release-semantic:** checkout git first ([65259db](https://github.com/dargmuesli/github-actions/commit/65259db0d1f735b8f010422d2ba140c103437f73))
+
 ## [0.21.1](https://github.com/dargmuesli/github-actions/compare/0.21.0...0.21.1) (2022-12-22)
 
 
