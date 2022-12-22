@@ -37,13 +37,17 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
+
       - name: Setup package manager
         run: corepack enable
-      - uses: actions/setup-node@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           cache: ${{ inputs.PACKAGE_MANAGER }}
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
+
       - name: Get module type
         uses: sergeysova/jq-action@v2
         id: type
@@ -51,6 +55,7 @@ jobs:
           DIRECTORY: ${{ inputs.DIRECTORY }}
         with:
           cmd: 'jq .type "$DIRECTORY/package.json" -r'
+
       - name: Update supported browsers file
         env:
           DIRECTORY: ${{ inputs.DIRECTORY }}
@@ -73,6 +78,8 @@ jobs:
           if [ -f "./node_modules/.bin/eslint" ]; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
           fi
-      - uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4.16.0
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4.16.0
         with:
           commit_message: 'chore(browserslist-regex): update supported browsers'

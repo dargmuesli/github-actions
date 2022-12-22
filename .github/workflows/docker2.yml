@@ -25,7 +25,7 @@ jobs:
     name: Docker
     runs-on: ubuntu-latest
     steps:
-      - name: Git checkout
+      - name: Checkout git repository
         uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
         with:
           fetch-depth: 0
@@ -40,7 +40,8 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
 
-      - uses: dargmuesli/docker-build-cache-config-action@v1.14.0
+      - name: Docker cache
+        uses: dargmuesli/docker-build-cache-config-action@v1.14.0
         id: cache
         with:
           image: ${{ github.repository }}

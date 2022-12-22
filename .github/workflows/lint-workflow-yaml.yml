@@ -11,9 +11,12 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
+      - name: Checkout git repository
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - uses: cschleiden/actions-linter@v1
+
+      - name: Lint yaml
+        uses: cschleiden/actions-linter@v1
         with:
           workflows: '[".github/workflows/*.yml", ".github/workflows/*.yaml"]'
