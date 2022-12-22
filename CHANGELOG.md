@@ -1,3 +1,10 @@
+## [0.21.1](https://github.com/dargmuesli/github-actions/compare/0.21.0...0.21.1) (2022-12-22)
+
+
+### Bug Fixes
+
+* enable corepack before node setup ([a5623b7](https://github.com/dargmuesli/github-actions/commit/a5623b7a801c3d4609a8a56b267c89c4a3306321))
+
 # [0.21.0](https://github.com/dargmuesli/github-actions/compare/0.20.8...0.21.0) (2022-12-22)
 
 
