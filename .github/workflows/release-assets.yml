@@ -37,7 +37,7 @@ jobs:
       - name: Zip
         uses: montudor/action-zip@0852c26906e00f8a315c704958823928d8018b28 # renovate: tag=v1.0.0
         with:
-          args: zip -qq -r ./${{ github.event.repository.name }}.zip ./dist/
+          args: zip -qq --symlinks -r ./${{ github.event.repository.name }}.zip ./dist/
 
       - name: GitHub Release Asset
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
