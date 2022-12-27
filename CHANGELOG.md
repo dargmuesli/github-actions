@@ -1,3 +1,10 @@
+## [0.22.1](https://github.com/dargmuesli/github-actions/compare/0.22.0...0.22.1) (2022-12-27)
+
+
+### Bug Fixes
+
+* **release-assets:** zip with symlinks ([3048a33](https://github.com/dargmuesli/github-actions/commit/3048a33bcd53cb6239341e62581de10caebae5e9))
+
 # [0.22.0](https://github.com/dargmuesli/github-actions/compare/0.21.2...0.22.0) (2022-12-27)
 
 
