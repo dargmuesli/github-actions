@@ -1,3 +1,15 @@
+# [0.22.0](https://github.com/dargmuesli/github-actions/compare/0.21.2...0.22.0) (2022-12-27)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([432e2cc](https://github.com/dargmuesli/github-actions/commit/432e2cc27d0a5bfbd53e92c5b379a163b6f051f4))
+
+
+### Features
+
+* **package:** switch to pnpm ([fdef4b8](https://github.com/dargmuesli/github-actions/commit/fdef4b82efe045f4ca9a52de9f9ff5282ecd7e1a))
+
 ## [0.21.2](https://github.com/dargmuesli/github-actions/compare/0.21.1...0.21.2) (2022-12-22)
 
 
