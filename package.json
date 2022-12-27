@@ -3,6 +3,11 @@
   "version": "0.21.2",
   "scheduleVersion": "0.21.3",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": "19"
+  },
+  "packageManager": "pnpm@7.19.0",
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
