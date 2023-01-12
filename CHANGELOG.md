@@ -1,3 +1,10 @@
+# [0.23.0](https://github.com/dargmuesli/github-actions/compare/0.22.3...0.23.0) (2023-01-12)
+
+
+### Features
+
+* **docker:** add image id as optional input ([dff3a7e](https://github.com/dargmuesli/github-actions/commit/dff3a7e17f4be505869a9f3ffe934875c804fc0a))
+
 ## [0.22.3](https://github.com/dargmuesli/github-actions/compare/0.22.2...0.22.3) (2023-01-09)
 
 
