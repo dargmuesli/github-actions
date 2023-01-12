@@ -7,6 +7,9 @@ on:
         default: linux/amd64
         required: false
         type: string
+      IMAGE_ID:
+        required: false
+        type: string
     secrets:
       DOCKER_HUB_ACCESS_TOKEN:
         required: true
@@ -34,7 +37,7 @@ jobs:
       - name: Build
         run: |
           # Strip git ref prefix from version
-          IMAGE_ID=${{ github.repository }}
+          IMAGE_ID=${{ inputs.IMAGE_ID || github.repository }}
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
 
           # Use Docker `latest` tag convention
