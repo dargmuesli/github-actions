@@ -1,3 +1,10 @@
+## [0.23.1](https://github.com/dargmuesli/github-actions/compare/0.23.0...0.23.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **release-schedule:** add missing job names ([07f0aeb](https://github.com/dargmuesli/github-actions/commit/07f0aebff0392dec7fbc0d2893e1334ebc588831))
+
 # [0.23.0](https://github.com/dargmuesli/github-actions/compare/0.22.3...0.23.0) (2023-01-12)
 
 
