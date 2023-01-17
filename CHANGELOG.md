@@ -1,3 +1,10 @@
+## [0.23.3](https://github.com/dargmuesli/github-actions/compare/0.23.2...0.23.3) (2023-01-17)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** update to v2.3.0 ([8b0b6dc](https://github.com/dargmuesli/github-actions/commit/8b0b6dcef2e6d21352bebbaee15d8ffccda79a5c))
+
 ## [0.23.2](https://github.com/dargmuesli/github-actions/compare/0.23.1...0.23.2) (2023-01-16)
 
 
