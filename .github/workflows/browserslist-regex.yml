@@ -49,7 +49,7 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: Get module type
-        uses: sergeysova/jq-action@v2
+        uses: sergeysova/jq-action@a3f0d4ff59cc1dddf023fc0b325dd75b10deec58 # v2.3.0
         id: type
         env:
           DIRECTORY: ${{ inputs.DIRECTORY }}
