@@ -1,3 +1,10 @@
+## [0.25.5](https://github.com/dargmuesli/github-actions/compare/0.25.4...0.25.5) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** correct conditional ([336d9ed](https://github.com/dargmuesli/github-actions/commit/336d9ed47f1467ad67746519ab000ecbd383a857))
+
 ## [0.25.4](https://github.com/dargmuesli/github-actions/compare/0.25.3...0.25.4) (2023-01-19)
 
 
