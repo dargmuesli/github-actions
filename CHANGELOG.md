@@ -1,3 +1,17 @@
+# [0.26.0](https://github.com/dargmuesli/github-actions/compare/0.25.8...0.26.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** disable fetch depth 0 ([29db7f0](https://github.com/dargmuesli/github-actions/commit/29db7f04dd9fdf5c25b8f4f7c49d12f80dbc99dd))
+* correct parameters ([6859799](https://github.com/dargmuesli/github-actions/commit/68597993dc00c2706b0d0d024e6d850d9f5a46ed))
+* **deploy-cloudflare-pages:** correct indentation ([921516a](https://github.com/dargmuesli/github-actions/commit/921516a0e6033d4d97f6e18c09daf546bdb37dc5))
+
+
+### Features
+
+* add deploy cloudflare pages workflow ([ae41cb5](https://github.com/dargmuesli/github-actions/commit/ae41cb5266b8081ac3516b2db6806c5d6f18ee0d))
+
 ## [0.25.8](https://github.com/dargmuesli/github-actions/compare/0.25.7...0.25.8) (2023-01-19)
 
 
