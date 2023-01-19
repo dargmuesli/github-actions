@@ -13,7 +13,7 @@ jobs:
 
       - uses: reviewdog/action-actionlint@v1
   release-semantic:
-    needs: lint
+    needs: actionlint
     name: Semantic Release
     uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.23.3
     secrets:
