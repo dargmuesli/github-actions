@@ -1,3 +1,10 @@
+## [0.25.6](https://github.com/dargmuesli/github-actions/compare/0.25.5...0.25.6) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** correct build target ([085af71](https://github.com/dargmuesli/github-actions/commit/085af71094ce27377e15dbfcbffc26d7ad056fa1))
+
 ## [0.25.5](https://github.com/dargmuesli/github-actions/compare/0.25.4...0.25.5) (2023-01-19)
 
 
