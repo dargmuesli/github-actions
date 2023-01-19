@@ -1,3 +1,10 @@
+## [0.27.1](https://github.com/dargmuesli/github-actions/compare/0.27.0...0.27.1) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** correct cache target ([a261200](https://github.com/dargmuesli/github-actions/commit/a2612001b8dff7941d50c430642c2fd2333cc69c))
+
 # [0.27.0](https://github.com/dargmuesli/github-actions/compare/0.26.0...0.27.0) (2023-01-19)
 
 
