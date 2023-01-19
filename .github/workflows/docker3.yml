@@ -137,6 +137,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           context: .
+          load: true
           push: false
           tags: stage_build
           target: ${{ inputs.BUILD_TARGET }}
