@@ -62,7 +62,6 @@ jobs:
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }}
 
       - name: Build and push
-        id: build
         uses: docker/build-push-action@v3
         with:
           push: ${{ github.event_name != 'pull_request' }}
@@ -124,7 +123,6 @@ jobs:
       #     fi
 
       - name: Build target "${{ inputs.TARGET }}"
-        id: build
         uses: docker/build-push-action@v3
         with:
           build-args: CI=true
