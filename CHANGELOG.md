@@ -1,3 +1,10 @@
+## [0.25.8](https://github.com/dargmuesli/github-actions/compare/0.25.7...0.25.8) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** add load option ([2b89e30](https://github.com/dargmuesli/github-actions/commit/2b89e303ad7906cd7b2ce3c3ce26c3b04e50a41d))
+
 ## [0.25.7](https://github.com/dargmuesli/github-actions/compare/0.25.6...0.25.7) (2023-01-19)
 
 
