@@ -5,28 +5,15 @@ on:
   push:
 
 jobs:
-  lint:
-    name: Lint
+  actionlint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
-      - name: Lint yaml
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          config_data: |
-            extends: default
-            rules:
-              colons:
-                level: warning
-              line-length:
-                level: warning
-    # uses: dargmuesli/github-actions/.github/workflows/lint-workflow-yaml.yml@0.6.1
-    # secrets:
-    #   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: reviewdog/action-actionlint@v1
   release-semantic:
-    needs: lint
+    needs: actionlint
     name: Semantic Release
     uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.23.3
     secrets:

@@ -12,8 +12,6 @@ on:
     secrets:
       CLOUDFLARE_API_TOKEN:
         required: true
-      GITHUB_TOKEN:
-        required: false
 
 jobs:
   deploy:
