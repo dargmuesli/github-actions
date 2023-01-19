@@ -1,3 +1,10 @@
+## [0.25.2](https://github.com/dargmuesli/github-actions/compare/0.25.1...0.25.2) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** correct names ([f317894](https://github.com/dargmuesli/github-actions/commit/f317894f0964380ff9c81d5665e291714db06379))
+
 ## [0.25.1](https://github.com/dargmuesli/github-actions/compare/0.25.0...0.25.1) (2023-01-19)
 
 
