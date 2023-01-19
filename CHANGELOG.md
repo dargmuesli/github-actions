@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/dargmuesli/github-actions/compare/0.24.2...0.25.0) (2023-01-19)
+
+
+### Features
+
+* add docker 3 ([13c7341](https://github.com/dargmuesli/github-actions/commit/13c7341fe8ff6c5ab1813d2be1a0bbebe5fff0b9))
+
 ## [0.24.2](https://github.com/dargmuesli/github-actions/compare/0.24.1...0.24.2) (2023-01-19)
 
 
