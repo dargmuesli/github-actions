@@ -1,3 +1,10 @@
+## [0.24.1](https://github.com/dargmuesli/github-actions/compare/0.24.0...0.24.1) (2023-01-19)
+
+
+### Reverts
+
+* Revert "feat: add release-github" ([5c56202](https://github.com/dargmuesli/github-actions/commit/5c56202bd9b56bc01d4f0817cd4eda86eca9aad7))
+
 # [0.24.0](https://github.com/dargmuesli/github-actions/compare/0.23.3...0.24.0) (2023-01-19)
 
 
