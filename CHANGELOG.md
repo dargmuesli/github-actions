@@ -1,3 +1,10 @@
+## [0.25.1](https://github.com/dargmuesli/github-actions/compare/0.25.0...0.25.1) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** remove unnecessary ids ([8375992](https://github.com/dargmuesli/github-actions/commit/837599205c2c3a78aae5ffe592bc5aa40d4233d4))
+
 # [0.25.0](https://github.com/dargmuesli/github-actions/compare/0.24.2...0.25.0) (2023-01-19)
 
 
