@@ -10,7 +10,7 @@ on:
         required: false
         type: string
       IS_DEBOUNCED:
-        default: true
+        default: ${{ github.event_name != 'workflow_dispatch' }}
         required: false
         type: boolean
     secrets:
