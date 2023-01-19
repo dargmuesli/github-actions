@@ -1,0 +1,47 @@
+name: 'Release: GitHub'
+
+on:
+  workflow_call:
+    inputs:
+      TARGET:
+        default: build
+        required: false
+        type: string
+
+jobs:
+  release-github:
+    if: startsWith(github.ref, 'refs/tags/')
+    name: Release GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+
+      - name: Setup Docker buildx
+        id: buildx
+        uses: docker/setup-buildx-action@8c0edbc76e98fa90f69d9a2c020dcb50019dc325 # tag=v2.2.1
+
+      - name: Build target "${{ inputs.TARGET }}"
+        run: |
+          docker buildx build \
+            --build-arg CI=true \
+            --cache-from=${{ github.repository }}:cache \
+            -t stage_build \
+            --target ${{ inputs.TARGET }} \
+            --load \
+            .
+          docker container create --name extract stage_build
+          docker container cp extract:/srv/app/ ./dist/
+          docker container rm -f extract
+
+      - name: Zip assets
+        uses: montudor/action-zip@0852c26906e00f8a315c704958823928d8018b28 # renovate: tag=v1.0.0
+        with:
+          args: zip -qq --symlinks -r ./${{ github.event.repository.name }}.zip ./dist/
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
+        with:
+          files: ${{ github.event.repository.name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
