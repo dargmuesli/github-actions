@@ -24,10 +24,10 @@ jobs:
     name: Docker
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout git repository
-      #   uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-      #   # with:
-      #   #   fetch-depth: 0 # fetch all history for all branches and tags
+      - name: Checkout git repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        # with:
+        #   fetch-depth: 0 # fetch all history for all branches and tags
 
       - name: Docker Buildx setup
         id: buildx
@@ -67,14 +67,15 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: ${{ github.event_name != 'pull_request' && steps.docker_meta.outputs.tags }}
+          build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
           cache-from: ${{ env.IMAGE_ID }}:cache
           cache-to: ${{ env.IMAGE_ID }}:cache
-          build-args: CI=true
+          context: .
+          labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
+          push: ${{ steps.docker_meta.outputs.tags && github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
 
       # - name: Build
       #   run: |
