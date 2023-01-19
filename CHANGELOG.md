@@ -1,3 +1,15 @@
+# [0.27.0](https://github.com/dargmuesli/github-actions/compare/0.26.0...0.27.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* correct errors ([79029e4](https://github.com/dargmuesli/github-actions/commit/79029e477d1b4c3f6bbdb97759753cc0f5bb3777))
+
+
+### Features
+
+* **ci:** use actionlint ([0d02621](https://github.com/dargmuesli/github-actions/commit/0d02621f950b4f154c08bc75886f146b323782d9))
+
 # [0.26.0](https://github.com/dargmuesli/github-actions/compare/0.25.8...0.26.0) (2023-01-19)
 
 
