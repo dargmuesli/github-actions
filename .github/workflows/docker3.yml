@@ -6,11 +6,15 @@ on:
       ARTIFACT_PATH:
         required: false
         type: string
-      PLATFORMS:
-        default: linux/amd64
+      BUILD_TARGET:
+        default: build
         required: false
         type: string
       IMAGE_ID:
+        required: false
+        type: string
+      PLATFORMS:
+        default: linux/amd64
         required: false
         type: string
     secrets:
@@ -126,15 +130,16 @@ jobs:
       #         .
       #     fi
 
-      - name: Build target "${{ inputs.TARGET }}"
+      - name: Build target "${{ inputs.BUILD_TARGET }}"
         uses: docker/build-push-action@v3
         with:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
+          context: .
           push: false
           tags: stage_build
-          target: ${{ inputs.TARGET }}
+          target: ${{ inputs.BUILD_TARGET }}
 
       # - name: Build targe "build"
       #   run: |
