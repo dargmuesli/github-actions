@@ -1,3 +1,10 @@
+# [0.24.0](https://github.com/dargmuesli/github-actions/compare/0.23.3...0.24.0) (2023-01-19)
+
+
+### Features
+
+* add release-github ([a59c361](https://github.com/dargmuesli/github-actions/commit/a59c3613c0f15022d23dfcbfcb016c14a9c82c16))
+
 ## [0.23.3](https://github.com/dargmuesli/github-actions/compare/0.23.2...0.23.3) (2023-01-17)
 
 
