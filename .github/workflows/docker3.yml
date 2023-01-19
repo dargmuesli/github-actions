@@ -56,7 +56,7 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: |
-            $IMAGE_ID
+            ${{ env.IMAGE_ID }}
           tags: |
             type=schedule
             type=raw,value=latest,enable={{is_default_branch}}
@@ -67,12 +67,12 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name != 'pull_request' && steps.docker_meta.outputs.tags }}
           builder: ${{ steps.buildx.outputs.name }}
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
-          cache-from: $IMAGE_ID:cache
-          cache-to: $IMAGE_ID:cache
+          cache-from: ${{ env.IMAGE_ID }}:cache
+          cache-to: ${{ env.IMAGE_ID }}:cache
           build-args: CI=true
           platforms: ${{ inputs.PLATFORMS }}
 
@@ -130,7 +130,7 @@ jobs:
         with:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
-          # cache-from: $IMAGE_ID:cache
+          # cache-from: ${{ env.IMAGE_ID }}:cache
           push: false
           tags: stage_build
           target: ${{ inputs.TARGET }}
