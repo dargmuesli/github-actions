@@ -1,3 +1,11 @@
+## [0.24.2](https://github.com/dargmuesli/github-actions/compare/0.24.1...0.24.2) (2023-01-19)
+
+
+### Bug Fixes
+
+* **release-schedule:** randomize cron day ([0d86a98](https://github.com/dargmuesli/github-actions/commit/0d86a9845ba950b554594fcd0890d3428c478f6c))
+* **release-schedule:** set debounce default as variable ([9a844b0](https://github.com/dargmuesli/github-actions/commit/9a844b04a752f976693318bfa4d2696833c9b8ea))
+
 ## [0.24.1](https://github.com/dargmuesli/github-actions/compare/0.24.0...0.24.1) (2023-01-19)
 
 
