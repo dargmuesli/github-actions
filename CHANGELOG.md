@@ -1,3 +1,10 @@
+## [0.25.4](https://github.com/dargmuesli/github-actions/compare/0.25.3...0.25.4) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** use path context ([d7f6981](https://github.com/dargmuesli/github-actions/commit/d7f69810c6f95b6b5d42913072d8a0438fd20e53))
+
 ## [0.25.3](https://github.com/dargmuesli/github-actions/compare/0.25.2...0.25.3) (2023-01-19)
 
 
