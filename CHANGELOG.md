@@ -1,3 +1,10 @@
+## [0.25.3](https://github.com/dargmuesli/github-actions/compare/0.25.2...0.25.3) (2023-01-19)
+
+
+### Bug Fixes
+
+* **docker:** correct environment ([7d298b6](https://github.com/dargmuesli/github-actions/commit/7d298b65c162df957f323fc2fb13535bc85f8ad8))
+
 ## [0.25.2](https://github.com/dargmuesli/github-actions/compare/0.25.1...0.25.2) (2023-01-19)
 
 
