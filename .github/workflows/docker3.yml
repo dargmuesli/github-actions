@@ -1,0 +1,184 @@
+name: Docker
+
+on:
+  workflow_call:
+    inputs:
+      ARCHITECTURES:
+        default: linux/amd64
+        required: false
+        type: string
+      IMAGE_ID:
+        required: false
+        type: string
+    secrets:
+      DOCKER_HUB_ACCESS_TOKEN:
+        required: true
+      DOCKER_HUB_USER_NAME:
+        required: true
+
+jobs:
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout git repository
+      #   uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      #   # with:
+      #   #   fetch-depth: 0 # fetch all history for all branches and tags
+
+      - name: Docker Buildx setup
+        id: buildx
+        uses: docker/setup-buildx-action@8c0edbc76e98fa90f69d9a2c020dcb50019dc325 # tag=v2.2.1
+        with:
+          install: true
+
+      - name: Registry login
+        if: github.event_name != 'pull_request'
+        run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USER_NAME }}" --password-stdin
+
+      - run: |
+          echo "IMAGE_ID=${{ inputs.IMAGE_ID || github.repository }}" >> $GITHUB_ENV
+      #     VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+      #     # Use Docker `latest` tag convention
+      #     [ "$VERSION" == "master" ] && VERSION=latest
+
+      #     echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      #     echo IMAGE_ID=$IMAGE_ID
+      #     echo VERSION=$VERSION
+
+      - name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v4.3.0
+        with:
+          images: |
+            $IMAGE_ID
+          tags: |
+            type=schedule
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }}
+
+      - name: Build and push
+        id: build
+        uses: docker/build-push-action@v3
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          builder: ${{ steps.buildx.outputs.name }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          cache-from: $IMAGE_ID:cache
+          cache-to: $IMAGE_ID:cache
+          build-args: CI=true
+          platforms: ${{ inputs.ARCHITECTURES }}
+
+      # - name: Build
+      #   run: |
+      #     # Strip git ref prefix from version
+      #     IMAGE_ID=${{ inputs.IMAGE_ID || github.repository }}
+      #     VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+      #     # Use Docker `latest` tag convention
+      #     [ "$VERSION" == "master" ] && VERSION=latest
+
+      #     echo IMAGE_ID=$IMAGE_ID
+      #     echo VERSION=$VERSION
+
+      #     # Push the Docker image to the registry on git pushes that either pushed a tag or one of the following branches: [master, develop]
+      #     if [[
+      #       (
+      #         "${{ github.event_name }}" == "release"
+      #         &&
+      #         "${{ startsWith(github.ref, 'refs/tags/') }}" == "true"
+      #       )
+      #       ||
+      #       (
+      #         "${{ github.event_name }}" == "push"
+      #         &&
+      #         "${{ startsWith(github.ref, 'refs/heads/') }}" == "true"
+      #         &&
+      #         (
+      #           $VERSION == "latest"
+      #           ||
+      #           $VERSION == "develop"
+      #         )
+      #       )
+      #     ]]
+      #     then
+      #       docker buildx build \
+      #         --build-arg CI=true \
+      #         --cache-from=$IMAGE_ID:cache \
+      #         --cache-to=$IMAGE_ID:cache \
+      #         --platform=${{ inputs.ARCHITECTURES }} \
+      #         --push \
+      #         -t $IMAGE_ID:$VERSION \
+      #         .
+      #     else
+      #       docker buildx build \
+      #         --build-arg CI=true \
+      #         --cache-from=$IMAGE_ID:cache \
+      #         -t $IMAGE_ID:$VERSION \
+      #         .
+      #     fi
+
+      - name: Build target "${{ inputs.TARGET }}"
+        id: build
+        uses: docker/build-push-action@v3
+        with:
+          build-args: CI=true
+          builder: ${{ steps.buildx.outputs.name }}
+          # cache-from: $IMAGE_ID:cache
+          push: false
+          tags: stage_build
+          target: ${{ inputs.TARGET }}
+
+      # - name: Build targe "build"
+      #   run: |
+      #     # Push the Docker image to the registry on git pushes that either pushed a tag or one of the following branches: [master, develop]
+      #     if [[
+      #       (
+      #         "${{ github.event_name }}" == "release"
+      #         &&
+      #         "${{ startsWith(github.ref, 'refs/tags/') }}" == "true"
+      #       )
+      #       ||
+      #       (
+      #         "${{ github.event_name }}" == "push"
+      #         &&
+      #         "${{ startsWith(github.ref, 'refs/heads/') }}" == "true"
+      #         &&
+      #         (
+      #           $VERSION == "latest"
+      #           ||
+      #           $VERSION == "develop"
+      #         )
+      #       )
+      #     ]]
+      #     then
+      #       docker buildx build \
+      #         --build-arg CI=true \
+      #         --cache-from=$IMAGE_ID:cache \
+      #         --cache-to=$IMAGE_ID:cache \
+      #         --platform=${{ inputs.ARCHITECTURES }} \
+      #         --push \
+      #         -t $IMAGE_ID:$VERSION \
+      #         .
+      #     else
+      #       docker buildx build \
+      #         --build-arg CI=true \
+      #         --cache-from=$IMAGE_ID:cache \
+      #         -t $IMAGE_ID:$VERSION \
+      #         .
+      #     fi
+      - run: |
+          docker container create --name extract stage_build
+          docker container cp extract:/srv/app /tmp/actions
+        #  docker container rm -f extract
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: /tmp/actions
