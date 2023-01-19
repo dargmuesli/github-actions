@@ -76,7 +76,7 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
       - name: Get next minor version
         id: semvers
