@@ -73,8 +73,8 @@ jobs:
         with:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
-          cache-from: ${{ env.IMAGE_ID }}:cache
-          cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
+          # cache-from: ${{ env.IMAGE_ID }}:cache
+          # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
           context: .
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
