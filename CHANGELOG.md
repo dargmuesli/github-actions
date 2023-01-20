@@ -1,3 +1,10 @@
+# [0.28.0](https://github.com/dargmuesli/github-actions/compare/0.27.1...0.28.0) (2023-01-20)
+
+
+### Features
+
+* **deploy-cloudflare-pages:** add branch parameter ([fb06f22](https://github.com/dargmuesli/github-actions/commit/fb06f229e376f2eab2a28adf3a998818f9150fbd))
+
 ## [0.27.1](https://github.com/dargmuesli/github-actions/compare/0.27.0...0.27.1) (2023-01-19)
 
 
