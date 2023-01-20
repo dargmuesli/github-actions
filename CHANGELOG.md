@@ -1,3 +1,10 @@
+## [0.28.2](https://github.com/dargmuesli/github-actions/compare/0.28.1...0.28.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* **release-schedule:** fetch complete history ([a049e48](https://github.com/dargmuesli/github-actions/commit/a049e48fa73a7f61313ce01a18d6b3bdb6d63c36))
+
 ## [0.28.1](https://github.com/dargmuesli/github-actions/compare/0.28.0...0.28.1) (2023-01-20)
 
 
