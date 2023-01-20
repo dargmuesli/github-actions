@@ -6,6 +6,9 @@ on:
       ACCOUNT_ID:
         required: true
         type: string
+      BRANCH:
+        required: false
+        type: string
       PROJECT_NAME:
         required: true
         type: string
@@ -29,8 +32,9 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ inputs.ACCOUNT_ID }}
-          projectName: ${{ inputs.PROJECT_NAME }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          branch: ${{ inputs.BRANCH }}
           directory: .
           gitHubToken: ${{ secrets.GITHUB_TOKEN }} # set this to enable GitHub deployments
+          projectName: ${{ inputs.PROJECT_NAME }}
