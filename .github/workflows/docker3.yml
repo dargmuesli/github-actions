@@ -185,7 +185,7 @@ jobs:
           docker container cp extract:/srv/app /tmp/actions
         #  docker container rm -f extract
 
-      - name: Archive code coverage results
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
