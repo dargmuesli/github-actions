@@ -1,3 +1,10 @@
+## [0.28.1](https://github.com/dargmuesli/github-actions/compare/0.28.0...0.28.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* **docker:** disable caching ([b89864d](https://github.com/dargmuesli/github-actions/commit/b89864dbddf5af5f1060009c7fdcd5804f13063e))
+
 # [0.28.0](https://github.com/dargmuesli/github-actions/compare/0.27.1...0.28.0) (2023-01-20)
 
 
