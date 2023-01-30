@@ -69,7 +69,7 @@ jobs:
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
@@ -131,7 +131,7 @@ jobs:
       #     fi
 
       - name: Build target "${{ inputs.BUILD_TARGET }}"
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
