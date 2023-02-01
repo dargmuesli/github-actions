@@ -1,3 +1,10 @@
+## [0.28.4](https://github.com/dargmuesli/github-actions/compare/0.28.3...0.28.4) (2023-02-01)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([1ac9cdc](https://github.com/dargmuesli/github-actions/commit/1ac9cdc0e61b999e2d2c5b82aacc95026658a304))
+
 ## [0.28.3](https://github.com/dargmuesli/github-actions/compare/0.28.2...0.28.3) (2023-01-25)
 
 
