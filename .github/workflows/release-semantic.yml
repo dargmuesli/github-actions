@@ -42,7 +42,8 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-        # with:
+        with:
+          persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
         #   token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup package manager
