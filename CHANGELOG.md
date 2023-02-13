@@ -1,3 +1,10 @@
+## [0.28.6](https://github.com/dargmuesli/github-actions/compare/0.28.5...0.28.6) (2023-02-13)
+
+
+### Bug Fixes
+
+* **release-semantic:** do not persist credentials on checkout ([75c4eee](https://github.com/dargmuesli/github-actions/commit/75c4eee58797e3f0062850ce30f1c81634d26f9b))
+
 ## [0.28.5](https://github.com/dargmuesli/github-actions/compare/0.28.4...0.28.5) (2023-02-08)
 
 
