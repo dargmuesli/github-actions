@@ -1,3 +1,10 @@
+# [0.29.0](https://github.com/dargmuesli/github-actions/compare/0.28.8...0.29.0) (2023-02-28)
+
+
+### Features
+
+* **docker:** upload artifacts only for given path ([236aab1](https://github.com/dargmuesli/github-actions/commit/236aab1c2f6ec093a5282bacab02a18e8826de16))
+
 ## [0.28.8](https://github.com/dargmuesli/github-actions/compare/0.28.7...0.28.8) (2023-02-22)
 
 
