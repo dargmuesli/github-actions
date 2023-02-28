@@ -186,6 +186,7 @@ jobs:
         #  docker container rm -f extract
 
       - name: Upload artifact
+        if: inputs.ARTIFACT_PATH != ''
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
