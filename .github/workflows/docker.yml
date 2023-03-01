@@ -3,11 +3,18 @@ name: Docker
 on:
   workflow_call:
     inputs:
-      ARCHITECTURES:
-        default: linux/amd64
+      ARTIFACT_PATH:
+        required: false
+        type: string
+      BUILD_TARGET:
+        default: build
         required: false
         type: string
       IMAGE_ID:
+        required: false
+        type: string
+      PLATFORMS:
+        default: linux/amd64
         required: false
         type: string
     secrets:
@@ -23,62 +30,67 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
-        with:
-          fetch-depth: 0
 
       - name: Docker Buildx setup
         id: buildx
         uses: docker/setup-buildx-action@f03ac48505955848960e80bbb68046aa35c7b9e7 # v2.4.1
+        with:
+          install: true
 
       - name: Registry login
         if: github.event_name != 'pull_request'
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USER_NAME }}" --password-stdin
 
-      - name: Build
+      - run: |
+          echo "IMAGE_ID=${{ inputs.IMAGE_ID || github.repository }}" >> $GITHUB_ENV
+
+      - name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v4.3.0
+        with:
+          images: |
+            ${{ env.IMAGE_ID }}
+          tags: |
+            type=schedule
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          build-args: CI=true
+          builder: ${{ steps.buildx.outputs.name }}
+          # cache-from: ${{ env.IMAGE_ID }}:cache
+          # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
+          context: .
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          platforms: ${{ inputs.PLATFORMS }}
+          push: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+
+      - name: Build target "${{ inputs.BUILD_TARGET }}"
+        uses: docker/build-push-action@v4
+        with:
+          build-args: CI=true
+          builder: ${{ steps.buildx.outputs.name }}
+          # cache-from: ${{ env.IMAGE_ID }}:cache
+          context: .
+          load: true
+          push: false
+          tags: stage_build
+          target: ${{ inputs.BUILD_TARGET }}
+
+      - name: Create artifact
+        if: inputs.ARTIFACT_PATH != ''
         run: |
-          # Strip git ref prefix from version
-          IMAGE_ID=${{ inputs.IMAGE_ID || github.repository }}
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          docker container create --name extract stage_build
+          docker container cp extract:/srv/app /tmp/actions
 
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "master" ] && VERSION=latest
-
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-
-          # Push the Docker image to the registry on git pushes that either pushed a tag or one of the following branches: [master, develop]
-          if [[
-            (
-              "${{ github.event_name }}" == "release"
-              &&
-              "${{ startsWith(github.ref, 'refs/tags/') }}" == "true"
-            )
-            ||
-            (
-              "${{ github.event_name }}" == "push"
-              &&
-              "${{ startsWith(github.ref, 'refs/heads/') }}" == "true"
-              &&
-              (
-                $VERSION == "latest"
-                ||
-                $VERSION == "develop"
-              )
-            )
-          ]]
-          then
-            docker buildx build \
-              --build-arg CI=true \
-              --cache-from=$IMAGE_ID:cache \
-              --cache-to=$IMAGE_ID:cache \
-              --platform=${{ inputs.ARCHITECTURES }} \
-              --push \
-              -t $IMAGE_ID:$VERSION \
-              .
-          else
-            docker buildx build \
-              --build-arg CI=true \
-              --cache-from=$IMAGE_ID:cache \
-              -t $IMAGE_ID:$VERSION \
-              .
-          fi
+      - name: Upload artifact
+        if: inputs.ARTIFACT_PATH != ''
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: /tmp/actions/${{ inputs.ARTIFACT_PATH }}
