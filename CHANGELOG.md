@@ -1,3 +1,10 @@
+# [0.30.0](https://github.com/dargmuesli/github-actions/compare/0.29.1...0.30.0) (2023-03-01)
+
+
+### Features
+
+* **docker:** make v3 the default ([e364631](https://github.com/dargmuesli/github-actions/commit/e36463121255c2717a3ac129482bd0ac102d6174))
+
 ## [0.29.1](https://github.com/dargmuesli/github-actions/compare/0.29.0...0.29.1) (2023-03-01)
 
 
