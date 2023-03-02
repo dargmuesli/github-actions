@@ -1,3 +1,10 @@
+# [0.31.0](https://github.com/dargmuesli/github-actions/compare/0.30.0...0.31.0) (2023-03-02)
+
+
+### Features
+
+* add dargstack rgen ([b901e2c](https://github.com/dargmuesli/github-actions/commit/b901e2c0c1ee7b7078abf90ba04431e0cfd340e2))
+
 # [0.30.0](https://github.com/dargmuesli/github-actions/compare/0.29.1...0.30.0) (2023-03-01)
 
 
