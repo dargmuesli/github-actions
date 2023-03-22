@@ -1,3 +1,10 @@
+# [0.32.0](https://github.com/dargmuesli/github-actions/compare/0.31.3...0.32.0) (2023-03-22)
+
+
+### Features
+
+* **node:** use lts version ([67062a7](https://github.com/dargmuesli/github-actions/commit/67062a7382fed6bf22245d773cedc35b3baa128b))
+
 ## [0.31.3](https://github.com/dargmuesli/github-actions/compare/0.31.2...0.31.3) (2023-03-22)
 
 
