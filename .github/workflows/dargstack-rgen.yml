@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [19]
+        node: [18]
     steps:
     - name: Checkout git repository
       uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
