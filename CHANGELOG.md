@@ -1,3 +1,10 @@
+# [0.33.0](https://github.com/dargmuesli/github-actions/compare/0.32.0...0.33.0) (2023-03-27)
+
+
+### Features
+
+* **release-schedule:** do empty commit ([2decf14](https://github.com/dargmuesli/github-actions/commit/2decf14bb6fcae1740497739e2dd7d13f819a08c))
+
 # [0.32.0](https://github.com/dargmuesli/github-actions/compare/0.31.3...0.32.0) (2023-03-22)
 
 
