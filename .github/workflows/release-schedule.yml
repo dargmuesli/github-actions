@@ -5,10 +5,6 @@ on:
     - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
   workflow_call:
     inputs:
-      PACKAGE_JSON_PATH:
-        default: package.json
-        required: false
-        type: string
       IS_DEBOUNCED:
         default: ${{ github.event_name != 'workflow_dispatch' }}
         required: false
@@ -18,10 +14,6 @@ on:
         required: true
   workflow_dispatch:
     inputs:
-      PACKAGE_JSON_PATH:
-        default: package.json
-        required: false
-        type: string
       IS_DEBOUNCED:
         default: true
         required: false
@@ -78,20 +70,8 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
-      - name: Get next minor version
-        id: semvers
-        uses: WyriHaximus/github-action-next-semvers@v1
-        with:
-          version: ${{ needs.analyze-tags.outputs.previous-tag }}
-
-      - name: Update manifest version
-        uses: deef0000dragon1/json-edit-action@cb3f7455e89d659879ab7e4a55cbc9b10c36a713 # renovate: tag=v1
-        env:
-          KEY: scheduleVersion
-          VALUE: ${{ steps.semvers.outputs.patch }}
-          FILE: ${{ inputs.PACKAGE_JSON_PATH || 'package.json' }}
-
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4.16.0
         with:
-          commit_message: 'fix(release): schedule release'
+          commit_message: 'fix: schedule release'
+          commit_options: '--allow-empty'
