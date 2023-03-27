@@ -75,6 +75,7 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
 
       - name: Build target "${{ inputs.BUILD_TARGET }}"
+        if: inputs.ARTIFACT_PATH != ''
         uses: docker/build-push-action@v4
         with:
           build-args: CI=true
