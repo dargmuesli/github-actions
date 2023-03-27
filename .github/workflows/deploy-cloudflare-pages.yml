@@ -15,6 +15,8 @@ on:
     secrets:
       CLOUDFLARE_API_TOKEN:
         required: true
+      GH_TOKEN:
+        required: true
 
 jobs:
   deploy:
@@ -36,5 +38,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           branch: ${{ inputs.BRANCH }}
           directory: .
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }} # set this to enable GitHub deployments
+          gitHubToken: ${{ secrets.GH_TOKEN }} # set this to enable GitHub deployments
           projectName: ${{ inputs.PROJECT_NAME }}
