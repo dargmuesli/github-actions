@@ -22,9 +22,6 @@ jobs:
   deploy:
     if: github.event_name != 'pull_request'
     name: Deploy
-    permissions:
-      contents: read
-      deployments: write
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifact
