@@ -1,3 +1,16 @@
+# [0.35.0](https://github.com/dargmuesli/github-actions/compare/0.34.1...0.35.0) (2023-03-27)
+
+
+### Features
+
+* **docker:** add ghcr fork ([caa7483](https://github.com/dargmuesli/github-actions/commit/caa74830e82b39b023c93337de991b6eeb605929))
+
+
+### Reverts
+
+* Revert "fix(deploy-cloudflare-pages): remove permission statement" ([5a0d650](https://github.com/dargmuesli/github-actions/commit/5a0d6503dab98cf778b39f23ea5fd1c6431b1b02))
+* Revert "feat(deploy-cloudflare-pages): use custom GitHub token secret" ([71d60e3](https://github.com/dargmuesli/github-actions/commit/71d60e3b7c9caf82ac8a3adbdcbb6f7ff61be489))
+
 ## [0.34.1](https://github.com/dargmuesli/github-actions/compare/0.34.0...0.34.1) (2023-03-27)
 
 
