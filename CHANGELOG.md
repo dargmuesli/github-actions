@@ -1,3 +1,10 @@
+## [0.35.1](https://github.com/dargmuesli/github-actions/compare/0.35.0...0.35.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **docker-ghcr:** correct login action ([b7039ed](https://github.com/dargmuesli/github-actions/commit/b7039ed2bfd9ff31ca4ea21b8f92e39e2b8a42f2))
+
 # [0.35.0](https://github.com/dargmuesli/github-actions/compare/0.34.1...0.35.0) (2023-03-27)
 
 
