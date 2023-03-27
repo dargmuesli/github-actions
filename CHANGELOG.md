@@ -1,3 +1,10 @@
+## [0.35.2](https://github.com/dargmuesli/github-actions/compare/0.35.1...0.35.2) (2023-03-27)
+
+
+### Bug Fixes
+
+* **docker-ghcr:** add missing permissions ([f01c99c](https://github.com/dargmuesli/github-actions/commit/f01c99c3ae35a24846f470c03d4a4436775ffd09))
+
 ## [0.35.1](https://github.com/dargmuesli/github-actions/compare/0.35.0...0.35.1) (2023-03-27)
 
 
