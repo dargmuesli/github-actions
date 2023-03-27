@@ -1,3 +1,10 @@
+## [0.35.3](https://github.com/dargmuesli/github-actions/compare/0.35.2...0.35.3) (2023-03-27)
+
+
+### Performance Improvements
+
+* **docker-ghcr:** build artifact only if necessary ([423214f](https://github.com/dargmuesli/github-actions/commit/423214f0b30dd72dae7e2c9f0a052520fc147291))
+
 ## [0.35.2](https://github.com/dargmuesli/github-actions/compare/0.35.1...0.35.2) (2023-03-27)
 
 
