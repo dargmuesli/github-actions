@@ -1,3 +1,10 @@
+## [0.35.4](https://github.com/dargmuesli/github-actions/compare/0.35.3...0.35.4) (2023-03-27)
+
+
+### Bug Fixes
+
+* **release-schedule:** skip dirty check ([a4675f0](https://github.com/dargmuesli/github-actions/commit/a4675f0cb9b81a54ae45968c22dffcd04fe39dfe))
+
 ## [0.35.3](https://github.com/dargmuesli/github-actions/compare/0.35.2...0.35.3) (2023-03-27)
 
 
