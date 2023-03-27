@@ -1,3 +1,10 @@
+## [0.34.1](https://github.com/dargmuesli/github-actions/compare/0.34.0...0.34.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **deploy-cloudflare-pages:** remove permission statement ([9906196](https://github.com/dargmuesli/github-actions/commit/9906196c31c841b2ac948e593d0d0b120da1307d))
+
 # [0.34.0](https://github.com/dargmuesli/github-actions/compare/0.33.0...0.34.0) (2023-03-27)
 
 
