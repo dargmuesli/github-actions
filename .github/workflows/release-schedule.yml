@@ -75,3 +75,4 @@ jobs:
         with:
           commit_message: 'fix: schedule release'
           commit_options: '--allow-empty'
+          skip_dirty_check: true
