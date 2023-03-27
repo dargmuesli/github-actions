@@ -84,7 +84,7 @@ jobs:
         with:
           version: ${{ needs.analyze-tags.outputs.previous-tag }}
 
-      - name: manifest Version
+      - name: Update manifest version
         uses: deef0000dragon1/json-edit-action@cb3f7455e89d659879ab7e4a55cbc9b10c36a713 # renovate: tag=v1
         env:
           KEY: scheduleVersion
