@@ -1,3 +1,10 @@
+# [0.34.0](https://github.com/dargmuesli/github-actions/compare/0.33.0...0.34.0) (2023-03-27)
+
+
+### Features
+
+* **deploy-cloudflare-pages:** use custom GitHub token secret ([4b7ca41](https://github.com/dargmuesli/github-actions/commit/4b7ca412762448115b9c7a7f82aafb5892408cf1))
+
 # [0.33.0](https://github.com/dargmuesli/github-actions/compare/0.32.0...0.33.0) (2023-03-27)
 
 
