@@ -1,3 +1,10 @@
+## [0.35.5](https://github.com/dargmuesli/github-actions/compare/0.35.4...0.35.5) (2023-03-29)
+
+
+### Bug Fixes
+
+* schedule release ([3883fa8](https://github.com/dargmuesli/github-actions/commit/3883fa86266e9754f6e04dc8e7efcdd57ccf3e44))
+
 ## [0.35.4](https://github.com/dargmuesli/github-actions/compare/0.35.3...0.35.4) (2023-03-27)
 
 
