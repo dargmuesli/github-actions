@@ -1,3 +1,10 @@
+# [0.36.0](https://github.com/dargmuesli/github-actions/compare/0.35.8...0.36.0) (2023-04-24)
+
+
+### Features
+
+* **node:** update to v20 ([d2fa5cc](https://github.com/dargmuesli/github-actions/commit/d2fa5cc029c2e5bdf162c893bdfec89d7d85347b))
+
 ## [0.35.8](https://github.com/dargmuesli/github-actions/compare/0.35.7...0.35.8) (2023-04-19)
 
 
