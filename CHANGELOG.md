@@ -1,3 +1,10 @@
+## [0.37.2](https://github.com/dargmuesli/github-actions/compare/0.37.1...0.37.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* **release-semantic:** parse input from json ([18bb0f1](https://github.com/dargmuesli/github-actions/commit/18bb0f1067625bbaa37cb1baf30af90f1463bb79))
+
 ## [0.37.1](https://github.com/dargmuesli/github-actions/compare/0.37.0...0.37.1) (2023-04-24)
 
 
