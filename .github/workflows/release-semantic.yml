@@ -7,6 +7,10 @@ on:
         default: pnpm-lock.yaml
         required: false
         type: string
+      NODE_VERSIONS:
+        default: [20]
+        required: false
+        type: array
       PACKAGE_MANAGER:
         default: pnpm
         required: false
@@ -38,7 +42,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [20]
+        node: ${{ inputs.NODE_VERSIONS }}
     steps:
       - name: Checkout git repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
