@@ -1,3 +1,10 @@
+## [0.37.1](https://github.com/dargmuesli/github-actions/compare/0.37.0...0.37.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* **release-semantic:** change input type to string ([eef7692](https://github.com/dargmuesli/github-actions/commit/eef769291d103d528e71fd64a9b0275b7ce10ff6))
+
 # [0.37.0](https://github.com/dargmuesli/github-actions/compare/0.36.0...0.37.0) (2023-04-24)
 
 
