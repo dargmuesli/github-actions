@@ -1,3 +1,10 @@
+# [0.37.0](https://github.com/dargmuesli/github-actions/compare/0.36.0...0.37.0) (2023-04-24)
+
+
+### Features
+
+* **release-semantic:** add node versions input ([039c978](https://github.com/dargmuesli/github-actions/commit/039c97885b46be4b03e02e7adccfc8d9bb41fd2d))
+
 # [0.36.0](https://github.com/dargmuesli/github-actions/compare/0.35.8...0.36.0) (2023-04-24)
 
 
