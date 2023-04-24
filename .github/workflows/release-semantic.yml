@@ -8,9 +8,9 @@ on:
         required: false
         type: string
       NODE_VERSIONS:
-        default: [20]
+        default: '[20]'
         required: false
-        type: array
+        type: string
       PACKAGE_MANAGER:
         default: pnpm
         required: false
