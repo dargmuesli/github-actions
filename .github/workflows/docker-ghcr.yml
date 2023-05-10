@@ -10,7 +10,13 @@ on:
         default: build
         required: false
         type: string
+      CONTEXT:
+        required: false
+        type: string
       IMAGE_ID:
+        required: false
+        type: string
+      IMAGE_ID_SUFFIX:
         required: false
         type: string
       PLATFORMS:
@@ -46,7 +52,13 @@ jobs:
           registry: ghcr.io
 
       - run: |
-          echo "IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', env.REGISTRY, github.repository) }}" >> $GITHUB_ENV
+          IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
+
+          if [ ! -z "${{ inputs.IMAGE_ID_SUFFIX || inputs.CONTEXT }}" ]; then
+            IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX || inputs.CONTEXT }}"
+          fi
+
+          echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
 
       - name: Docker meta
         id: docker_meta
@@ -68,7 +80,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
-          context: .
+          context: ${{ inputs.CONTEXT || . }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
           push: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
@@ -81,7 +93,7 @@ jobs:
           build-args: CI=true
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
-          context: .
+          context: ${{ inputs.CONTEXT || . }}
           load: true
           push: false
           tags: stage_build
