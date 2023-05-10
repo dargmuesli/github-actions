@@ -1,3 +1,12 @@
+# [0.38.0](https://github.com/dargmuesli/github-actions/compare/0.37.5...0.38.0) (2023-05-10)
+
+
+### Features
+
+* **docker-ghcr:** add context and image id suffix ([65ea4f3](https://github.com/dargmuesli/github-actions/commit/65ea4f3d1db3f49f550b40e97d949a9211d9f83d))
+* **docker-ghcr:** move registry to inputs ([ac4bfc0](https://github.com/dargmuesli/github-actions/commit/ac4bfc09e59ce078e5835a7833d4bc3c6ed4b45e))
+* **docker:** remove ([1d49ab8](https://github.com/dargmuesli/github-actions/commit/1d49ab886012eadcdabbe42868c32bddbdc9bb4d))
+
 ## [0.37.5](https://github.com/dargmuesli/github-actions/compare/0.37.4...0.37.5) (2023-05-10)
 
 
