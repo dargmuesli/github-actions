@@ -1,3 +1,10 @@
+## [0.38.1](https://github.com/dargmuesli/github-actions/compare/0.38.0...0.38.1) (2023-05-10)
+
+
+### Bug Fixes
+
+* **docker-ghcr:** add quotation marks ([f70601b](https://github.com/dargmuesli/github-actions/commit/f70601b6b7d9483ec0c7b833a8c09bd64eedc39a))
+
 # [0.38.0](https://github.com/dargmuesli/github-actions/compare/0.37.5...0.38.0) (2023-05-10)
 
 
