@@ -23,9 +23,10 @@ on:
         default: linux/amd64
         required: false
         type: string
-
-env:
-  REGISTRY: ghcr.io
+      REGISTRY:
+        default: ghcr.io
+        required: false
+        type: string
 
 jobs:
   docker:
@@ -49,7 +50,7 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
+          registry: ${{ inputs.REGISTRY }}
 
       - run: |
           IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
