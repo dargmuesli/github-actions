@@ -1,3 +1,10 @@
+## [0.38.2](https://github.com/dargmuesli/github-actions/compare/0.38.1...0.38.2) (2023-05-12)
+
+
+### Bug Fixes
+
+* **docker-ghcr:** exclude context from image if suffix generation ([753f5f7](https://github.com/dargmuesli/github-actions/commit/753f5f792d4ef91c11278da01356117fbc9be7ca))
+
 ## [0.38.1](https://github.com/dargmuesli/github-actions/compare/0.38.0...0.38.1) (2023-05-10)
 
 
