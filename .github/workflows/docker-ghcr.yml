@@ -55,8 +55,8 @@ jobs:
       - run: |
           IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
 
-          if [ ! -z "${{ inputs.IMAGE_ID_SUFFIX || inputs.CONTEXT }}" ]; then
-            IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX || inputs.CONTEXT }}"
+          if [ ! -z "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
+            IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
           fi
 
           echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
