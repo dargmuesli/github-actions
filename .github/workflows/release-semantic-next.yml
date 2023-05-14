@@ -22,6 +22,8 @@ on:
     secrets:
       NPM_TOKEN:
         required: false
+      PERSONAL_ACCESS_TOKEN:
+        required: true
     outputs:
       new_release_version:
         value: ${{ jobs.semantic-release.outputs.new_release_version }}
@@ -68,5 +70,5 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
