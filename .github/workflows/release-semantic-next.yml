@@ -22,6 +22,9 @@ on:
     secrets:
       NPM_TOKEN:
         required: false
+    outputs:
+      new_release_version:
+        value: ${{ jobs.semantic-release.outputs.new_release_version }}
 
 jobs:
   semantic-release:
