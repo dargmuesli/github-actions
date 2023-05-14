@@ -1,3 +1,10 @@
+# [0.39.0](https://github.com/dargmuesli/github-actions/compare/0.38.2...0.39.0) (2023-05-14)
+
+
+### Features
+
+* rework docker & semantic release ([0ca7fe7](https://github.com/dargmuesli/github-actions/commit/0ca7fe7af3448e9445773691dd764c422fa796fe))
+
 ## [0.38.2](https://github.com/dargmuesli/github-actions/compare/0.38.1...0.38.2) (2023-05-12)
 
 
