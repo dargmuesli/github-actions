@@ -1,0 +1,66 @@
+name: 'Release: Semantic'
+
+on:
+  workflow_call:
+    inputs:
+      CACHE_PATH:
+        default: pnpm-lock.yaml
+        required: false
+        type: string
+      DRY_RUN:
+        default: false
+        required: false
+        type: boolean
+      NODE_VERSION:
+        default: 20
+        required: false
+        type: string
+      PACKAGE_MANAGER:
+        default: pnpm
+        required: false
+        type: string
+    secrets:
+      NPM_TOKEN:
+        required: false
+
+jobs:
+  semantic-release:
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref_type == 'branch' && contains(fromJSON('["master", "next", "next-major", "beta", "alpha"]'), github.ref_name)
+    outputs:
+      new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        # with:
+        #   persist-credentials: false # use GITHUB_TOKEN
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          cache-dependency-path: ${{ inputs.CACHE_PATH }}
+          node-version: ${{ inputs.NODE_VERSION }}
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles(format('{0}{1}', github.workspace, inputs.CACHE_PATH)) }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm install
+
+      - name: Release
+        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d # v3.4.2
+        id: semantic-release
+        with:
+          dry_run: ${{ inputs.DRY_RUN }}
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
