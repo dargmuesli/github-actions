@@ -1,3 +1,10 @@
+## [0.39.2](https://github.com/dargmuesli/github-actions/compare/0.39.1...0.39.2) (2023-05-14)
+
+
+### Bug Fixes
+
+* **release-semantic-next:** add corepack ([c09ca27](https://github.com/dargmuesli/github-actions/commit/c09ca275f48be0d22b9cc8c34a800fe31f537625))
+
 ## [0.39.1](https://github.com/dargmuesli/github-actions/compare/0.39.0...0.39.1) (2023-05-14)
 
 
