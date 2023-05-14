@@ -1,3 +1,10 @@
+## [0.40.2](https://github.com/dargmuesli/github-actions/compare/0.40.1...0.40.2) (2023-05-14)
+
+
+### Performance Improvements
+
+* **release-semantic-next:** readd node_modules caching ([f28d048](https://github.com/dargmuesli/github-actions/commit/f28d048ac1136c7bd39639fe75ef62f14eaf5ff3))
+
 ## [0.40.1](https://github.com/dargmuesli/github-actions/compare/0.40.0...0.40.1) (2023-05-14)
 
 
