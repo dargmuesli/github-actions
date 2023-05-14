@@ -36,6 +36,9 @@ jobs:
         # with:
         #   persist-credentials: false # use GITHUB_TOKEN
 
+      - name: Setup package manager # node setup must be able to find pnpm
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
