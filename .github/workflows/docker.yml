@@ -23,6 +23,10 @@ on:
         default: linux/amd64
         required: false
         type: string
+      PUSH:
+        default: true
+        required: false
+        type: boolean
       TAG:
         required: false
         type: string
@@ -87,7 +91,7 @@ jobs:
           context: ${{ inputs.CONTEXT || '.' }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
-          push: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
+          push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
           tags: ${{ steps.docker_meta.outputs.tags }}
 
       - name: Build target "${{ inputs.BUILD_TARGET }}"
