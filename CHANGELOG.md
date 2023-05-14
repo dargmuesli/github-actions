@@ -1,3 +1,10 @@
+# [0.40.0](https://github.com/dargmuesli/github-actions/compare/0.39.2...0.40.0) (2023-05-14)
+
+
+### Features
+
+* **docker:** add push parameter ([e5c384b](https://github.com/dargmuesli/github-actions/commit/e5c384b47935768bfaab9a092622f984c02f709c))
+
 ## [0.39.2](https://github.com/dargmuesli/github-actions/compare/0.39.1...0.39.2) (2023-05-14)
 
 
