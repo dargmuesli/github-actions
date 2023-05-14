@@ -1,3 +1,11 @@
+## [0.40.3](https://github.com/dargmuesli/github-actions/compare/0.40.2...0.40.3) (2023-05-14)
+
+
+### Bug Fixes
+
+* **release-semantic-next:** add output ([d05a4d5](https://github.com/dargmuesli/github-actions/commit/d05a4d5fea7f12f69375cbda7481eedaa6cb5db1))
+* **release-semantic-next:** add personal access token secret ([a680c67](https://github.com/dargmuesli/github-actions/commit/a680c67021f6aa183e24d674feb8822282f78a50))
+
 ## [0.40.2](https://github.com/dargmuesli/github-actions/compare/0.40.1...0.40.2) (2023-05-14)
 
 
