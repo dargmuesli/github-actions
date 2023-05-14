@@ -1,3 +1,10 @@
+## [0.39.1](https://github.com/dargmuesli/github-actions/compare/0.39.0...0.39.1) (2023-05-14)
+
+
+### Bug Fixes
+
+* **semantic-release-next:** do not skip on dry run ([4272177](https://github.com/dargmuesli/github-actions/commit/427217771dce84af726fe10925d44768de541442))
+
 # [0.39.0](https://github.com/dargmuesli/github-actions/compare/0.38.2...0.39.0) (2023-05-14)
 
 
