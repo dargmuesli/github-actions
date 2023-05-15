@@ -38,8 +38,8 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-        # with:
-        #   persist-credentials: false # use GITHUB_TOKEN
+        with:
+          persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
       - name: Setup package manager # node setup must be able to find pnpm
         run: corepack enable
