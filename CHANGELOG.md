@@ -1,3 +1,10 @@
+## [0.40.4](https://github.com/dargmuesli/github-actions/compare/0.40.3...0.40.4) (2023-05-15)
+
+
+### Bug Fixes
+
+* **release-semantic-next:** reenable credential removal ([05b88e2](https://github.com/dargmuesli/github-actions/commit/05b88e24a08355af058cbbbd5e574684d74360d4))
+
 ## [0.40.3](https://github.com/dargmuesli/github-actions/compare/0.40.2...0.40.3) (2023-05-14)
 
 
