@@ -45,7 +45,7 @@ jobs:
         node: ${{ fromJSON(inputs.NODE_VERSIONS) }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
         #   token: ${{ secrets.GH_TOKEN }}
