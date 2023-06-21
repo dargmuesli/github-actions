@@ -1,3 +1,10 @@
+## [0.40.10](https://github.com/dargmuesli/github-actions/compare/0.40.9...0.40.10) (2023-06-21)
+
+
+### Bug Fixes
+
+* schedule release ([fb056d3](https://github.com/dargmuesli/github-actions/commit/fb056d32eacc3c251c16186a11037df72d990caf))
+
 ## [0.40.9](https://github.com/dargmuesli/github-actions/compare/0.40.8...0.40.9) (2023-06-14)
 
 
