@@ -3,20 +3,49 @@ name: CI
 on:
   pull_request:
   push:
+    branches:
+      - alpha
+      - beta
+      - master
+      - renovate/**
 
 jobs:
+  prepare_jobs:
+    name: 'Prepare: job optimization'
+    runs-on: ubuntu-latest
+    outputs:
+      pr_found: ${{ steps.pr.outputs.pr_found }}
+    steps:
+      - name: Get current PR
+        id: pr
+        uses: 8BitJonny/gh-get-current-pr@2.2.0
+        with:
+          filterOutClosed: true
+          sha: ${{ github.event.pull_request.head.sha }}
+  release_semantic_dry:
+    needs: prepare_jobs
+    name: Release (semantic, dry)
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.40.17
+    if: needs.prepare_jobs.outputs.pr_found == 'false' || github.event_name == 'pull_request'
+    permissions:
+      contents: write
+    secrets:
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    with:
+      DRY_RUN: true
   actionlint:
     name: Lint
     runs-on: ubuntu-latest
+    needs: release_semantic_dry
     steps:
       - name: Checkout git repository
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
       - uses: reviewdog/action-actionlint@v1
   release-semantic:
     needs: actionlint
-    name: Semantic Release
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.40.17
+    name: Release (semantic)
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.41.0
     permissions:
       contents: write
     secrets:
-      GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
