@@ -1,3 +1,10 @@
+## [0.41.3](https://github.com/dargmuesli/github-actions/compare/0.41.2...0.41.3) (2023-08-10)
+
+
+### Bug Fixes
+
+* **docker:** revert permission logic ([91ef65c](https://github.com/dargmuesli/github-actions/commit/91ef65c5360f6d9180ffbab8a35a68d0bc95bef6))
+
 ## [0.41.2](https://github.com/dargmuesli/github-actions/compare/0.41.1...0.41.2) (2023-08-10)
 
 
