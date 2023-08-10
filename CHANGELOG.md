@@ -1,3 +1,12 @@
+# [0.41.0](https://github.com/dargmuesli/github-actions/compare/0.40.17...0.41.0) (2023-08-10)
+
+
+### Features
+
+* **browserslist-regex:** change default package manager to pnpm ([5f4a996](https://github.com/dargmuesli/github-actions/commit/5f4a99682d48adb8c689514ab112c4bad8be85b4))
+* **release-semantic:** use next ([f0bb6cb](https://github.com/dargmuesli/github-actions/commit/f0bb6cb2391587b9f979c8f06d9ede3f1c5cb86e))
+* use `PERSONAL_ACCESS_TOKEN` ([603f093](https://github.com/dargmuesli/github-actions/commit/603f093a0c84ea8ce75e1b35f3c3e628a3bebff9))
+
 ## [0.40.17](https://github.com/dargmuesli/github-actions/compare/0.40.16...0.40.17) (2023-08-09)
 
 
