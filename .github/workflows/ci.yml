@@ -6,11 +6,11 @@ on:
 
 jobs:
   actionlint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-
       - uses: reviewdog/action-actionlint@v1
   release-semantic:
     needs: actionlint
