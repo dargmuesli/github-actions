@@ -1,3 +1,10 @@
+## [0.41.2](https://github.com/dargmuesli/github-actions/compare/0.41.1...0.41.2) (2023-08-10)
+
+
+### Bug Fixes
+
+* **docker:** use github context ([06bbaab](https://github.com/dargmuesli/github-actions/commit/06bbaab66236787ca9ec8c6300738857852bc7df))
+
 ## [0.41.1](https://github.com/dargmuesli/github-actions/compare/0.41.0...0.41.1) (2023-08-10)
 
 
