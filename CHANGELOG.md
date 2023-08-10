@@ -1,3 +1,10 @@
+## [0.41.1](https://github.com/dargmuesli/github-actions/compare/0.41.0...0.41.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* **docker:** conditional permissions ([dbc24f9](https://github.com/dargmuesli/github-actions/commit/dbc24f9dfeae540b9080362c12bfc6568a241a8c))
+
 # [0.41.0](https://github.com/dargmuesli/github-actions/compare/0.40.17...0.41.0) (2023-08-10)
 
 
