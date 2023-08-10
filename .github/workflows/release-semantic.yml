@@ -16,10 +16,10 @@ on:
         required: false
         type: string
     secrets:
-      GH_TOKEN:
-        required: true
       NPM_TOKEN:
         required: false
+      PERSONAL_ACCESS_TOKEN:
+        required: true
 
 jobs:
   validate:
@@ -77,5 +77,5 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # to allow for protected branches
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

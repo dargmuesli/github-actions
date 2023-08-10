@@ -24,7 +24,7 @@ on:
         required: false
         type: string
     secrets:
-      GH_TOKEN:
+      PERSONAL_ACCESS_TOKEN:
         required: true
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
         #   fetch-depth: 0 # fetch all history for all branches and tags
-          token: ${{ secrets.GH_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
       - name: Setup package manager
         run: corepack enable
