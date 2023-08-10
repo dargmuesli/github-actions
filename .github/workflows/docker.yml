@@ -40,7 +40,7 @@ jobs:
     name: Docker
     runs-on: ubuntu-latest
     permissions:
-      packages: ${{ github.event.inputs.PUSH && 'write' || 'none' }}
+      packages: write
     steps:
       - name: Checkout git repository
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
