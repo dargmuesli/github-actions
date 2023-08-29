@@ -1,3 +1,10 @@
+# [0.42.0](https://github.com/dargmuesli/github-actions/compare/0.41.5...0.42.0) (2023-08-29)
+
+
+### Features
+
+* **release-semantic:** beautify changelog ([355b9f6](https://github.com/dargmuesli/github-actions/commit/355b9f6e6b82ee549421238c04b0b6f0b6d7ce6e))
+
 ## [0.41.5](https://github.com/dargmuesli/github-actions/compare/0.41.4...0.41.5) (2023-08-23)
 
 
