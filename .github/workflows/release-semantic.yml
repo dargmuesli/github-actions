@@ -74,7 +74,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Beautify changelog
-        if: steps.semantic-release.outputs.new_release_published == 'true'
+        if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
         run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
