@@ -73,18 +73,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Debug
-        run: |
-          echo "${{ inputs.DRY_RUN }}"
-          echo "${{ inputs.DRY_RUN > ''}}"
-          echo ""
-          echo "${{ inputs.DRY_RUN == false }}"
-          echo "${{ inputs.DRY_RUN == 'false' }}"
-          echo "${{ inputs.DRY_RUN == true }}"
-          echo "${{ inputs.DRY_RUN == 'true' }}"
-
-      - name: Beautify changelog
-        if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
-        run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Beautify changelog
+      #   if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
+      #   run: npx changelogithub
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
