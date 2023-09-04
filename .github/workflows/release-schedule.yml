@@ -28,7 +28,7 @@ jobs:
       timestamp-diff: ${{ steps.diff.outputs.timestamp-diff }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
         with:
           fetch-depth: 0 # fetch complete history to find the last git tag
 
@@ -70,7 +70,7 @@ jobs:
     if: (inputs.IS_DEBOUNCED > '' && inputs.IS_DEBOUNCED || true) && (inputs.IS_DEBOUNCED == false || needs.analyze-tags.outputs.timestamp-diff > 604800) # 604800 equal one week.
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
