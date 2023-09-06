@@ -12,7 +12,7 @@ on:
         required: false
         type: boolean
       NODE_VERSION:
-        default: 20
+        default: '20.5.1'
         required: false
         type: string
       PACKAGE_MANAGER:
