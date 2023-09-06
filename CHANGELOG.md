@@ -1,3 +1,10 @@
+## [0.42.5](https://github.com/dargmuesli/github-actions/compare/0.42.4...0.42.5) (2023-09-06)
+
+
+### Bug Fixes
+
+* **release-semantic:** pin node version to 20.5.1 ([562195a](https://github.com/dargmuesli/github-actions/commit/562195a42f954b5ead5586fd4cc895f61bf454eb))
+
 ## [0.42.4](https://github.com/dargmuesli/github-actions/compare/0.42.3...0.42.4) (2023-09-06)
 
 
