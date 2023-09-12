@@ -6,6 +6,10 @@ on:
       ARTIFACT_PATH:
         required: false
         type: string
+      BUILD_ARGUMENTS:
+        default: CI=true
+        required: false
+        type: string
       BUILD_TARGET:
         default: build
         required: false
@@ -84,7 +88,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          build-args: CI=true
+          build-args: ${{ inputs.BUILD_ARGUMENTS || 'CI=true' }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
@@ -98,7 +102,7 @@ jobs:
         if: inputs.ARTIFACT_PATH != ''
         uses: docker/build-push-action@v4
         with:
-          build-args: CI=true
+          build-args: ${{ inputs.BUILD_ARGUMENTS || 'CI=true' }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           context: ${{ inputs.CONTEXT || '.' }}
