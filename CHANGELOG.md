@@ -1,3 +1,10 @@
+# [0.43.0](https://github.com/dargmuesli/github-actions/compare/0.42.5...0.43.0) (2023-09-12)
+
+
+### Features
+
+* **docker:** allow to specify build arguments ([183573a](https://github.com/dargmuesli/github-actions/commit/183573acecf08c0236d7279a1712020829d6c4c8))
+
 ## [0.42.5](https://github.com/dargmuesli/github-actions/compare/0.42.4...0.42.5) (2023-09-06)
 
 
