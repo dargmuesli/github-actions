@@ -6,11 +6,13 @@ on:
       ARTIFACT_PATH:
         required: false
         type: string
-      BUILD_ARGUMENTS:
-        default: CI=true
+      BUILD_ARGUMENTS_CI:
         required: false
         type: string
-      BUILD_TARGET:
+      BUILD_ARGUMENTS_RELEASE:
+        required: false
+        type: string
+      BUILD_TARGET_RELEASE:
         default: build
         required: false
         type: string
@@ -88,7 +90,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          build-args: ${{ inputs.BUILD_ARGUMENTS || 'CI=true' }}
+          build-args: ${{ inputs.BUILD_ARGUMENTS_CI }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
@@ -98,18 +100,18 @@ jobs:
           push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
           tags: ${{ steps.docker_meta.outputs.tags }}
 
-      - name: Build target "${{ inputs.BUILD_TARGET }}"
+      - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
         if: inputs.ARTIFACT_PATH != ''
         uses: docker/build-push-action@v5
         with:
-          build-args: ${{ inputs.BUILD_ARGUMENTS || 'CI=true' }}
+          build-args: ${{ inputs.BUILD_ARGUMENTS_RELEASE }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           context: ${{ inputs.CONTEXT || '.' }}
           load: true
           push: false
           tags: stage_build
-          target: ${{ inputs.BUILD_TARGET }}
+          target: ${{ inputs.BUILD_TARGET_RELEASE }}
 
       - name: Create artifact
         if: inputs.ARTIFACT_PATH != ''
