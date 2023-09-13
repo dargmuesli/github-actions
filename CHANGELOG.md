@@ -1,3 +1,10 @@
+## [1.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.2...1.0.0-beta.3) (2023-09-13)
+
+
+### Features
+
+* zip build artifact ([e255c02](https://github.com/dargmuesli/github-actions/commit/e255c02b698652e2df2f2adb249839d313d4319a))
+
 ## [1.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-09-13)
 
 
