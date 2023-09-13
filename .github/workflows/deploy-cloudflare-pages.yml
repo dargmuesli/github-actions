@@ -9,6 +9,9 @@ on:
       BRANCH:
         required: false
         type: string
+      DIRECTORY:
+        required: false
+        type: string
       PROJECT_NAME:
         required: true
         type: string
@@ -34,6 +37,6 @@ jobs:
           accountId: ${{ inputs.ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           branch: ${{ inputs.BRANCH }}
-          directory: .
+          directory: ${{ inputs.DIRECTORY || '.' }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }} # set this to enable GitHub deployments
           projectName: ${{ inputs.PROJECT_NAME }}
