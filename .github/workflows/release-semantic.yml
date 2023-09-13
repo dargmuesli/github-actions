@@ -32,7 +32,8 @@ jobs:
   semantic-release:
     name: Semantic Release
     runs-on: ubuntu-latest
-    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["master", "next", "next-major", "beta", "alpha"]'), github.head_ref || github.ref_name)
+    # semantic-release does not run on pull requests
+    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["master", "next", "next-major", "beta", "alpha"]'), github.ref_name)
     outputs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
