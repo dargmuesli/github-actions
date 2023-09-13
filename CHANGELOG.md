@@ -1,3 +1,10 @@
+## [1.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.3...1.0.0-beta.4) (2023-09-13)
+
+
+### Bug Fixes
+
+* **docker:** tar using directory ([d44d6ad](https://github.com/dargmuesli/github-actions/commit/d44d6adbb631b8b7aeafd6f6fc5a2dcf20bcf0d6))
+
 ## [1.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.2...1.0.0-beta.3) (2023-09-13)
 
 
