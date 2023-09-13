@@ -31,6 +31,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifact
+      - name: Extract build artifact
+        run: |
+          tar -xzvf build-artifact.tar
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:

@@ -117,11 +117,12 @@ jobs:
         if: inputs.ARTIFACT_PATH != ''
         run: |
           docker container create --name extract stage_build
-          docker container cp extract:/srv/app /tmp/actions
+          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/${{ inputs.ARTIFACT_PATH }}
+          tar -czvf build-artifact.tar /tmp/actions/${{ inputs.ARTIFACT_PATH }}
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: /tmp/actions/${{ inputs.ARTIFACT_PATH }}
+          path: build-artifact.tar
