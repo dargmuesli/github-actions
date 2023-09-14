@@ -1,3 +1,10 @@
+## [1.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.5...1.0.0-beta.6) (2023-09-14)
+
+
+### Reverts
+
+* Revert "fix(deploy-cloudflare-pages): correct directory usage" ([4e15c9a](https://github.com/dargmuesli/github-actions/commit/4e15c9a37f45ace0c0d73487778a84830a26b9f2))
+
 ## [1.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.4...1.0.0-beta.5) (2023-09-14)
 
 
