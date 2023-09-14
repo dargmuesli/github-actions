@@ -34,13 +34,12 @@ jobs:
       - name: Extract build artifact
         run: |
           tar -xzvf build-artifact.tar
-          cd ${{ inputs.DIRECTORY }}
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           accountId: ${{ inputs.ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           branch: ${{ inputs.BRANCH }}
-          directory: .
+          directory: ${{ inputs.DIRECTORY || '.' }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }} # set this to enable GitHub deployments
           projectName: ${{ inputs.PROJECT_NAME }}
