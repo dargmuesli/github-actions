@@ -1,3 +1,14 @@
+## [1.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.6...1.0.0-beta.7) (2023-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** drop node setup
+
+### Features
+
+* **release-semantic:** drop node setup ([678b6f4](https://github.com/dargmuesli/github-actions/commit/678b6f460a0e7e437ee0499ed9c40158946f0ff1))
+
 ## [1.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.5...1.0.0-beta.6) (2023-09-14)
 
 
