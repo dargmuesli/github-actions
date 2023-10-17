@@ -1,3 +1,10 @@
+## [1.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.7...1.0.0-beta.8) (2023-10-17)
+
+
+### Bug Fixes
+
+* **release-semantic:** add plugin `conventional-changelog-conventionalcommits` ([ce6b4c8](https://github.com/dargmuesli/github-actions/commit/ce6b4c874987b95fe44cfc768e4397e08fe4126c))
+
 ## [1.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.6...1.0.0-beta.7) (2023-10-17)
 
 
