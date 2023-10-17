@@ -50,6 +50,7 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
+            conventional-changelog-conventionalcommits
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
