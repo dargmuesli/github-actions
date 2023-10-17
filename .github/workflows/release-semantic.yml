@@ -3,22 +3,10 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
-      CACHE_PATH:
-        default: pnpm-lock.yaml
-        required: false
-        type: string
       DRY_RUN:
         default: false
         required: false
         type: boolean
-      NODE_VERSION:
-        default: '20.5.1'
-        required: false
-        type: string
-      PACKAGE_MANAGER:
-        default: pnpm
-        required: false
-        type: string
     secrets:
       NPM_TOKEN:
         required: false
