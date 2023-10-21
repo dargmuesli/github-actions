@@ -1,3 +1,106 @@
+## [1.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.8...1.0.0-beta.9) (2023-10-21)
+
+
+### Bug Fixes
+
+* schedule release ([f3dfd13](https://github.com/dargmuesli/github-actions/commit/f3dfd13a721d5447624da10c16bf191598ed5977))
+* schedule release ([a0a3a2e](https://github.com/dargmuesli/github-actions/commit/a0a3a2efd5b9e0319a30a9153749b9274b2aee6c))
+* schedule release ([e277178](https://github.com/dargmuesli/github-actions/commit/e277178def775a4ec2dc41f2599f8c7550dc8f12))
+* schedule release ([2201e3c](https://github.com/dargmuesli/github-actions/commit/2201e3c2d99137c1aafe7f45a11f132ee5b31957))
+* schedule release ([79b3dca](https://github.com/dargmuesli/github-actions/commit/79b3dca08b087edb2223d51d76cccba7d4df0e19))
+
+## [1.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.7...1.0.0-beta.8) (2023-10-17)
+
+
+### Bug Fixes
+
+* **release-semantic:** add plugin `conventional-changelog-conventionalcommits` ([ce6b4c8](https://github.com/dargmuesli/github-actions/commit/ce6b4c874987b95fe44cfc768e4397e08fe4126c))
+
+## [1.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.6...1.0.0-beta.7) (2023-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** drop node setup
+
+### Features
+
+* **release-semantic:** drop node setup ([678b6f4](https://github.com/dargmuesli/github-actions/commit/678b6f460a0e7e437ee0499ed9c40158946f0ff1))
+
+## [1.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.5...1.0.0-beta.6) (2023-09-14)
+
+
+### Reverts
+
+* Revert "fix(deploy-cloudflare-pages): correct directory usage" ([4e15c9a](https://github.com/dargmuesli/github-actions/commit/4e15c9a37f45ace0c0d73487778a84830a26b9f2))
+
+## [1.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.4...1.0.0-beta.5) (2023-09-14)
+
+
+### Bug Fixes
+
+* **deploy-cloudflare-pages:** correct directory usage ([20e9c76](https://github.com/dargmuesli/github-actions/commit/20e9c76510e9cc5a5d554ff00a36f1d29e8829db))
+
+## [1.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.3...1.0.0-beta.4) (2023-09-13)
+
+
+### Bug Fixes
+
+* **docker:** tar using directory ([d44d6ad](https://github.com/dargmuesli/github-actions/commit/d44d6adbb631b8b7aeafd6f6fc5a2dcf20bcf0d6))
+
+## [1.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.2...1.0.0-beta.3) (2023-09-13)
+
+
+### Features
+
+* zip build artifact ([e255c02](https://github.com/dargmuesli/github-actions/commit/e255c02b698652e2df2f2adb249839d313d4319a))
+
+## [1.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-09-13)
+
+
+### Features
+
+* **deploy-cloudflare-pages:** add directory parameter ([21fc8cf](https://github.com/dargmuesli/github-actions/commit/21fc8cff110ad1f3a2a213761f690e9054555b78))
+* **deploy-cloudflare-pages:** deploy pull requests ([70a2a57](https://github.com/dargmuesli/github-actions/commit/70a2a57e437c6f94cf780a11d8e195f969896a14))
+
+
+### Bug Fixes
+
+* **release-schedule:** simplify run condition ([71ad0bd](https://github.com/dargmuesli/github-actions/commit/71ad0bdef489e0fd9e12f365ae96c67d3b9f83fe))
+* **release-semantic:** fall back to head reference for pull requests ([5bb10e8](https://github.com/dargmuesli/github-actions/commit/5bb10e8efee6c4e31cb70e99c89073e2c974b9e9))
+* **release-semantic:** revert changes ([9618cac](https://github.com/dargmuesli/github-actions/commit/9618caccf162411add737ee58703ae4db3d0d6ce))
+* **release-semantic:** run for any event name ([3cac1ec](https://github.com/dargmuesli/github-actions/commit/3cac1ec9a054df4a02673ac24acb7de25c3717c2))
+* schedule release ([216963f](https://github.com/dargmuesli/github-actions/commit/216963f16dbb0c294bbc7ce66c177b2908eabab2))
+* schedule release ([34dcaf9](https://github.com/dargmuesli/github-actions/commit/34dcaf9cf5e763c7033e1bd81b87e99a03892adc))
+
+## [1.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.1...1.0.0-beta.2) (2023-09-13)
+
+
+### Features
+
+* **deploy-cloudflare-pages:** deploy pull requests ([70a2a57](https://github.com/dargmuesli/github-actions/commit/70a2a57e437c6f94cf780a11d8e195f969896a14))
+
+
+### Bug Fixes
+
+* **release-schedule:** simplify run condition ([71ad0bd](https://github.com/dargmuesli/github-actions/commit/71ad0bdef489e0fd9e12f365ae96c67d3b9f83fe))
+* **release-semantic:** fall back to head reference for pull requests ([5bb10e8](https://github.com/dargmuesli/github-actions/commit/5bb10e8efee6c4e31cb70e99c89073e2c974b9e9))
+* **release-semantic:** revert changes ([9618cac](https://github.com/dargmuesli/github-actions/commit/9618caccf162411add737ee58703ae4db3d0d6ce))
+* **release-semantic:** run for any event name ([3cac1ec](https://github.com/dargmuesli/github-actions/commit/3cac1ec9a054df4a02673ac24acb7de25c3717c2))
+* schedule release ([216963f](https://github.com/dargmuesli/github-actions/commit/216963f16dbb0c294bbc7ce66c177b2908eabab2))
+* schedule release ([34dcaf9](https://github.com/dargmuesli/github-actions/commit/34dcaf9cf5e763c7033e1bd81b87e99a03892adc))
+
+## [1.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/0.43.0...1.0.0-beta.1) (2023-09-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** differentiate ci and release build
+
+### Features
+
+* **docker:** differentiate ci and release build ([f6cff3f](https://github.com/dargmuesli/github-actions/commit/f6cff3f9f76187c4707129daa1fb80a7d2e971ea))
+
 ## [0.43.6](https://github.com/dargmuesli/github-actions/compare/0.43.5...0.43.6) (2023-10-18)
 
 
