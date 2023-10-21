@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/dargmuesli/github-actions/compare/1.1.0...1.1.1) (2023-10-21)
+
+
+### Bug Fixes
+
+* **dargstack-rgen:** set cache step id ([8dabe7e](https://github.com/dargmuesli/github-actions/commit/8dabe7ee2a1903172480137085f458200fcd0f11))
+* **release-schedule:** correct output source ([5f74f6c](https://github.com/dargmuesli/github-actions/commit/5f74f6c28f7089f51b9a0e3f63f2cd152224f69d))
+
 ## [1.1.0](https://github.com/dargmuesli/github-actions/compare/1.0.0...1.1.0) (2023-10-21)
 
 
