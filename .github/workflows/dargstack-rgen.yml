@@ -27,6 +27,7 @@ jobs:
 
       - name: Cache node_modules
         uses: actions/cache@v3
+        id: cache
         with:
           path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
