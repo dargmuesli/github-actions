@@ -1,3 +1,30 @@
+## [1.0.0](https://github.com/dargmuesli/github-actions/compare/0.43.6...1.0.0) (2023-10-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** drop node setup
+* **docker:** differentiate ci and release build
+
+### Features
+
+* **deploy-cloudflare-pages:** add directory parameter ([21fc8cf](https://github.com/dargmuesli/github-actions/commit/21fc8cff110ad1f3a2a213761f690e9054555b78))
+* **deploy-cloudflare-pages:** deploy pull requests ([70a2a57](https://github.com/dargmuesli/github-actions/commit/70a2a57e437c6f94cf780a11d8e195f969896a14))
+* **docker:** differentiate ci and release build ([f6cff3f](https://github.com/dargmuesli/github-actions/commit/f6cff3f9f76187c4707129daa1fb80a7d2e971ea))
+* **release-semantic:** drop node setup ([678b6f4](https://github.com/dargmuesli/github-actions/commit/678b6f460a0e7e437ee0499ed9c40158946f0ff1))
+* zip build artifact ([e255c02](https://github.com/dargmuesli/github-actions/commit/e255c02b698652e2df2f2adb249839d313d4319a))
+
+
+### Bug Fixes
+
+* **docker:** tar using directory ([d44d6ad](https://github.com/dargmuesli/github-actions/commit/d44d6adbb631b8b7aeafd6f6fc5a2dcf20bcf0d6))
+* **release-schedule:** simplify run condition ([71ad0bd](https://github.com/dargmuesli/github-actions/commit/71ad0bdef489e0fd9e12f365ae96c67d3b9f83fe))
+* **release-semantic:** add plugin `conventional-changelog-conventionalcommits` ([ce6b4c8](https://github.com/dargmuesli/github-actions/commit/ce6b4c874987b95fe44cfc768e4397e08fe4126c))
+* **release-semantic:** fall back to head reference for pull requests ([5bb10e8](https://github.com/dargmuesli/github-actions/commit/5bb10e8efee6c4e31cb70e99c89073e2c974b9e9))
+* **release-semantic:** revert changes ([9618cac](https://github.com/dargmuesli/github-actions/commit/9618caccf162411add737ee58703ae4db3d0d6ce))
+* **release-semantic:** run for any event name ([3cac1ec](https://github.com/dargmuesli/github-actions/commit/3cac1ec9a054df4a02673ac24acb7de25c3717c2))
+* schedule release ([216963f](https://github.com/dargmuesli/github-actions/commit/216963f16dbb0c294bbc7ce66c177b2908eabab2))
+
 ## [1.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.8...1.0.0-beta.9) (2023-10-21)
 
 
