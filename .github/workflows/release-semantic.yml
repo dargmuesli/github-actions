@@ -33,6 +33,9 @@ jobs:
         with:
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
+      - name: Setup package manager # node setup must be able to find pnpm
+        run: corepack enable
+
       - name: Release
         uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
         id: semantic-release
