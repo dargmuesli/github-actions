@@ -22,21 +22,10 @@ jobs:
         with:
           filterOutClosed: true
           sha: ${{ github.event.pull_request.head.sha }}
-  release_semantic_dry:
-    needs: prepare_jobs
-    name: Release (semantic, dry)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@1.0.0-beta.8
-    if: needs.prepare_jobs.outputs.pr_found == 'false' || github.event_name == 'pull_request'
-    permissions:
-      contents: write
-    secrets:
-      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    with:
-      DRY_RUN: true
   actionlint:
     name: Lint
     runs-on: ubuntu-latest
-    needs: release_semantic_dry
+    needs: prepare_jobs
     steps:
       - name: Checkout git repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
