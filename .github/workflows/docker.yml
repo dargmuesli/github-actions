@@ -68,7 +68,7 @@ jobs:
       - run: |
           IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
 
-          if [ ! -z "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
+          if [ -n "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
             IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
           fi
 
