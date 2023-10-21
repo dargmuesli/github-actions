@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dargmuesli/github-actions/compare/1.1.5...1.1.6) (2023-10-21)
+
+
+### Bug Fixes
+
+* **release-semantic:** install dependencies ([0709332](https://github.com/dargmuesli/github-actions/commit/07093329586a99c5ae644a54cadbc2ae9eb106c2))
+
 ## [1.1.5](https://github.com/dargmuesli/github-actions/compare/1.1.4...1.1.5) (2023-10-21)
 
 
