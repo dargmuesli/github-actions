@@ -72,7 +72,7 @@ jobs:
             IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
           fi
 
-          echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
+          echo "IMAGE_ID=$IMAGE_ID" >> "$GITHUB_ENV"
 
       - name: Docker meta
         id: docker_meta

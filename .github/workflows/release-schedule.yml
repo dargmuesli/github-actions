@@ -43,7 +43,7 @@ jobs:
           TIMESTAMP_TAG: ${{ steps.previoustag.outputs.timestamp }}
         run: |
           echo "$(($(printf '%(%s)T') - TIMESTAMP_TAG))"
-          echo "timestamp-diff=$(($(printf '%(%s)T') - TIMESTAMP_TAG))" >> $GITHUB_OUTPUT
+          echo "timestamp-diff=$(($(printf '%(%s)T') - TIMESTAMP_TAG))" >> "$GITHUB_OUTPUT"
 
       - name: Debug
         env:
