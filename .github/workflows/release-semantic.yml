@@ -1,8 +1,11 @@
-name: 'Release: Semantic'
+name: "Release: Semantic"
 
 on:
   workflow_call:
     inputs:
+      EXTRA_PLUGINS:
+        required: false
+        type: string
       DRY_RUN:
         default: false
         required: false
@@ -39,6 +42,7 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
             conventional-changelog-conventionalcommits
+            ${{ inputs.EXTRA_PLUGINS }}
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
