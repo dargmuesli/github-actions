@@ -83,9 +83,9 @@ jobs:
           tags: |
             type=schedule
             type=raw,value=latest,enable={{is_default_branch}}
-            type=semver,pattern={{version}},value=${{ inputs.tag }}
-            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.tag }}
-            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.tag }}
+            type=semver,pattern={{version}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
 
       - name: Build and push
         uses: docker/build-push-action@v5
