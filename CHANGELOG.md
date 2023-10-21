@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/dargmuesli/github-actions/compare/1.1.4...1.1.5) (2023-10-21)
+
+
+### Bug Fixes
+
+* **release-semantic:** enable corepack ([e9c23a9](https://github.com/dargmuesli/github-actions/commit/e9c23a9ca2978208264053451d686ab905c69c17))
+
 ## [1.1.4](https://github.com/dargmuesli/github-actions/compare/1.1.3...1.1.4) (2023-10-21)
 
 
