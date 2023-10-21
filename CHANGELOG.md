@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/dargmuesli/github-actions/compare/1.1.6...1.1.7) (2023-10-21)
+
+
+### Bug Fixes
+
+* **release-semantic:** run install at all times ([f13bf57](https://github.com/dargmuesli/github-actions/commit/f13bf579b1bbb1e5f832f9b28bdc0f6f28bb7e43))
+
 ## [1.1.6](https://github.com/dargmuesli/github-actions/compare/1.1.5...1.1.6) (2023-10-21)
 
 
