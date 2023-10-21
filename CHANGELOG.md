@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/dargmuesli/github-actions/compare/1.0.0...1.1.0) (2023-10-21)
+
+
+### Features
+
+* **release-semantic:** add input `EXTRA_PLUGINS` ([d947d03](https://github.com/dargmuesli/github-actions/commit/d947d033e3a8a1b7dc6eab1c256e8586734c40f9))
+
 ## [1.0.0](https://github.com/dargmuesli/github-actions/compare/0.43.6...1.0.0) (2023-10-21)
 
 
