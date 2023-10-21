@@ -41,14 +41,12 @@ jobs:
         run: corepack enable
 
       - name: Cache node_modules
-        id: cache
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: node_modules # contains most data, install will run regardless of caching in the next step
           key: deps-${{ hashFiles(format('{0}{1}{2}', github.workspace, '/', inputs.CACHE_PATH)) }}
 
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install dependencies # trigger `prepare` scripts
         run: pnpm install
 
       - name: Release
