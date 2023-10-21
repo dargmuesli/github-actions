@@ -90,6 +90,41 @@
 
 * **docker:** differentiate ci and release build ([f6cff3f](https://github.com/dargmuesli/github-actions/commit/f6cff3f9f76187c4707129daa1fb80a7d2e971ea))
 
+## [0.43.6](https://github.com/dargmuesli/github-actions/compare/0.43.5...0.43.6) (2023-10-18)
+
+
+### Bug Fixes
+
+* schedule release ([f3dfd13](https://github.com/dargmuesli/github-actions/commit/f3dfd13a721d5447624da10c16bf191598ed5977))
+
+## [0.43.5](https://github.com/dargmuesli/github-actions/compare/0.43.4...0.43.5) (2023-10-11)
+
+
+### Bug Fixes
+
+* schedule release ([a0a3a2e](https://github.com/dargmuesli/github-actions/commit/a0a3a2efd5b9e0319a30a9153749b9274b2aee6c))
+
+## [0.43.4](https://github.com/dargmuesli/github-actions/compare/0.43.3...0.43.4) (2023-10-04)
+
+
+### Bug Fixes
+
+* schedule release ([e277178](https://github.com/dargmuesli/github-actions/commit/e277178def775a4ec2dc41f2599f8c7550dc8f12))
+
+## [0.43.3](https://github.com/dargmuesli/github-actions/compare/0.43.2...0.43.3) (2023-09-27)
+
+
+### Bug Fixes
+
+* schedule release ([2201e3c](https://github.com/dargmuesli/github-actions/commit/2201e3c2d99137c1aafe7f45a11f132ee5b31957))
+
+## [0.43.2](https://github.com/dargmuesli/github-actions/compare/0.43.1...0.43.2) (2023-09-20)
+
+
+### Bug Fixes
+
+* schedule release ([79b3dca](https://github.com/dargmuesli/github-actions/commit/79b3dca08b087edb2223d51d76cccba7d4df0e19))
+
 ## [0.43.1](https://github.com/dargmuesli/github-actions/compare/0.43.0...0.43.1) (2023-09-13)
 
 
