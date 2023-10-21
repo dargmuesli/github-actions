@@ -3,6 +3,10 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
+      CACHE_PATH:
+        default: pnpm-lock.yaml
+        required: false
+        type: string
       EXTRA_PLUGINS:
         required: false
         type: string
@@ -35,6 +39,17 @@ jobs:
 
       - name: Setup package manager # node setup must be able to find pnpm
         run: corepack enable
+
+      - name: Cache node_modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles(format('{0}{1}{2}', github.workspace, '/', inputs.CACHE_PATH)) }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm install
 
       - name: Release
         uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
