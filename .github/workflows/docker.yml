@@ -68,11 +68,11 @@ jobs:
       - run: |
           IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
 
-          if [ ! -z "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
+          if [ -n "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
             IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
           fi
 
-          echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
+          echo "IMAGE_ID=$IMAGE_ID" >> "$GITHUB_ENV"
 
       - name: Docker meta
         id: docker_meta
@@ -83,9 +83,9 @@ jobs:
           tags: |
             type=schedule
             type=raw,value=latest,enable={{is_default_branch}}
-            type=semver,pattern={{version}},value=${{ inputs.tag }}
-            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.tag }}
-            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.tag }}
+            type=semver,pattern={{version}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
 
       - name: Build and push
         uses: docker/build-push-action@v5

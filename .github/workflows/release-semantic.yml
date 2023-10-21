@@ -1,4 +1,4 @@
-name: "Release: Semantic"
+name: 'Release: Semantic'
 
 on:
   workflow_call:

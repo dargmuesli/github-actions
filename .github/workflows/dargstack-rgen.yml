@@ -12,35 +12,36 @@ jobs:
         os: [ubuntu-latest]
         node: [20]
     steps:
-    - name: Checkout git repository
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout git repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
-    - name: Setup package manager
-      run: corepack enable
+      - name: Setup package manager
+        run: corepack enable
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        cache: pnpm
-        cache-dependency-path: pnpm-lock.yaml
-        node-version: ${{ matrix.node }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          node-version: ${{ matrix.node }}
 
-    - name: Cache node_modules
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
 
-    - name: Install dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: pnpm install
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm install
 
-    - name: dargstack rgen
-      run: pnpm dargstack_rgen --validate
+      - name: dargstack rgen
+        run: pnpm dargstack_rgen --validate
 
-    - name: dargstack derive
-      run: |
-        mkdir ~/scripts/
-        wget "https://raw.githubusercontent.com/dargstack/dargstack/master/src/dargstack" -O ~/scripts/dargstack
-        chmod +x ~/scripts/dargstack
-        ~/scripts/dargstack derive
+      - name: dargstack derive
+        run: |
+          mkdir ~/scripts/
+          wget "https://raw.githubusercontent.com/dargstack/dargstack/master/src/dargstack" -O ~/scripts/dargstack
+          chmod +x ~/scripts/dargstack
+          ~/scripts/dargstack derive
