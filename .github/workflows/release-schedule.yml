@@ -62,7 +62,7 @@ jobs:
           echo "inputs.IS_DEBOUNCED == 'true': ${{ inputs.IS_DEBOUNCED == 'true' }}"
           echo "-"
           echo "steps.diff.outputs.timestamp-diff > 604800: ${{ steps.diff.outputs.timestamp-diff > 604800 }}"
-          echo "inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800: ${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
+          echo "contains(inputs.IS_DEBOUNCED, 'false') || steps.diff.outputs.timestamp-diff > 604800: ${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
 
   schedule-release:
     name: Schedule release
