@@ -51,24 +51,24 @@ jobs:
         run: |
           echo "$TIMESTAMP_DIFF"
           echo "-"
-          echo "${{ inputs.IS_DEBOUNCED }}"
-          echo "${{ inputs.IS_DEBOUNCED > ''}}"
+          echo "inputs.IS_DEBOUNCED: ${{ inputs.IS_DEBOUNCED }}"
+          echo "inputs.IS_DEBOUNCED == '': ${{ inputs.IS_DEBOUNCED == '' }}"
+          echo "inputs.IS_DEBOUNCED == null: ${{ inputs.IS_DEBOUNCED == null }}"
+          echo "inputs.IS_DEBOUNCED > '': ${{ inputs.IS_DEBOUNCED > '' }}"
           echo "-"
-          echo "${{ inputs.IS_DEBOUNCED == false }}"
-          echo "${{ inputs.IS_DEBOUNCED == 'false' }}"
-          echo "${{ inputs.IS_DEBOUNCED == true }}"
-          echo "${{ inputs.IS_DEBOUNCED == 'true' }}"
+          echo "inputs.IS_DEBOUNCED == false: ${{ inputs.IS_DEBOUNCED == false }}"
+          echo "inputs.IS_DEBOUNCED == 'false': ${{ inputs.IS_DEBOUNCED == 'false' }}"
+          echo "inputs.IS_DEBOUNCED == true: ${{ inputs.IS_DEBOUNCED == true }}"
+          echo "inputs.IS_DEBOUNCED == 'true': ${{ inputs.IS_DEBOUNCED == 'true' }}"
           echo "-"
-          echo "${{ steps.diff.outputs.timestamp-diff > 604800 }}"
-          echo "${{ inputs.IS_DEBOUNCED > '' && inputs.IS_DEBOUNCED || true }}"
-          echo "${{ (inputs.IS_DEBOUNCED > '' && inputs.IS_DEBOUNCED || true) && (inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800) }}"
-          echo "${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
+          echo "steps.diff.outputs.timestamp-diff > 604800: ${{ steps.diff.outputs.timestamp-diff > 604800 }}"
+          echo "inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800: ${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
 
   schedule-release:
     name: Schedule release
     runs-on: ubuntu-latest
     needs: analyze-tags
-    if: inputs.IS_DEBOUNCED == false || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
+    if: (inputs.IS_DEBOUNCED == false && inputs.IS_DEBOUNCED != null) || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
     steps:
       - name: Checkout git repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
