@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/dargmuesli/github-actions/compare/1.1.2...1.1.3) (2023-10-21)
+
+
+### Bug Fixes
+
+* **release-schedule:** debounce on schedule ([b9c01f2](https://github.com/dargmuesli/github-actions/commit/b9c01f2ddef03d0758904d3b816ebc0d85486569))
+
 ## [1.1.2](https://github.com/dargmuesli/github-actions/compare/1.1.1...1.1.2) (2023-10-21)
 
 
