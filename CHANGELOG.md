@@ -1,3 +1,14 @@
+## [1.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.8...1.0.0-beta.9) (2023-10-21)
+
+
+### Bug Fixes
+
+* schedule release ([f3dfd13](https://github.com/dargmuesli/github-actions/commit/f3dfd13a721d5447624da10c16bf191598ed5977))
+* schedule release ([a0a3a2e](https://github.com/dargmuesli/github-actions/commit/a0a3a2efd5b9e0319a30a9153749b9274b2aee6c))
+* schedule release ([e277178](https://github.com/dargmuesli/github-actions/commit/e277178def775a4ec2dc41f2599f8c7550dc8f12))
+* schedule release ([2201e3c](https://github.com/dargmuesli/github-actions/commit/2201e3c2d99137c1aafe7f45a11f132ee5b31957))
+* schedule release ([79b3dca](https://github.com/dargmuesli/github-actions/commit/79b3dca08b087edb2223d51d76cccba7d4df0e19))
+
 ## [1.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/1.0.0-beta.7...1.0.0-beta.8) (2023-10-17)
 
 
