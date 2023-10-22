@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/dargmuesli/github-actions/compare/1.1.7...1.2.0) (2023-10-22)
+
+
+### Features
+
+* **release-semantic:** add package manager input ([39e27e7](https://github.com/dargmuesli/github-actions/commit/39e27e709288f9e4ddd5964cba6134a9e2437a37))
+
 ## [1.1.7](https://github.com/dargmuesli/github-actions/compare/1.1.6...1.1.7) (2023-10-21)
 
 
