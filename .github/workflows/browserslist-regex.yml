@@ -42,7 +42,7 @@ jobs:
         run: corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: ${{ inputs.PACKAGE_MANAGER }}
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
