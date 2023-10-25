@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/dargmuesli/github-actions/compare/1.3.4...1.3.5) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** trim build argument trailing newline ([6bc6781](https://github.com/dargmuesli/github-actions/commit/6bc6781fbab74506eeeea7b51fac4c06f3f33732))
+
 ## [1.3.4](https://github.com/dargmuesli/github-actions/compare/1.3.3...1.3.4) (2023-10-25)
 
 
