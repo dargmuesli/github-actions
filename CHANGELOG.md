@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/dargmuesli/github-actions/compare/1.2.0...1.3.0) (2023-10-25)
+
+
+### Features
+
+* **docker:** add ci build arguments as secret ([35b3543](https://github.com/dargmuesli/github-actions/commit/35b354380c72724a0858f766e1482c82afeaf7c7))
+
 ## [1.2.0](https://github.com/dargmuesli/github-actions/compare/1.1.7...1.2.0) (2023-10-22)
 
 
