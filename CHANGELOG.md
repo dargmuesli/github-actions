@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/dargmuesli/github-actions/compare/1.3.5...1.3.6) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** downgrade docker ([cb2e5ab](https://github.com/dargmuesli/github-actions/commit/cb2e5ab98c9f40eb1687dcda978782a2962e32b0))
+
 ## [1.3.5](https://github.com/dargmuesli/github-actions/compare/1.3.4...1.3.5) (2023-10-25)
 
 
