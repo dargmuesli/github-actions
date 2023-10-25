@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/dargmuesli/github-actions/compare/1.3.3...1.3.4) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** use quotes ([251f7d2](https://github.com/dargmuesli/github-actions/commit/251f7d2a061cc9ecba8563b80c6be29ba696460e))
+
 ## [1.3.3](https://github.com/dargmuesli/github-actions/compare/1.3.2...1.3.3) (2023-10-25)
 
 
