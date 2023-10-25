@@ -28,7 +28,7 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # fetch all history for all branches and tags
           ref: ${{ github.head_ref || github.ref }}
 
       - name: Docker Buildx setup
