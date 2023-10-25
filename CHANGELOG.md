@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/dargmuesli/github-actions/compare/1.3.2...1.3.3) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** pass build arguments as list ([393f4eb](https://github.com/dargmuesli/github-actions/commit/393f4eb63da3470f8b5595aa7b61758affc86ec1))
+
 ## [1.3.2](https://github.com/dargmuesli/github-actions/compare/1.3.1...1.3.2) (2023-10-25)
 
 
