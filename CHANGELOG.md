@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/dargmuesli/github-actions/compare/1.3.0...1.3.1) (2023-10-25)
+
+
+### Bug Fixes
+
+* **release-semantic:** set fetch depth to 0 ([afdc3c4](https://github.com/dargmuesli/github-actions/commit/afdc3c41478ef39aa503acebead22204660de501))
+
 ## [1.3.0](https://github.com/dargmuesli/github-actions/compare/1.2.0...1.3.0) (2023-10-25)
 
 
