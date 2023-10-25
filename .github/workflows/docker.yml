@@ -96,8 +96,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           build-args: |
-            ${{ inputs.BUILD_ARGUMENTS_CI }}
-            ${{ secrets.BUILD_ARGUMENTS_CI }}
+            "${{ secrets.BUILD_ARGUMENTS_CI }}"
+            "${{ inputs.BUILD_ARGUMENTS_CI }}"
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
