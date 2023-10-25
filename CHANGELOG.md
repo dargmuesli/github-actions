@@ -1,3 +1,15 @@
+## [1.3.7](https://github.com/dargmuesli/github-actions/compare/1.3.6...1.3.7) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** simplify build arguments ([e348c7c](https://github.com/dargmuesli/github-actions/commit/e348c7c3f05d5bf3cd2859deaf018c72bc366384))
+
+
+### Reverts
+
+* Revert "fix(docker): downgrade docker" ([a686dce](https://github.com/dargmuesli/github-actions/commit/a686dcea6fae31b0f4fcfc4d5672b0e61bd40f19))
+
 ## [1.3.6](https://github.com/dargmuesli/github-actions/compare/1.3.5...1.3.6) (2023-10-25)
 
 
