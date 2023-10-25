@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/dargmuesli/github-actions/compare/1.3.1...1.3.2) (2023-10-25)
+
+
+### Bug Fixes
+
+* **docker:** set fetch depth to 0 ([281582d](https://github.com/dargmuesli/github-actions/commit/281582dd99d903602b9e03fae4381e79d982965b))
+
 ## [1.3.1](https://github.com/dargmuesli/github-actions/compare/1.3.0...1.3.1) (2023-10-25)
 
 
