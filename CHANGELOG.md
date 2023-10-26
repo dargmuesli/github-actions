@@ -1,3 +1,10 @@
+## [1.3.9](https://github.com/dargmuesli/github-actions/compare/1.3.8...1.3.9) (2023-10-26)
+
+
+### Bug Fixes
+
+* **docker:** revert testing changes ([138d716](https://github.com/dargmuesli/github-actions/commit/138d716aaf046917e2efab46805b56b069ff0115))
+
 ## [1.3.8](https://github.com/dargmuesli/github-actions/compare/1.3.7...1.3.8) (2023-10-26)
 
 
