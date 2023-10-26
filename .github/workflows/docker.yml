@@ -41,7 +41,7 @@ on:
         required: false
         type: string
     secrets:
-      BUILD_ARGUMENTS_CII:
+      BUILD_ARGUMENTS_CI:
         required: false
 
 jobs:
@@ -95,7 +95,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          build-args: ${{ secrets.BUILD_ARGUMENTS_CII }}
+          build-args: ${{ secrets.BUILD_ARGUMENTS_CI }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
