@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/dargmuesli/github-actions/compare/1.3.7...1.3.8) (2023-10-26)
+
+
+### Bug Fixes
+
+* **docker:** add test ([94702ad](https://github.com/dargmuesli/github-actions/commit/94702ad7c4bc5d7fcc3548d3bffd5e841a6cfd8d))
+
 ## [1.3.7](https://github.com/dargmuesli/github-actions/compare/1.3.6...1.3.7) (2023-10-25)
 
 
