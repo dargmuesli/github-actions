@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/dargmuesli/github-actions/compare/1.3.9...1.4.0) (2023-10-31)
+
+
+### Features
+
+* **browserslist-regex:** fetch all history ([34b8250](https://github.com/dargmuesli/github-actions/commit/34b8250f1563050cc55423a81364187383a660df))
+
 ## [1.3.9](https://github.com/dargmuesli/github-actions/compare/1.3.8...1.3.9) (2023-10-26)
 
 
