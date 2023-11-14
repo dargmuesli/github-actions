@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/dargmuesli/github-actions/compare/1.4.1...1.5.0) (2023-11-14)
+
+
+### Features
+
+* add clean version of semantic release ([194eb17](https://github.com/dargmuesli/github-actions/commit/194eb17d630ce088acc53009233a5ca67c499996))
+
 ## [1.4.1](https://github.com/dargmuesli/github-actions/compare/1.4.0...1.4.1) (2023-11-08)
 
 
