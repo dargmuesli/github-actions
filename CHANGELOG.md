@@ -1,3 +1,16 @@
+## [2.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/1.5.0...2.0.0-beta.1) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** do not install project's dependencies
+* **docker:** drop ci ~ in favor of release build arguments
+
+### Features
+
+* **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
+* **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
+
 ## [1.5.0](https://github.com/dargmuesli/github-actions/compare/1.4.1...1.5.0) (2023-11-14)
 
 
