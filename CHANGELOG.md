@@ -1,3 +1,14 @@
+## [2.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.1...2.0.0-beta.2) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** duplicate build arguments
+
+### Features
+
+* **docker:** duplicate build arguments ([e1e2fa7](https://github.com/dargmuesli/github-actions/commit/e1e2fa7c3f3f166ef6591a67bbefbc57a5dc44fc))
+
 ## [2.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/1.5.0...2.0.0-beta.1) (2023-11-16)
 
 
