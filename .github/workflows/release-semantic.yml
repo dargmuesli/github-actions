@@ -3,10 +3,6 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
-      CACHE_PATH:
-        default: pnpm-lock.yaml
-        required: false
-        type: string
       DRY_RUN:
         default: false
         required: false
@@ -14,13 +10,7 @@ on:
       EXTRA_PLUGINS:
         required: false
         type: string
-      PACKAGE_MANAGER:
-        default: pnpm
-        required: false
-        type: string
     secrets:
-      NPM_TOKEN:
-        required: false
       PERSONAL_ACCESS_TOKEN:
         required: true
     outputs:
@@ -41,18 +31,6 @@ jobs:
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
-
-      - name: Setup package manager
-        run: corepack enable
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules # contains most data, install will run regardless of caching in the next step
-          key: deps-${{ hashFiles(format('{0}{1}{2}', github.workspace, '/', inputs.CACHE_PATH)) }}
-
-      - name: Install dependencies # trigger `prepare` scripts
-        run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release
         uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
