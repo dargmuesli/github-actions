@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/dargmuesli/github-actions/compare/1.5.3...1.5.4) (2024-01-03)
+
+
+### Bug Fixes
+
+* schedule release ([7fc04cc](https://github.com/dargmuesli/github-actions/commit/7fc04ccd0f890afaeed6cb4fe83ca8c48cd8ae3e))
+
 ## [1.5.3](https://github.com/dargmuesli/github-actions/compare/1.5.2...1.5.3) (2023-12-27)
 
 
