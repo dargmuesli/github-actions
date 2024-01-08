@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/dargmuesli/github-actions/compare/1.7.0...1.7.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* **docker:** add fallback token ([4f2c5bb](https://github.com/dargmuesli/github-actions/commit/4f2c5bb9ab1d76ce2c035f8c4b8dd114304b22c8))
+
 ## [1.7.0](https://github.com/dargmuesli/github-actions/compare/1.6.0...1.7.0) (2024-01-08)
 
 
