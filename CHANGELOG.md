@@ -1,3 +1,10 @@
+## [2.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.3...2.0.0-beta.4) (2024-01-08)
+
+
+### Features
+
+* **release-semantic:** add `main` to branch list ([7ae5d94](https://github.com/dargmuesli/github-actions/commit/7ae5d94acd8a663088ab8682d898cc8a21ef50a0))
+
 ## [2.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.2...2.0.0-beta.3) (2024-01-08)
 
 
