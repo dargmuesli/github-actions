@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/dargmuesli/github-actions/compare/1.5.4...1.6.0) (2024-01-08)
+
+
+### Features
+
+* **docker:** add personal access token secret ([40e35a2](https://github.com/dargmuesli/github-actions/commit/40e35a2d087ab6d044f32dc3a84f8e1aa96af530))
+
 ## [1.5.4](https://github.com/dargmuesli/github-actions/compare/1.5.3...1.5.4) (2024-01-03)
 
 
