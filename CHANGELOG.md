@@ -22,6 +22,41 @@
 * **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
 * **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
 
+## [1.6.0](https://github.com/dargmuesli/github-actions/compare/1.5.4...1.6.0) (2024-01-08)
+
+
+### Features
+
+* **docker:** add personal access token secret ([40e35a2](https://github.com/dargmuesli/github-actions/commit/40e35a2d087ab6d044f32dc3a84f8e1aa96af530))
+
+## [1.5.4](https://github.com/dargmuesli/github-actions/compare/1.5.3...1.5.4) (2024-01-03)
+
+
+### Bug Fixes
+
+* schedule release ([7fc04cc](https://github.com/dargmuesli/github-actions/commit/7fc04ccd0f890afaeed6cb4fe83ca8c48cd8ae3e))
+
+## [1.5.3](https://github.com/dargmuesli/github-actions/compare/1.5.2...1.5.3) (2023-12-27)
+
+
+### Bug Fixes
+
+* schedule release ([df069c1](https://github.com/dargmuesli/github-actions/commit/df069c121defac485552e81aa8d9be2af1f48622))
+
+## [1.5.2](https://github.com/dargmuesli/github-actions/compare/1.5.1...1.5.2) (2023-12-13)
+
+
+### Bug Fixes
+
+* schedule release ([bd06570](https://github.com/dargmuesli/github-actions/commit/bd065707e717234ae7258cb43f8b69a387e9bc7c))
+
+## [1.5.1](https://github.com/dargmuesli/github-actions/compare/1.5.0...1.5.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* schedule release ([028c160](https://github.com/dargmuesli/github-actions/commit/028c160dc5ca970243c5ea40b614139919414d17))
+
 ## [1.5.0](https://github.com/dargmuesli/github-actions/compare/1.4.1...1.5.0) (2023-11-14)
 
 
