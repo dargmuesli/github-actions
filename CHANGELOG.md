@@ -1,3 +1,18 @@
+## [2.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.2...2.0.0-beta.3) (2024-01-08)
+
+
+### Features
+
+* **docker:** add personal access token secret ([40e35a2](https://github.com/dargmuesli/github-actions/commit/40e35a2d087ab6d044f32dc3a84f8e1aa96af530))
+
+
+### Bug Fixes
+
+* schedule release ([7fc04cc](https://github.com/dargmuesli/github-actions/commit/7fc04ccd0f890afaeed6cb4fe83ca8c48cd8ae3e))
+* schedule release ([df069c1](https://github.com/dargmuesli/github-actions/commit/df069c121defac485552e81aa8d9be2af1f48622))
+* schedule release ([bd06570](https://github.com/dargmuesli/github-actions/commit/bd065707e717234ae7258cb43f8b69a387e9bc7c))
+* schedule release ([028c160](https://github.com/dargmuesli/github-actions/commit/028c160dc5ca970243c5ea40b614139919414d17))
+
 ## [2.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.1...2.0.0-beta.2) (2023-11-16)
 
 
