@@ -46,7 +46,7 @@ jobs:
         run: corepack enable
 
       - name: Cache node_modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules # contains most data, install will run regardless of caching in the next step
           key: deps-${{ hashFiles(format('{0}{1}{2}', github.workspace, '/', inputs.CACHE_PATH)) }}
