@@ -1,3 +1,14 @@
+## [2.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.4...2.0.0-beta.5) (2024-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** extract without subdirectories
+
+### Features
+
+* **docker:** extract without subdirectories ([2dc3e2f](https://github.com/dargmuesli/github-actions/commit/2dc3e2f039ac2fc755a298021b592fb443d39612))
+
 ## [2.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.3...2.0.0-beta.4) (2024-01-08)
 
 
