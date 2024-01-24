@@ -126,8 +126,8 @@ jobs:
         if: inputs.ARTIFACT_PATH != ''
         run: |
           docker container create --name extract stage_build
-          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/${{ inputs.ARTIFACT_PATH }}
-          tar -C /tmp/actions/${{ inputs.ARTIFACT_PATH }} -czvf build-artifact.tar .
+          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/
+          tar -C /tmp/actions/ -czvf build-artifact.tar .
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''
