@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/dargmuesli/github-actions/compare/1.7.3...1.7.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* schedule release ([a1bfe80](https://github.com/dargmuesli/github-actions/commit/a1bfe809a7ee041e321554327785a44c7ca84800))
+
 ## [1.7.3](https://github.com/dargmuesli/github-actions/compare/1.7.2...1.7.3) (2024-02-07)
 
 
