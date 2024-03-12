@@ -1,3 +1,10 @@
+## [2.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.6...2.0.0-beta.7) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** install dependencies ([ad9008c](https://github.com/dargmuesli/github-actions/commit/ad9008cb05ed4981a39a4872b826f67410562496))
+
 ## [2.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.5...2.0.0-beta.6) (2024-03-12)
 
 
