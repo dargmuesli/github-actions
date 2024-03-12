@@ -1,3 +1,19 @@
+## [2.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.5...2.0.0-beta.6) (2024-03-12)
+
+
+### Features
+
+* **release-semantic:** add npm token secret ([7806457](https://github.com/dargmuesli/github-actions/commit/7806457a8301181dbf3661d55456b40e5cf8b12e))
+
+
+### Bug Fixes
+
+* **docker:** add fallback token ([4f2c5bb](https://github.com/dargmuesli/github-actions/commit/4f2c5bb9ab1d76ce2c035f8c4b8dd114304b22c8))
+* schedule release ([396140d](https://github.com/dargmuesli/github-actions/commit/396140da788fc8667d01be503551e12427dc8ffd))
+* schedule release ([a1bfe80](https://github.com/dargmuesli/github-actions/commit/a1bfe809a7ee041e321554327785a44c7ca84800))
+* schedule release ([f4f4cf4](https://github.com/dargmuesli/github-actions/commit/f4f4cf45236870c1d8373f0ebbd5a2b39ed67c69))
+* schedule release ([c41114d](https://github.com/dargmuesli/github-actions/commit/c41114d112b36c946a5e5cd32ebf0562d22d32b1))
+
 ## [2.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.4...2.0.0-beta.5) (2024-01-24)
 
 
