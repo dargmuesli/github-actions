@@ -1,3 +1,10 @@
+## [2.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.8...2.0.0-beta.9) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** correct conditional ([1e5a890](https://github.com/dargmuesli/github-actions/commit/1e5a89010e64d6f807418e32eb41560d46ce1708))
+
 ## [2.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.7...2.0.0-beta.8) (2024-03-12)
 
 
