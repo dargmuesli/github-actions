@@ -44,8 +44,11 @@ jobs:
         run: corepack enable
 
       - name: Configure npm
-        if: secrets.NPM_CONFIG
-        run: npm config set -- ${{ secrets.NPM_CONFIG }}
+        run: |
+          if [[ "${{ secrets.NPM_CONFIG }}" != "" ]]
+          then
+            npm config set -- ${{ secrets.NPM_CONFIG }}
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
