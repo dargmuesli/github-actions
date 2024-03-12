@@ -11,6 +11,8 @@ on:
         required: false
         type: string
     secrets:
+      NPM_TOKEN:
+        required: false
       PERSONAL_ACCESS_TOKEN:
         required: true
     outputs:
