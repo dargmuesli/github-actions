@@ -1,3 +1,10 @@
+## [2.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.7...2.0.0-beta.8) (2024-03-12)
+
+
+### Features
+
+* **release-semantic:** add npm configuration secret ([1abd2f9](https://github.com/dargmuesli/github-actions/commit/1abd2f959be8cde8c4e90e86ac8aa8d4578c7ed7))
+
 ## [2.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.6...2.0.0-beta.7) (2024-03-12)
 
 
