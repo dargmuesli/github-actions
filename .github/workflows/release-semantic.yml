@@ -11,6 +11,8 @@ on:
         required: false
         type: string
     secrets:
+      NPM_CONFIG:
+        required: false
       NPM_TOKEN:
         required: false
       PERSONAL_ACCESS_TOKEN:
@@ -40,6 +42,10 @@ jobs:
 
       - name: Setup package manager
         run: corepack enable
+
+      - name: Configure npm
+        if: secrets.NPM_CONFIG
+        run: npm config set -- ${{ secrets.NPM_CONFIG }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
