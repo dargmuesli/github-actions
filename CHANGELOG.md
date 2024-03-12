@@ -1,3 +1,10 @@
+## [2.0.0-beta.10](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.9...2.0.0-beta.10) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** drop secondary caching ([ec2d64a](https://github.com/dargmuesli/github-actions/commit/ec2d64aab45831a399b23fdb8a7b2e51eb30818a))
+
 ## [2.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.8...2.0.0-beta.9) (2024-03-12)
 
 
