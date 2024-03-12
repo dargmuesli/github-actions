@@ -55,6 +55,48 @@
 * **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
 * **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
 
+## [1.7.5](https://github.com/dargmuesli/github-actions/compare/1.7.4...1.7.5) (2024-02-28)
+
+
+### Bug Fixes
+
+* schedule release ([396140d](https://github.com/dargmuesli/github-actions/commit/396140da788fc8667d01be503551e12427dc8ffd))
+
+## [1.7.4](https://github.com/dargmuesli/github-actions/compare/1.7.3...1.7.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* schedule release ([a1bfe80](https://github.com/dargmuesli/github-actions/commit/a1bfe809a7ee041e321554327785a44c7ca84800))
+
+## [1.7.3](https://github.com/dargmuesli/github-actions/compare/1.7.2...1.7.3) (2024-02-07)
+
+
+### Bug Fixes
+
+* schedule release ([f4f4cf4](https://github.com/dargmuesli/github-actions/commit/f4f4cf45236870c1d8373f0ebbd5a2b39ed67c69))
+
+## [1.7.2](https://github.com/dargmuesli/github-actions/compare/1.7.1...1.7.2) (2024-01-17)
+
+
+### Bug Fixes
+
+* schedule release ([c41114d](https://github.com/dargmuesli/github-actions/commit/c41114d112b36c946a5e5cd32ebf0562d22d32b1))
+
+## [1.7.1](https://github.com/dargmuesli/github-actions/compare/1.7.0...1.7.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* **docker:** add fallback token ([4f2c5bb](https://github.com/dargmuesli/github-actions/commit/4f2c5bb9ab1d76ce2c035f8c4b8dd114304b22c8))
+
+## [1.7.0](https://github.com/dargmuesli/github-actions/compare/1.6.0...1.7.0) (2024-01-08)
+
+
+### Features
+
+* **release-semantic:** add `main` to branch list ([7ae5d94](https://github.com/dargmuesli/github-actions/commit/7ae5d94acd8a663088ab8682d898cc8a21ef50a0))
+
 ## [1.6.0](https://github.com/dargmuesli/github-actions/compare/1.5.4...1.6.0) (2024-01-08)
 
 
