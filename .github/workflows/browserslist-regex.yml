@@ -75,7 +75,7 @@ jobs:
 
           echo "$prefix $("$PACKAGE_MANAGER" browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
 
-          if [ -f "./node_modules/.bin/eslint" ]; then
+          if $PACKAGE_MANAGER which eslint; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
           fi
 
