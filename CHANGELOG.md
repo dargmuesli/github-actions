@@ -1,3 +1,10 @@
+## [1.7.10](https://github.com/dargmuesli/github-actions/compare/1.7.9...1.7.10) (2024-04-27)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** correct eslint check ([bab7169](https://github.com/dargmuesli/github-actions/commit/bab71698ee9cc994413efca2c3166c343084c525))
+
 ## [1.7.9](https://github.com/dargmuesli/github-actions/compare/1.7.8...1.7.9) (2024-04-24)
 
 
