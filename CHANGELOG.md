@@ -1,3 +1,14 @@
+## [2.0.0-beta.11](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.10...2.0.0-beta.11) (2024-04-27)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** correct eslint check ([bab7169](https://github.com/dargmuesli/github-actions/commit/bab71698ee9cc994413efca2c3166c343084c525))
+* schedule release ([d2c3e41](https://github.com/dargmuesli/github-actions/commit/d2c3e417f490bff041d193d23c666daf3987a33a))
+* schedule release ([1f24f02](https://github.com/dargmuesli/github-actions/commit/1f24f0273f5766f02cc8bb8d86579843d9778776))
+* schedule release ([ed1bbdd](https://github.com/dargmuesli/github-actions/commit/ed1bbdd08088e1143896c93cf1f3e37e858772cf))
+* schedule release ([3e9c285](https://github.com/dargmuesli/github-actions/commit/3e9c2855bef25b0a001eb8b136bc9775c43988b8))
+
 ## [2.0.0-beta.10](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.9...2.0.0-beta.10) (2024-03-12)
 
 
