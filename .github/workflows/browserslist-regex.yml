@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
@@ -75,11 +75,11 @@ jobs:
 
           echo "$prefix $("$PACKAGE_MANAGER" browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
 
-          if [ -f "./node_modules/.bin/eslint" ]; then
+          if $PACKAGE_MANAGER which eslint; then
             "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
           fi
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # v5.0.0
+        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
         with:
           commit_message: 'chore(browserslist-regex): update supported browsers'
