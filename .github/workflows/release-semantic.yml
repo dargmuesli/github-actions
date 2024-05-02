@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
-      - name: Release
+      - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
         uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
         id: semantic-release
         with:
