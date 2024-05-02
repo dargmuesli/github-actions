@@ -25,10 +25,6 @@ jobs:
   semantic-release:
     name: Semantic Release
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [20]
     # semantic-release does not run on pull requests
     if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name)
     outputs:
@@ -40,35 +36,16 @@ jobs:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
-      - name: Setup package manager
-        run: corepack enable
-
-      - name: Configure npm
-        run: |
-          if [[ "${{ secrets.NPM_CONFIG }}" != "" ]]
-          then
-            npm config set -- ${{ secrets.NPM_CONFIG }}
-          fi
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
-          node-version: ${{ matrix.node }}
-
-      - name: Install dependencies
-        run: pnpm install
-
       - name: Release
+        uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
         id: semantic-release
-        run: |
-          if [[ "${{ inputs.DRY_RUN }}" == "true" ]]
-          then
-            pnpm exec semantic-release --dry-run
-          else
-            pnpm exec semantic-release
-          fi
+        with:
+          dry_run: ${{ inputs.DRY_RUN }}
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
+            ${{ inputs.EXTRA_PLUGINS }}
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
