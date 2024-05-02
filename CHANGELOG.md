@@ -1,3 +1,10 @@
+## [2.0.0-beta.12](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.11...2.0.0-beta.12) (2024-05-02)
+
+
+### Bug Fixes
+
+* **release-semantic:** revert action removal ([20e2a64](https://github.com/dargmuesli/github-actions/commit/20e2a64814656b91ad0f019b817ed543dfae4a16))
+
 ## [2.0.0-beta.11](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.10...2.0.0-beta.11) (2024-04-27)
 
 
