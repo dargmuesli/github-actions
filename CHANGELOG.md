@@ -1,3 +1,10 @@
+## [2.0.0-beta.13](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.12...2.0.0-beta.13) (2024-05-06)
+
+
+### Bug Fixes
+
+* **release-semantic:** specify semantic version ([2be5ef0](https://github.com/dargmuesli/github-actions/commit/2be5ef03c44aa381fa0f033d6541a83ea533869e))
+
 ## [2.0.0-beta.12](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.11...2.0.0-beta.12) (2024-05-02)
 
 
