@@ -131,6 +131,27 @@
 * **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
 * **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
 
+## [1.7.12](https://github.com/dargmuesli/github-actions/compare/1.7.11...1.7.12) (2024-05-15)
+
+
+### Bug Fixes
+
+* schedule release ([5480b64](https://github.com/dargmuesli/github-actions/commit/5480b64e65d16072b8f1ae5e9ba3232e53c468e2))
+
+## [1.7.11](https://github.com/dargmuesli/github-actions/compare/1.7.10...1.7.11) (2024-05-15)
+
+
+### Bug Fixes
+
+* schedule release ([81f077b](https://github.com/dargmuesli/github-actions/commit/81f077bebc2322281b715a1c8cc3122dfe30e372))
+
+## [1.7.10](https://github.com/dargmuesli/github-actions/compare/1.7.9...1.7.10) (2024-04-27)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** correct eslint check ([bab7169](https://github.com/dargmuesli/github-actions/commit/bab71698ee9cc994413efca2c3166c343084c525))
+
 ## [1.7.9](https://github.com/dargmuesli/github-actions/compare/1.7.8...1.7.9) (2024-04-24)
 
 
