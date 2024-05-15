@@ -1,3 +1,32 @@
+## [2.0.0](https://github.com/dargmuesli/github-actions/compare/1.7.12...2.0.0) (2024-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** extract without subdirectories
+* **docker:** duplicate build arguments
+* **release-semantic:** do not install project's dependencies
+* **docker:** drop ci ~ in favor of release build arguments
+
+### Features
+
+* **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
+* **docker:** duplicate build arguments ([e1e2fa7](https://github.com/dargmuesli/github-actions/commit/e1e2fa7c3f3f166ef6591a67bbefbc57a5dc44fc))
+* **docker:** extract without subdirectories ([2dc3e2f](https://github.com/dargmuesli/github-actions/commit/2dc3e2f039ac2fc755a298021b592fb443d39612))
+* **release-semantic:** add npm configuration secret ([1abd2f9](https://github.com/dargmuesli/github-actions/commit/1abd2f959be8cde8c4e90e86ac8aa8d4578c7ed7))
+* **release-semantic:** add npm token secret ([7806457](https://github.com/dargmuesli/github-actions/commit/7806457a8301181dbf3661d55456b40e5cf8b12e))
+* **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
+
+
+### Bug Fixes
+
+* **release-semantic:** correct conditional ([1e5a890](https://github.com/dargmuesli/github-actions/commit/1e5a89010e64d6f807418e32eb41560d46ce1708))
+* **release-semantic:** drop secondary caching ([ec2d64a](https://github.com/dargmuesli/github-actions/commit/ec2d64aab45831a399b23fdb8a7b2e51eb30818a))
+* **release-semantic:** install dependencies ([ad9008c](https://github.com/dargmuesli/github-actions/commit/ad9008cb05ed4981a39a4872b826f67410562496))
+* **release-semantic:** install dependencies for releases ([38dd3e7](https://github.com/dargmuesli/github-actions/commit/38dd3e7d96a507c1c8395f1dd2fad6c1083d078d))
+* **release-semantic:** revert action removal ([20e2a64](https://github.com/dargmuesli/github-actions/commit/20e2a64814656b91ad0f019b817ed543dfae4a16))
+* **release-semantic:** specify semantic version ([2be5ef0](https://github.com/dargmuesli/github-actions/commit/2be5ef03c44aa381fa0f033d6541a83ea533869e))
+
 ## [2.0.0-beta.15](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.14...2.0.0-beta.15) (2024-05-15)
 
 
