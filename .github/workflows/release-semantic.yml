@@ -10,9 +10,11 @@ on:
       EXTRA_PLUGINS:
         required: false
         type: string
-    secrets:
-      NPM_CONFIG:
+      PACKAGE_MANAGER:
+        default: pnpm
         required: false
+        type: string
+    secrets:
       NPM_TOKEN:
         required: false
       PERSONAL_ACCESS_TOKEN:
@@ -31,10 +33,22 @@ jobs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
+
+      - name: Setup package manager
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NPM_TOKEN != ''
+        run: corepack enable
+
+      - name: Install dependencies
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NPM_TOKEN != ''
+        run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
         uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4 # v4.1.0
