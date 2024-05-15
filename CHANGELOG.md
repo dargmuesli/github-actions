@@ -1,3 +1,11 @@
+## [2.0.0-beta.15](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.14...2.0.0-beta.15) (2024-05-15)
+
+
+### Bug Fixes
+
+* schedule release ([5480b64](https://github.com/dargmuesli/github-actions/commit/5480b64e65d16072b8f1ae5e9ba3232e53c468e2))
+* schedule release ([81f077b](https://github.com/dargmuesli/github-actions/commit/81f077bebc2322281b715a1c8cc3122dfe30e372))
+
 ## [2.0.0-beta.14](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.13...2.0.0-beta.14) (2024-05-15)
 
 
