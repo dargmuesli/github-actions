@@ -6,10 +6,7 @@ on:
       ARTIFACT_PATH:
         required: false
         type: string
-      BUILD_ARGUMENTS_CI:
-        required: false
-        type: string
-      BUILD_ARGUMENTS_RELEASE:
+      BUILD_ARGUMENTS:
         required: false
         type: string
       BUILD_TARGET_RELEASE:
@@ -41,7 +38,7 @@ on:
         required: false
         type: string
     secrets:
-      BUILD_ARGUMENTS_CI:
+      BUILD_ARGUMENTS:
         required: false
       PERSONAL_ACCESS_TOKEN:
         required: false
@@ -98,7 +95,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          build-args: ${{ secrets.BUILD_ARGUMENTS_CI }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+            ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
@@ -112,7 +111,9 @@ jobs:
         if: inputs.ARTIFACT_PATH != ''
         uses: docker/build-push-action@v5
         with:
-          build-args: ${{ inputs.BUILD_ARGUMENTS_RELEASE }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+            ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ env.IMAGE_ID }}:cache
           context: ${{ inputs.CONTEXT || '.' }}
@@ -125,8 +126,8 @@ jobs:
         if: inputs.ARTIFACT_PATH != ''
         run: |
           docker container create --name extract stage_build
-          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/${{ inputs.ARTIFACT_PATH }}
-          tar -C /tmp/actions/${{ inputs.ARTIFACT_PATH }} -czvf build-artifact.tar .
+          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/
+          tar -C /tmp/actions/ -czvf build-artifact.tar .
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''

@@ -3,10 +3,6 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
-      CACHE_PATH:
-        default: pnpm-lock.yaml
-        required: false
-        type: string
       DRY_RUN:
         default: false
         required: false
@@ -43,18 +39,18 @@ jobs:
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
       - name: Setup package manager
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NPM_TOKEN != ''
         run: corepack enable
 
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules # contains most data, install will run regardless of caching in the next step
-          key: deps-${{ hashFiles(format('{0}{1}{2}', github.workspace, '/', inputs.CACHE_PATH)) }}
-
-      - name: Install dependencies # trigger `prepare` scripts
+      - name: Install dependencies
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: env.NPM_TOKEN != ''
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
-      - name: Release
+      - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
         uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4 # v4.1.0
         id: semantic-release
         with:

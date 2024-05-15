@@ -1,3 +1,144 @@
+## [2.0.0-beta.15](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.14...2.0.0-beta.15) (2024-05-15)
+
+
+### Bug Fixes
+
+* schedule release ([5480b64](https://github.com/dargmuesli/github-actions/commit/5480b64e65d16072b8f1ae5e9ba3232e53c468e2))
+* schedule release ([81f077b](https://github.com/dargmuesli/github-actions/commit/81f077bebc2322281b715a1c8cc3122dfe30e372))
+
+## [2.0.0-beta.14](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.13...2.0.0-beta.14) (2024-05-15)
+
+
+### Bug Fixes
+
+* **release-semantic:** install dependencies for releases ([38dd3e7](https://github.com/dargmuesli/github-actions/commit/38dd3e7d96a507c1c8395f1dd2fad6c1083d078d))
+
+## [2.0.0-beta.13](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.12...2.0.0-beta.13) (2024-05-06)
+
+
+### Bug Fixes
+
+* **release-semantic:** specify semantic version ([2be5ef0](https://github.com/dargmuesli/github-actions/commit/2be5ef03c44aa381fa0f033d6541a83ea533869e))
+
+## [2.0.0-beta.12](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.11...2.0.0-beta.12) (2024-05-02)
+
+
+### Bug Fixes
+
+* **release-semantic:** revert action removal ([20e2a64](https://github.com/dargmuesli/github-actions/commit/20e2a64814656b91ad0f019b817ed543dfae4a16))
+
+## [2.0.0-beta.11](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.10...2.0.0-beta.11) (2024-04-27)
+
+
+### Bug Fixes
+
+* **browserslist-regex:** correct eslint check ([bab7169](https://github.com/dargmuesli/github-actions/commit/bab71698ee9cc994413efca2c3166c343084c525))
+* schedule release ([d2c3e41](https://github.com/dargmuesli/github-actions/commit/d2c3e417f490bff041d193d23c666daf3987a33a))
+* schedule release ([1f24f02](https://github.com/dargmuesli/github-actions/commit/1f24f0273f5766f02cc8bb8d86579843d9778776))
+* schedule release ([ed1bbdd](https://github.com/dargmuesli/github-actions/commit/ed1bbdd08088e1143896c93cf1f3e37e858772cf))
+* schedule release ([3e9c285](https://github.com/dargmuesli/github-actions/commit/3e9c2855bef25b0a001eb8b136bc9775c43988b8))
+
+## [2.0.0-beta.10](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.9...2.0.0-beta.10) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** drop secondary caching ([ec2d64a](https://github.com/dargmuesli/github-actions/commit/ec2d64aab45831a399b23fdb8a7b2e51eb30818a))
+
+## [2.0.0-beta.9](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.8...2.0.0-beta.9) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** correct conditional ([1e5a890](https://github.com/dargmuesli/github-actions/commit/1e5a89010e64d6f807418e32eb41560d46ce1708))
+
+## [2.0.0-beta.8](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.7...2.0.0-beta.8) (2024-03-12)
+
+
+### Features
+
+* **release-semantic:** add npm configuration secret ([1abd2f9](https://github.com/dargmuesli/github-actions/commit/1abd2f959be8cde8c4e90e86ac8aa8d4578c7ed7))
+
+## [2.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.6...2.0.0-beta.7) (2024-03-12)
+
+
+### Bug Fixes
+
+* **release-semantic:** install dependencies ([ad9008c](https://github.com/dargmuesli/github-actions/commit/ad9008cb05ed4981a39a4872b826f67410562496))
+
+## [2.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.5...2.0.0-beta.6) (2024-03-12)
+
+
+### Features
+
+* **release-semantic:** add npm token secret ([7806457](https://github.com/dargmuesli/github-actions/commit/7806457a8301181dbf3661d55456b40e5cf8b12e))
+
+
+### Bug Fixes
+
+* **docker:** add fallback token ([4f2c5bb](https://github.com/dargmuesli/github-actions/commit/4f2c5bb9ab1d76ce2c035f8c4b8dd114304b22c8))
+* schedule release ([396140d](https://github.com/dargmuesli/github-actions/commit/396140da788fc8667d01be503551e12427dc8ffd))
+* schedule release ([a1bfe80](https://github.com/dargmuesli/github-actions/commit/a1bfe809a7ee041e321554327785a44c7ca84800))
+* schedule release ([f4f4cf4](https://github.com/dargmuesli/github-actions/commit/f4f4cf45236870c1d8373f0ebbd5a2b39ed67c69))
+* schedule release ([c41114d](https://github.com/dargmuesli/github-actions/commit/c41114d112b36c946a5e5cd32ebf0562d22d32b1))
+
+## [2.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.4...2.0.0-beta.5) (2024-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** extract without subdirectories
+
+### Features
+
+* **docker:** extract without subdirectories ([2dc3e2f](https://github.com/dargmuesli/github-actions/commit/2dc3e2f039ac2fc755a298021b592fb443d39612))
+
+## [2.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.3...2.0.0-beta.4) (2024-01-08)
+
+
+### Features
+
+* **release-semantic:** add `main` to branch list ([7ae5d94](https://github.com/dargmuesli/github-actions/commit/7ae5d94acd8a663088ab8682d898cc8a21ef50a0))
+
+## [2.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.2...2.0.0-beta.3) (2024-01-08)
+
+
+### Features
+
+* **docker:** add personal access token secret ([40e35a2](https://github.com/dargmuesli/github-actions/commit/40e35a2d087ab6d044f32dc3a84f8e1aa96af530))
+
+
+### Bug Fixes
+
+* schedule release ([7fc04cc](https://github.com/dargmuesli/github-actions/commit/7fc04ccd0f890afaeed6cb4fe83ca8c48cd8ae3e))
+* schedule release ([df069c1](https://github.com/dargmuesli/github-actions/commit/df069c121defac485552e81aa8d9be2af1f48622))
+* schedule release ([bd06570](https://github.com/dargmuesli/github-actions/commit/bd065707e717234ae7258cb43f8b69a387e9bc7c))
+* schedule release ([028c160](https://github.com/dargmuesli/github-actions/commit/028c160dc5ca970243c5ea40b614139919414d17))
+
+## [2.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/2.0.0-beta.1...2.0.0-beta.2) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** duplicate build arguments
+
+### Features
+
+* **docker:** duplicate build arguments ([e1e2fa7](https://github.com/dargmuesli/github-actions/commit/e1e2fa7c3f3f166ef6591a67bbefbc57a5dc44fc))
+
+## [2.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/1.5.0...2.0.0-beta.1) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** do not install project's dependencies
+* **docker:** drop ci ~ in favor of release build arguments
+
+### Features
+
+* **docker:** drop ci ~ in favor of release build arguments ([92eb386](https://github.com/dargmuesli/github-actions/commit/92eb3867c6ea26fc24289a035914902c313faeba))
+* **release-semantic:** do not install project's dependencies ([9421fa5](https://github.com/dargmuesli/github-actions/commit/9421fa519d875e16b74facccad492a7807a37d36))
+
 ## [1.7.12](https://github.com/dargmuesli/github-actions/compare/1.7.11...1.7.12) (2024-05-15)
 
 
