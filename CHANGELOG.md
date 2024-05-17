@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/dargmuesli/github-actions/compare/2.0.0...2.1.0) (2024-05-17)
+
+
+### Features
+
+* **docker:** add build hosts ([338ae57](https://github.com/dargmuesli/github-actions/commit/338ae57a03fd8de68ff3897cbab35f445d56ee62))
+
 ## [2.0.0](https://github.com/dargmuesli/github-actions/compare/1.7.12...2.0.0) (2024-05-15)
 
 
