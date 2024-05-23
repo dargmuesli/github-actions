@@ -26,6 +26,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     needs: prepare_jobs
+    if: needs.prepare_jobs.outputs.pr_found == 'false' || github.event_name == 'pull_request'
     steps:
       - name: Checkout git repository
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
