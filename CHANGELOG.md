@@ -1,3 +1,10 @@
+## [2.2.0-beta.1](https://github.com/dargmuesli/github-actions/compare/2.1.1-beta.1...2.2.0-beta.1) (2024-05-23)
+
+
+### Features
+
+* **dargstack-rgen:** add skip input ([f0a33fd](https://github.com/dargmuesli/github-actions/commit/f0a33fd612fd66d4db0be702a92c613b3ff7545d))
+
 ## [2.1.1-beta.1](https://github.com/dargmuesli/github-actions/compare/2.1.0...2.1.1-beta.1) (2024-05-23)
 
 
