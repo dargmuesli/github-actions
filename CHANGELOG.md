@@ -1,3 +1,10 @@
+## [2.1.1-beta.1](https://github.com/dargmuesli/github-actions/compare/2.1.0...2.1.1-beta.1) (2024-05-23)
+
+
+### Bug Fixes
+
+* **release-semantic:** use head reference for pull requests ([675d1ed](https://github.com/dargmuesli/github-actions/commit/675d1ed6bce3765e79d33c43ff5a98710b90b078))
+
 ## [2.1.0](https://github.com/dargmuesli/github-actions/compare/2.0.0...2.1.0) (2024-05-17)
 
 
