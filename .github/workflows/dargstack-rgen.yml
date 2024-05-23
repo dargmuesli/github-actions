@@ -2,11 +2,17 @@ name: 'DargStack: rgen'
 
 on:
   workflow_call:
+    inputs:
+      SKIP:
+        default: false
+        required: false
+        type: boolean
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    if: inputs.skip == 'false'
     strategy:
       matrix:
         os: [ubuntu-latest]
