@@ -1,3 +1,10 @@
+## [2.2.0-beta.2](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.1...2.2.0-beta.2) (2024-05-23)
+
+
+### Bug Fixes
+
+* revert "fix(release-semantic): use head reference for pull requests" ([acefc27](https://github.com/dargmuesli/github-actions/commit/acefc27a70e0e9503c6bc9208450f35a64256de8))
+
 ## [2.2.0-beta.1](https://github.com/dargmuesli/github-actions/compare/2.1.1-beta.1...2.2.0-beta.1) (2024-05-23)
 
 
