@@ -1,3 +1,10 @@
+## [2.2.0-beta.3](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.2...2.2.0-beta.3) (2024-05-26)
+
+
+### Bug Fixes
+
+* **dargstack-rgen:** correct input name ([d355172](https://github.com/dargmuesli/github-actions/commit/d3551724407b0ee8659a38e134b9c47d62e3041b))
+
 ## [2.2.0-beta.2](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.1...2.2.0-beta.2) (2024-05-23)
 
 
