@@ -1,3 +1,10 @@
+## [2.2.0-beta.5](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.4...2.2.0-beta.5) (2024-05-27)
+
+
+### Bug Fixes
+
+* **dargstack-rgen:** move skip decision to steps ([7b35493](https://github.com/dargmuesli/github-actions/commit/7b35493aa5f80be3defaff6a808b3d19f4aee67d))
+
 ## [2.2.0-beta.4](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.3...2.2.0-beta.4) (2024-05-27)
 
 
