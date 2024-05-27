@@ -12,19 +12,21 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: inputs.SKIP == false
     strategy:
       matrix:
         os: [ubuntu-latest]
         node: [20]
     steps:
       - name: Checkout git repository
+        if: inputs.SKIP == false
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
       - name: Setup package manager
+        if: inputs.SKIP == false
         run: corepack enable
 
       - name: Setup Node
+        if: inputs.SKIP == false
         uses: actions/setup-node@v4
         with:
           cache: pnpm
@@ -32,6 +34,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Cache node_modules
+        if: inputs.SKIP == false
         uses: actions/cache@v4
         id: cache
         with:
@@ -39,13 +42,15 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: inputs.SKIP == false && steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: dargstack rgen
+        if: inputs.SKIP == false
         run: pnpm dargstack_rgen --validate
 
       - name: dargstack derive
+        if: inputs.SKIP == false
         run: |
           mkdir ~/scripts/
           wget "https://raw.githubusercontent.com/dargstack/dargstack/master/src/dargstack" -O ~/scripts/dargstack
