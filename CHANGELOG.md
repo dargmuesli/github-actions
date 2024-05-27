@@ -1,3 +1,10 @@
+## [2.2.0-beta.4](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.3...2.2.0-beta.4) (2024-05-27)
+
+
+### Bug Fixes
+
+* **dargstack-rgen:** correct boolean usage ([101f812](https://github.com/dargmuesli/github-actions/commit/101f812a24a14532ba42a2d442fa099f89c6404c))
+
 ## [2.2.0-beta.3](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.2...2.2.0-beta.3) (2024-05-26)
 
 
