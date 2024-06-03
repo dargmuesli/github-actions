@@ -1,3 +1,9 @@
+## [2.1.1](https://github.com/dargmuesli/github-actions/compare/2.1.0...2.1.1) (2024-06-03)
+
+### Bug Fixes
+
+* **release-semantic:** unpin versions ([1a03d55](https://github.com/dargmuesli/github-actions/commit/1a03d5596c7a17d33423bab4de02063c3b04fe7f))
+
 ## [2.1.0](https://github.com/dargmuesli/github-actions/compare/2.0.0...2.1.0) (2024-05-17)
 
 
