@@ -33,7 +33,7 @@ jobs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
