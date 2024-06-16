@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/dargmuesli/github-actions/compare/2.1.2...2.2.0) (2024-06-16)
+
+### Features
+
+* **release-semantic:** install apt packages ([a6e8369](https://github.com/dargmuesli/github-actions/commit/a6e8369858cf958ae9eaaabcb9dd66fbd0e06f42))
+
 ## [2.1.2](https://github.com/dargmuesli/github-actions/compare/2.1.1...2.1.2) (2024-06-12)
 
 ### Bug Fixes
