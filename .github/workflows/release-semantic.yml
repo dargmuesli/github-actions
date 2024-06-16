@@ -3,6 +3,9 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
+      APT_PACKAGES:
+        required: false
+        type: string
       DRY_RUN:
         default: false
         required: false
@@ -37,6 +40,12 @@ jobs:
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
+
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        if: inputs.APT_PACKAGES != ''
+        with:
+          packages: ${{ inputs.APT_PACKAGES }}
+          version: 1.0
 
       - name: Setup package manager
         env:
