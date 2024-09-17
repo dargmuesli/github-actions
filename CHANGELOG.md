@@ -1,3 +1,9 @@
+## [2.3.0](https://github.com/dargmuesli/github-actions/compare/2.2.7...2.3.0) (2024-09-17)
+
+### Features
+
+* **node:** update to v22 ([b59759a](https://github.com/dargmuesli/github-actions/commit/b59759a5cb63379ca18b9595a3ae52feab03da1e))
+
 ## [2.2.7](https://github.com/dargmuesli/github-actions/compare/2.2.6...2.2.7) (2024-09-04)
 
 ### Bug Fixes
