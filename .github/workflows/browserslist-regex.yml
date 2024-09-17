@@ -12,7 +12,7 @@ on:
         required: false
         type: string
       NODE_VERSION:
-        default: 20
+        default: 22
         required: false
         type: number
       OUTPUT_PATH:
