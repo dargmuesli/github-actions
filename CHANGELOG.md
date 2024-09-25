@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/dargmuesli/github-actions/compare/2.3.0...2.3.1) (2024-09-25)
+
+### Bug Fixes
+
+* schedule release ([71500b7](https://github.com/dargmuesli/github-actions/commit/71500b79aebb11b12a123606133bf779458d92f2))
+
 ## [2.3.0](https://github.com/dargmuesli/github-actions/compare/2.2.7...2.3.0) (2024-09-17)
 
 ### Features
