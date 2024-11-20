@@ -1,3 +1,9 @@
+## [2.3.6](https://github.com/dargmuesli/github-actions/compare/2.3.5...2.3.6) (2024-11-20)
+
+### Bug Fixes
+
+* schedule release ([58b56b2](https://github.com/dargmuesli/github-actions/commit/58b56b2484e1ba77d9f87e6b2ff3000a1dd62b7b))
+
 ## [2.3.5](https://github.com/dargmuesli/github-actions/compare/2.3.4...2.3.5) (2024-11-13)
 
 ### Bug Fixes
