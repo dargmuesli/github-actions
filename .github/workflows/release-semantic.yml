@@ -41,7 +41,7 @@ jobs:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
 
-      - uses: awalsh128/cache-apt-pkgs-action@latest
+      - uses: awalsh128/cache-apt-pkgs-action@5902b33ae29014e6ca012c5d8025d4346556bd40 # v1.4.3
         if: inputs.APT_PACKAGES != ''
         with:
           packages: ${{ inputs.APT_PACKAGES }}
