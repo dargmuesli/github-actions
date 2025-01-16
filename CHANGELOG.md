@@ -1,3 +1,9 @@
+## [2.3.12](https://github.com/dargmuesli/github-actions/compare/2.3.11...2.3.12) (2025-01-16)
+
+### Bug Fixes
+
+* **semantic-release:** set awalsh128/cache-apt-pkgs-action version ([4974dfd](https://github.com/dargmuesli/github-actions/commit/4974dfd32bafe7dcf49046f5f365c3767f5533b5))
+
 ## [2.3.11](https://github.com/dargmuesli/github-actions/compare/2.3.10...2.3.11) (2025-01-15)
 
 ### Bug Fixes
