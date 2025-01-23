@@ -96,7 +96,7 @@ jobs:
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v6.12.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -114,7 +114,7 @@ jobs:
 
       - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
         if: inputs.ARTIFACT_PATH != ''
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v6.12.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -138,7 +138,7 @@ jobs:
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: build-artifact
           path: build-artifact.tar

@@ -19,14 +19,14 @@ jobs:
         run: corepack enable
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
           node-version: ${{ matrix.node }}
 
       - name: Cache node_modules
-        uses: actions/cache@v4
+        uses: actions/cache@v4.2.0
         id: cache
         with:
           path: node_modules
