@@ -1,3 +1,9 @@
+## [2.3.14](https://github.com/dargmuesli/github-actions/compare/2.3.13...2.3.14) (2025-02-03)
+
+### Bug Fixes
+
+* **dargstack-rgen:** add workaround for corepack key issue ([fc2fb7a](https://github.com/dargmuesli/github-actions/commit/fc2fb7ac92b19ff9497a51bb01186c44b1ee8a7e))
+
 ## [2.3.13](https://github.com/dargmuesli/github-actions/compare/2.3.12...2.3.13) (2025-01-29)
 
 ### Bug Fixes
