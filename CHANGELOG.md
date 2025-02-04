@@ -1,3 +1,9 @@
+## [2.3.15](https://github.com/dargmuesli/github-actions/compare/2.3.14...2.3.15) (2025-02-04)
+
+### Bug Fixes
+
+* **browserslist-regex:** add workaround for corepack key issue ([1038e1e](https://github.com/dargmuesli/github-actions/commit/1038e1ea30e09f9f0de35c696f07b1f2d9bf990d))
+
 ## [2.3.14](https://github.com/dargmuesli/github-actions/compare/2.3.13...2.3.14) (2025-02-03)
 
 ### Bug Fixes
