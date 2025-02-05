@@ -1,3 +1,9 @@
+## [2.3.16](https://github.com/dargmuesli/github-actions/compare/2.3.15...2.3.16) (2025-02-05)
+
+### Bug Fixes
+
+* **release-semantic:** add workaround for corepack key issue ([2fe7897](https://github.com/dargmuesli/github-actions/commit/2fe789719ccd0eac2d1ff89523dc5414a356a95c))
+
 ## [2.3.15](https://github.com/dargmuesli/github-actions/compare/2.3.14...2.3.15) (2025-02-04)
 
 ### Bug Fixes
