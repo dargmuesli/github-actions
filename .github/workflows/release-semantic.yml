@@ -51,7 +51,9 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: env.NPM_TOKEN != ''
-        run: corepack enable
+        run:  |
+          npm install -g corepack@latest # TODO: remove (https://github.com/nodejs/corepack/issues/612)
+          corepack enable
 
       - name: Install dependencies
         env:
