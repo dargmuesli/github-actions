@@ -1,3 +1,18 @@
+## [2.4.0](https://github.com/dargmuesli/github-actions/compare/2.3.16...2.4.0) (2025-02-11)
+
+### Features
+
+* **browserslist-regex:** allow for ubuntu dependencies ([99c2b44](https://github.com/dargmuesli/github-actions/commit/99c2b4425df177272374b1824d9b33b5ffe92556))
+* **browserslist-regex:** step renaming ([8b0caa2](https://github.com/dargmuesli/github-actions/commit/8b0caa2efcbdb601550326567735501ef9cca304))
+
+### Bug Fixes
+
+* **browserslist-regex:** remove incompatible `which` command ([4976fc4](https://github.com/dargmuesli/github-actions/commit/4976fc4e7a48073e2ddbd43c11f1c02bae43a0e7))
+
+### Performance Improvements
+
+* **dargstack-rgen:** remove duplicate caching ([8583649](https://github.com/dargmuesli/github-actions/commit/8583649c24ceab51a8c3a46d434c772cb08c0379))
+
 ## [2.3.16](https://github.com/dargmuesli/github-actions/compare/2.3.15...2.3.16) (2025-02-05)
 
 ### Bug Fixes
