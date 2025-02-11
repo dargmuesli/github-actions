@@ -46,7 +46,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.2.0
         with:
-          cache: ${{ inputs.PACKAGE_MANAGER }}
+          cache: ${{ inputs.PACKAGE_MANAGER }} # TODO: remove once auto-detected (https://github.com/actions/setup-node/issues/686)
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
 
