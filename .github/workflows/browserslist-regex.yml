@@ -23,6 +23,12 @@ on:
         default: pnpm
         required: false
         type: string
+      UBUNTU_DEPENDENCIES:
+        required: false
+        type: string
+      UBUNTU_REPOSITORIES:
+        required: false
+        type: string
     secrets:
       PERSONAL_ACCESS_TOKEN:
         required: true
@@ -49,6 +55,17 @@ jobs:
           cache: ${{ inputs.PACKAGE_MANAGER }} # TODO: remove once auto-detected (https://github.com/actions/setup-node/issues/686)
           cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
+
+      - name: Add Ubuntu repositories
+        if: inputs.UBUNTU_REPOSITORIES != ''
+        run: |
+          add-apt-repository ${{ inputs.UBUNTU_REPOSITORIES }}
+
+      - name: Install Ubuntu dependencies
+        if: inputs.UBUNTU_DEPENDENCIES != ''
+        run: |
+          apt update
+          apt install -y ${{ inputs.UBUNTU_DEPENDENCIES }}
 
       - name: Get module type
         uses: sergeysova/jq-action@a3f0d4ff59cc1dddf023fc0b325dd75b10deec58 # v2.3.0
