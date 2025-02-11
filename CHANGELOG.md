@@ -1,3 +1,18 @@
+## [2.5.0](https://github.com/dargmuesli/github-actions/compare/2.4.0...2.5.0) (2025-02-11)
+
+### Features
+
+* **dargstack-rgen:** add skip input ([f0a33fd](https://github.com/dargmuesli/github-actions/commit/f0a33fd612fd66d4db0be702a92c613b3ff7545d))
+* **dargstack-rgen:** revert `skip` input addition ([c2f5b18](https://github.com/dargmuesli/github-actions/commit/c2f5b184879b1c85bd3cce5b65b02bf82679fd8f))
+
+### Bug Fixes
+
+* **dargstack-rgen:** correct boolean usage ([101f812](https://github.com/dargmuesli/github-actions/commit/101f812a24a14532ba42a2d442fa099f89c6404c))
+* **dargstack-rgen:** correct input name ([d355172](https://github.com/dargmuesli/github-actions/commit/d3551724407b0ee8659a38e134b9c47d62e3041b))
+* **dargstack-rgen:** move skip decision to steps ([7b35493](https://github.com/dargmuesli/github-actions/commit/7b35493aa5f80be3defaff6a808b3d19f4aee67d))
+* **release-semantic:** use head reference for pull requests ([675d1ed](https://github.com/dargmuesli/github-actions/commit/675d1ed6bce3765e79d33c43ff5a98710b90b078))
+* revert "fix(release-semantic): use head reference for pull requests" ([acefc27](https://github.com/dargmuesli/github-actions/commit/acefc27a70e0e9503c6bc9208450f35a64256de8))
+
 ## [2.2.0-beta.6](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.5...2.2.0-beta.6) (2025-02-11)
 
 
