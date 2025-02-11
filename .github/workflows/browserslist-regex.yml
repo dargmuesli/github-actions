@@ -59,13 +59,13 @@ jobs:
       - name: Add Ubuntu repositories
         if: inputs.UBUNTU_REPOSITORIES != ''
         run: |
-          add-apt-repository ${{ inputs.UBUNTU_REPOSITORIES }}
+          sudo add-apt-repository ${{ inputs.UBUNTU_REPOSITORIES }}
 
       - name: Install Ubuntu dependencies
         if: inputs.UBUNTU_DEPENDENCIES != ''
         run: |
-          apt update
-          apt install -y ${{ inputs.UBUNTU_DEPENDENCIES }}
+          sudo apt update
+          sudo apt install -y ${{ inputs.UBUNTU_DEPENDENCIES }}
 
       - name: Determine module type
         uses: sergeysova/jq-action@a3f0d4ff59cc1dddf023fc0b325dd75b10deec58 # v2.3.0
