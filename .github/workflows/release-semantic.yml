@@ -3,6 +3,9 @@ name: 'Release: Semantic'
 on:
   workflow_call:
     inputs:
+      APT_PACKAGES:
+        required: false
+        type: string
       DRY_RUN:
         default: false
         required: false
@@ -32,16 +35,24 @@ jobs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches (prevent "At least 1 approving review is required by reviewers with write access")
+
+      - uses: awalsh128/cache-apt-pkgs-action@5902b33ae29014e6ca012c5d8025d4346556bd40 # v1.4.3
+        if: inputs.APT_PACKAGES != ''
+        with:
+          packages: ${{ inputs.APT_PACKAGES }}
+          version: 1.0
 
       - name: Setup package manager
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: env.NPM_TOKEN != ''
-        run: corepack enable
+        run:  |
+          npm install -g corepack@latest # TODO: remove (https://github.com/nodejs/corepack/issues/612)
+          corepack enable
 
       - name: Install dependencies
         env:
@@ -50,15 +61,16 @@ jobs:
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
-        uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4 # v4.1.0
+        uses: cycjimmy/semantic-release-action@b1b432f13acb7768e0c8efdec416d363a57546f2 # v4.1.1
         id: semantic-release
         with:
           dry_run: ${{ inputs.DRY_RUN }}
-          extra_plugins: | # TODO: update conventional-changelog-conventionalcommits to v8 (https://github.com/semantic-release/release-notes-generator/issues/633)
-            @semantic-release/changelog@6.0.3
-            @semantic-release/git@10.0.1
-            conventional-changelog-conventionalcommits@7.0.2
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
+          semantic_version: 24.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

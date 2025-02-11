@@ -47,6 +47,183 @@
 
 * **release-semantic:** use head reference for pull requests ([675d1ed](https://github.com/dargmuesli/github-actions/commit/675d1ed6bce3765e79d33c43ff5a98710b90b078))
 
+## [2.4.0](https://github.com/dargmuesli/github-actions/compare/2.3.16...2.4.0) (2025-02-11)
+
+### Features
+
+* **browserslist-regex:** allow for ubuntu dependencies ([99c2b44](https://github.com/dargmuesli/github-actions/commit/99c2b4425df177272374b1824d9b33b5ffe92556))
+* **browserslist-regex:** step renaming ([8b0caa2](https://github.com/dargmuesli/github-actions/commit/8b0caa2efcbdb601550326567735501ef9cca304))
+
+### Bug Fixes
+
+* **browserslist-regex:** remove incompatible `which` command ([4976fc4](https://github.com/dargmuesli/github-actions/commit/4976fc4e7a48073e2ddbd43c11f1c02bae43a0e7))
+
+### Performance Improvements
+
+* **dargstack-rgen:** remove duplicate caching ([8583649](https://github.com/dargmuesli/github-actions/commit/8583649c24ceab51a8c3a46d434c772cb08c0379))
+
+## [2.3.16](https://github.com/dargmuesli/github-actions/compare/2.3.15...2.3.16) (2025-02-05)
+
+### Bug Fixes
+
+* **release-semantic:** add workaround for corepack key issue ([2fe7897](https://github.com/dargmuesli/github-actions/commit/2fe789719ccd0eac2d1ff89523dc5414a356a95c))
+
+## [2.3.15](https://github.com/dargmuesli/github-actions/compare/2.3.14...2.3.15) (2025-02-04)
+
+### Bug Fixes
+
+* **browserslist-regex:** add workaround for corepack key issue ([1038e1e](https://github.com/dargmuesli/github-actions/commit/1038e1ea30e09f9f0de35c696f07b1f2d9bf990d))
+
+## [2.3.14](https://github.com/dargmuesli/github-actions/compare/2.3.13...2.3.14) (2025-02-03)
+
+### Bug Fixes
+
+* **dargstack-rgen:** add workaround for corepack key issue ([fc2fb7a](https://github.com/dargmuesli/github-actions/commit/fc2fb7ac92b19ff9497a51bb01186c44b1ee8a7e))
+
+## [2.3.13](https://github.com/dargmuesli/github-actions/compare/2.3.12...2.3.13) (2025-01-29)
+
+### Bug Fixes
+
+* schedule release ([40baa51](https://github.com/dargmuesli/github-actions/commit/40baa51969ac4613d08e01f01632232cebf9edc9))
+
+## [2.3.12](https://github.com/dargmuesli/github-actions/compare/2.3.11...2.3.12) (2025-01-16)
+
+### Bug Fixes
+
+* **semantic-release:** set awalsh128/cache-apt-pkgs-action version ([4974dfd](https://github.com/dargmuesli/github-actions/commit/4974dfd32bafe7dcf49046f5f365c3767f5533b5))
+
+## [2.3.11](https://github.com/dargmuesli/github-actions/compare/2.3.10...2.3.11) (2025-01-15)
+
+### Bug Fixes
+
+* schedule release ([9b32407](https://github.com/dargmuesli/github-actions/commit/9b3240765c97d7c693a3a63f9f4addf416ab4450))
+
+## [2.3.10](https://github.com/dargmuesli/github-actions/compare/2.3.9...2.3.10) (2025-01-01)
+
+### Bug Fixes
+
+* schedule release ([04dfa46](https://github.com/dargmuesli/github-actions/commit/04dfa46fd604181e69884a2eca2118942ed25f89))
+
+## [2.3.9](https://github.com/dargmuesli/github-actions/compare/2.3.8...2.3.9) (2024-12-18)
+
+### Bug Fixes
+
+* schedule release ([dd47fed](https://github.com/dargmuesli/github-actions/commit/dd47fed36f6ef04286e8689b1d63b70cf554e15a))
+
+## [2.3.8](https://github.com/dargmuesli/github-actions/compare/2.3.7...2.3.8) (2024-12-04)
+
+### Bug Fixes
+
+* schedule release ([1d472e6](https://github.com/dargmuesli/github-actions/commit/1d472e67d0c56061bfc8b3d5d05b04bb799042a6))
+
+## [2.3.7](https://github.com/dargmuesli/github-actions/compare/2.3.6...2.3.7) (2024-11-27)
+
+### Bug Fixes
+
+* schedule release ([cb74dee](https://github.com/dargmuesli/github-actions/commit/cb74dee231b33bcd1104366f8e7c06518b376898))
+
+## [2.3.6](https://github.com/dargmuesli/github-actions/compare/2.3.5...2.3.6) (2024-11-20)
+
+### Bug Fixes
+
+* schedule release ([58b56b2](https://github.com/dargmuesli/github-actions/commit/58b56b2484e1ba77d9f87e6b2ff3000a1dd62b7b))
+
+## [2.3.5](https://github.com/dargmuesli/github-actions/compare/2.3.4...2.3.5) (2024-11-13)
+
+### Bug Fixes
+
+* schedule release ([6dc42c9](https://github.com/dargmuesli/github-actions/commit/6dc42c91e2217aaea916981eda242b59d14a104f))
+
+## [2.3.4](https://github.com/dargmuesli/github-actions/compare/2.3.3...2.3.4) (2024-10-30)
+
+### Bug Fixes
+
+* schedule release ([d314ca0](https://github.com/dargmuesli/github-actions/commit/d314ca03a498f449cff10e398aa2d4f833033907))
+
+## [2.3.3](https://github.com/dargmuesli/github-actions/compare/2.3.2...2.3.3) (2024-10-16)
+
+### Bug Fixes
+
+* schedule release ([c19046e](https://github.com/dargmuesli/github-actions/commit/c19046e9131a12f09c97fe06eb618d3cf9afd4e3))
+
+## [2.3.2](https://github.com/dargmuesli/github-actions/compare/2.3.1...2.3.2) (2024-10-09)
+
+### Bug Fixes
+
+* schedule release ([233a645](https://github.com/dargmuesli/github-actions/commit/233a6454fabf8e0f0caa573504e22595797439e9))
+
+## [2.3.1](https://github.com/dargmuesli/github-actions/compare/2.3.0...2.3.1) (2024-09-25)
+
+### Bug Fixes
+
+* schedule release ([71500b7](https://github.com/dargmuesli/github-actions/commit/71500b79aebb11b12a123606133bf779458d92f2))
+
+## [2.3.0](https://github.com/dargmuesli/github-actions/compare/2.2.7...2.3.0) (2024-09-17)
+
+### Features
+
+* **node:** update to v22 ([b59759a](https://github.com/dargmuesli/github-actions/commit/b59759a5cb63379ca18b9595a3ae52feab03da1e))
+
+## [2.2.7](https://github.com/dargmuesli/github-actions/compare/2.2.6...2.2.7) (2024-09-04)
+
+### Bug Fixes
+
+* schedule release ([03ea724](https://github.com/dargmuesli/github-actions/commit/03ea724b29ced282c79cfff483d39ef7fef6916c))
+
+## [2.2.6](https://github.com/dargmuesli/github-actions/compare/2.2.5...2.2.6) (2024-08-28)
+
+### Bug Fixes
+
+* schedule release ([9c24c57](https://github.com/dargmuesli/github-actions/commit/9c24c579880f4c1218365fde4feee8763918e5ef))
+
+## [2.2.5](https://github.com/dargmuesli/github-actions/compare/2.2.4...2.2.5) (2024-08-21)
+
+### Bug Fixes
+
+* schedule release ([6cca4c8](https://github.com/dargmuesli/github-actions/commit/6cca4c89d813349622473d9d0c497d76d05adb5c))
+
+## [2.2.4](https://github.com/dargmuesli/github-actions/compare/2.2.3...2.2.4) (2024-08-07)
+
+### Bug Fixes
+
+* schedule release ([9b625c0](https://github.com/dargmuesli/github-actions/commit/9b625c0e843e4b221cb433808dd1d03e1d74183e))
+
+## [2.2.3](https://github.com/dargmuesli/github-actions/compare/2.2.2...2.2.3) (2024-07-24)
+
+### Bug Fixes
+
+* schedule release ([86f7581](https://github.com/dargmuesli/github-actions/commit/86f7581cfbe9457f5b0935dc279b8ac613db0bf2))
+
+## [2.2.2](https://github.com/dargmuesli/github-actions/compare/2.2.1...2.2.2) (2024-07-10)
+
+### Bug Fixes
+
+* schedule release ([829833e](https://github.com/dargmuesli/github-actions/commit/829833ef68ba093ba7fb4b16b9580cb24a67f4ff))
+
+## [2.2.1](https://github.com/dargmuesli/github-actions/compare/2.2.0...2.2.1) (2024-06-26)
+
+### Bug Fixes
+
+* schedule release ([db751c7](https://github.com/dargmuesli/github-actions/commit/db751c7659bd13b16e2636db1b09303cc2190eb5))
+
+## [2.2.0](https://github.com/dargmuesli/github-actions/compare/2.1.2...2.2.0) (2024-06-16)
+
+### Features
+
+* **release-semantic:** install apt packages ([a6e8369](https://github.com/dargmuesli/github-actions/commit/a6e8369858cf958ae9eaaabcb9dd66fbd0e06f42))
+
+## [2.1.2](https://github.com/dargmuesli/github-actions/compare/2.1.1...2.1.2) (2024-06-12)
+
+### Bug Fixes
+
+* schedule release ([90a7cae](https://github.com/dargmuesli/github-actions/commit/90a7caea01306f1234dc076e9af3831631baa29a))
+
+## [2.1.1](https://github.com/dargmuesli/github-actions/compare/2.1.0...2.1.1) (2024-06-03)
+
+### Bug Fixes
+
+* **release-semantic:** unpin versions ([1a03d55](https://github.com/dargmuesli/github-actions/commit/1a03d5596c7a17d33423bab4de02063c3b04fe7f))
+
 ## [2.1.0](https://github.com/dargmuesli/github-actions/compare/2.0.0...2.1.0) (2024-05-17)
 
 
