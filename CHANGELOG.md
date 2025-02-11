@@ -1,3 +1,9 @@
+## [2.5.1](https://github.com/dargmuesli/github-actions/compare/2.5.0...2.5.1) (2025-02-11)
+
+### Bug Fixes
+
+* **browserslist-regex:** add sudo ([dbd588c](https://github.com/dargmuesli/github-actions/commit/dbd588c8ef89509e8b0f4e18f9e1ea17a641f608))
+
 ## [2.5.0](https://github.com/dargmuesli/github-actions/compare/2.4.0...2.5.0) (2025-02-11)
 
 ### Features
