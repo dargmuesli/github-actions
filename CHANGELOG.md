@@ -1,3 +1,10 @@
+## [2.2.0-beta.6](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.5...2.2.0-beta.6) (2025-02-11)
+
+
+### Features
+
+* **dargstack-rgen:** revert `skip` input addition ([c2f5b18](https://github.com/dargmuesli/github-actions/commit/c2f5b184879b1c85bd3cce5b65b02bf82679fd8f))
+
 ## [2.2.0-beta.5](https://github.com/dargmuesli/github-actions/compare/2.2.0-beta.4...2.2.0-beta.5) (2024-05-27)
 
 
