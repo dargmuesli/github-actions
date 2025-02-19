@@ -58,7 +58,7 @@ jobs:
             ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6.13.0
+        uses: docker/build-push-action@v6.14.0
         with:
           build-args: |
             CI=true
