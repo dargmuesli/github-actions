@@ -1,3 +1,9 @@
+## [2.5.5](https://github.com/dargmuesli/github-actions/compare/2.5.4...2.5.5) (2025-03-19)
+
+### Bug Fixes
+
+* schedule release ([4208cb3](https://github.com/dargmuesli/github-actions/commit/4208cb3d70e6cf6b7a3efd9dbdf9f1fbabffda68))
+
 ## [2.5.4](https://github.com/dargmuesli/github-actions/compare/2.5.3...2.5.4) (2025-03-05)
 
 ### Bug Fixes
