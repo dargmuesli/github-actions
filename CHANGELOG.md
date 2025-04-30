@@ -1,3 +1,9 @@
+## [2.5.8](https://github.com/dargmuesli/github-actions/compare/2.5.7...2.5.8) (2025-04-30)
+
+### Bug Fixes
+
+* schedule release ([97bc26f](https://github.com/dargmuesli/github-actions/commit/97bc26fa84df830b60784c3696c9fcb994ff2091))
+
 ## [2.5.7](https://github.com/dargmuesli/github-actions/compare/2.5.6...2.5.7) (2025-04-16)
 
 ### Bug Fixes
