@@ -1,3 +1,9 @@
+## [2.5.20](https://github.com/dargmuesli/github-actions/compare/2.5.19...2.5.20) (2025-07-23)
+
+### Bug Fixes
+
+* **release-semantic:** set contents write permission ([28d78ee](https://github.com/dargmuesli/github-actions/commit/28d78eeffbee3dd0e225df4a937a91a087c1f29f))
+
 ## [2.5.19](https://github.com/dargmuesli/github-actions/compare/2.5.18...2.5.19) (2025-07-23)
 
 ### Bug Fixes
