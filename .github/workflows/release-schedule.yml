@@ -23,6 +23,8 @@ jobs:
   analyze-tags:
     name: Analyze tags
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       previous-tag: ${{ steps.previoustag.outputs.tag }}
       timestamp-diff: ${{ steps.diff.outputs.timestamp-diff }}
