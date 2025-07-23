@@ -1,3 +1,9 @@
+## [2.5.17](https://github.com/dargmuesli/github-actions/compare/2.5.16...2.5.17) (2025-07-23)
+
+### Bug Fixes
+
+* **release-schedule:** set permissions ([64bccbd](https://github.com/dargmuesli/github-actions/commit/64bccbd5f00c50149a38635ef123da777b3f53ec))
+
 ## [2.5.16](https://github.com/dargmuesli/github-actions/compare/2.5.15...2.5.16) (2025-07-23)
 
 ### Bug Fixes
