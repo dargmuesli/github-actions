@@ -1,3 +1,10 @@
+## [2.5.18](https://github.com/dargmuesli/github-actions/compare/2.5.17...2.5.18) (2025-07-23)
+
+### Bug Fixes
+
+* **ci:** set permissions ([a906f66](https://github.com/dargmuesli/github-actions/commit/a906f66585789748708a94b8265887bc11a0ad36))
+* **ci:** set permissions ([4ca3a06](https://github.com/dargmuesli/github-actions/commit/4ca3a064082839941c982af40d40d704b7557c13))
+
 ## [2.5.17](https://github.com/dargmuesli/github-actions/compare/2.5.16...2.5.17) (2025-07-23)
 
 ### Bug Fixes
