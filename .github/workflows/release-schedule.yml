@@ -69,6 +69,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: analyze-tags
     if: ${{ contains(inputs.IS_DEBOUNCED, 'false') || needs.analyze-tags.outputs.timestamp-diff > 604800 }} # 604800 equal one week.
+    permissions:
+      contents: read
     steps:
       - name: Checkout git repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
