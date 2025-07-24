@@ -1,3 +1,9 @@
+## [2.6.0](https://github.com/dargmuesli/github-actions/compare/2.5.20...2.6.0) (2025-07-24)
+
+### Features
+
+* **dargstack-rgen:** allow to install apt packages ([5f95b26](https://github.com/dargmuesli/github-actions/commit/5f95b26638d8adcba46f943d5e8f7351544409c0))
+
 ## [2.5.20](https://github.com/dargmuesli/github-actions/compare/2.5.19...2.5.20) (2025-07-23)
 
 ### Bug Fixes
