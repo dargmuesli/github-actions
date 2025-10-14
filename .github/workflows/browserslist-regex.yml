@@ -50,6 +50,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6.0.0
         with:
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: Add Ubuntu repositories
