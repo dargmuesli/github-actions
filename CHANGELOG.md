@@ -1,3 +1,9 @@
+## [2.7.0](https://github.com/dargmuesli/github-actions/compare/2.6.9...2.7.0) (2025-11-05)
+
+### Features
+
+* **deps:** update node.js to v24 ([f8f10a0](https://github.com/dargmuesli/github-actions/commit/f8f10a036b74bd0ca781ec2ca33aea5520e5e36d))
+
 ## [2.6.9](https://github.com/dargmuesli/github-actions/compare/2.6.8...2.6.9) (2025-10-29)
 
 ### Bug Fixes
