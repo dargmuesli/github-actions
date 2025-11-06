@@ -1,0 +1,25 @@
+name: CI optimization
+
+permissions: {}
+
+on:
+  workflow_call:
+    outputs:
+      continue:
+        value: ${{ jobs.pr_analysis.outputs.pr_found == false || github.event_name == 'pull_request' }}
+
+jobs:
+  pr_analysis:
+    name: Pull request analysis
+    runs-on: ubuntu-latest
+    outputs:
+      pr_found: ${{ steps.pr.outputs.pr_found }}
+    permissions:
+      pull-requests: read
+    steps:
+      - name: Get current PR
+        id: pr
+        uses: 8BitJonny/gh-get-current-pr@4056877062a1f3b624d5d4c2bedefa9cf51435c9 # 4.0.0
+        with:
+          filterOutClosed: true
+          filterOutDraft: true
