@@ -35,7 +35,6 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: dargstack rgen
