@@ -1,7 +1,6 @@
 name: 'Release: Semantic'
 
-permissions:
-  contents: write
+permissions: {}
 
 on:
   workflow_call:
@@ -26,9 +25,11 @@ on:
 
 jobs:
   semantic-release:
+    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name) # semantic-release does not run on pull requests, so accounting for `github.head_ref` in addition to `github.ref_name` does not make sense
     name: Semantic Release
     runs-on: ubuntu-latest
-    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name) # semantic-release does not run on pull requests, so accounting for `github.head_ref` in addition to `github.ref_name` does not make sense
+    # permissions:
+    #   contents: write
     outputs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
