@@ -1,3 +1,9 @@
+## [3.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.2...3.0.0-beta.3) (2025-11-06)
+
+### Bug Fixes
+
+* **release-semantic:** reenable content write permissions ([f1e3fb9](https://github.com/dargmuesli/github-actions/commit/f1e3fb9d01781a2407eb84883cb9f5057a8cb686))
+
 ## [3.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.1...3.0.0-beta.2) (2025-11-06)
 
 ### ⚠ BREAKING CHANGES
