@@ -1,3 +1,9 @@
+## [2.8.0](https://github.com/dargmuesli/github-actions/compare/2.7.0...2.8.0) (2025-11-06)
+
+### Features
+
+* **ci:** extract optimization ([d4230e2](https://github.com/dargmuesli/github-actions/commit/d4230e25e1925027b086c2bb6e72ab6fd70acc01))
+
 ## [2.7.0](https://github.com/dargmuesli/github-actions/compare/2.6.9...2.7.0) (2025-11-05)
 
 ### Features
