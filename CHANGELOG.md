@@ -1,3 +1,14 @@
+## [3.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.1...3.0.0-beta.2) (2025-11-06)
+
+### ⚠ BREAKING CHANGES
+
+* tweak permissions
+
+### Features
+
+* **ci:** extract optimization ([d4230e2](https://github.com/dargmuesli/github-actions/commit/d4230e25e1925027b086c2bb6e72ab6fd70acc01))
+* tweak permissions ([0b70e8a](https://github.com/dargmuesli/github-actions/commit/0b70e8a7185627943143b663a06b92a4ca58d1ab))
+
 ## [3.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/2.7.0...3.0.0-beta.1) (2025-11-06)
 
 ### ⚠ BREAKING CHANGES
