@@ -1,3 +1,13 @@
+## [3.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/2.7.0...3.0.0-beta.1) (2025-11-06)
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** drop npm token
+
+### Features
+
+* **release-semantic:** drop npm token ([41670e0](https://github.com/dargmuesli/github-actions/commit/41670e0bb0859e02541491c3b0b1c43ddd0256e1))
+
 ## [2.7.0](https://github.com/dargmuesli/github-actions/compare/2.6.9...2.7.0) (2025-11-05)
 
 ### Features
