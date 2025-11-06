@@ -7,10 +7,8 @@ on:
         required: true
         type: string
       BRANCH:
-        required: false
         type: string
       DIRECTORY:
-        required: false
         type: string
       PROJECT_NAME:
         required: true

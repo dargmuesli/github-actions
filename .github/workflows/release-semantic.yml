@@ -7,22 +7,16 @@ on:
   workflow_call:
     inputs:
       APT_PACKAGES:
-        required: false
         type: string
       DRY_RUN:
-        default: false
-        required: false
         type: boolean
       EXTRA_PLUGINS:
-        required: false
         type: string
       PACKAGE_MANAGER:
         default: pnpm
-        required: false
         type: string
     secrets:
       NPM_TOKEN:
-        required: false
       PERSONAL_ACCESS_TOKEN:
         required: true
     outputs:

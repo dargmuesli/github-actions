@@ -4,47 +4,34 @@ on:
   workflow_call:
     inputs:
       ARTIFACT_PATH:
-        required: false
         type: string
       BUILD_ADD_HOSTS:
-        required: false
         type: string
       BUILD_ARGUMENTS:
-        required: false
         type: string
       BUILD_TARGET_RELEASE:
         default: build
-        required: false
         type: string
       CONTEXT:
-        required: false
         type: string
       IMAGE_ID:
-        required: false
         type: string
       IMAGE_ID_SUFFIX:
-        required: false
         type: string
       PLATFORMS:
         default: linux/amd64
-        required: false
         type: string
       PUSH:
         default: true
-        required: false
         type: boolean
       TAG:
-        required: false
         type: string
       REGISTRY:
         default: ghcr.io
-        required: false
         type: string
     secrets:
       BUILD_ARGUMENTS:
-        required: false
       PERSONAL_ACCESS_TOKEN:
-        required: false
 
 jobs:
   docker:

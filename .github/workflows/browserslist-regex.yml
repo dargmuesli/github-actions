@@ -5,29 +5,22 @@ on:
     inputs:
       CACHE_PATH:
         default: pnpm-lock.yaml
-        required: false
         type: string
       DIRECTORY:
         default: ./
-        required: false
         type: string
       NODE_VERSION:
         default: 24
-        required: false
         type: number
       OUTPUT_PATH:
         default: supportedBrowsers.js
-        required: false
         type: string
       PACKAGE_MANAGER:
         default: pnpm
-        required: false
         type: string
       UBUNTU_DEPENDENCIES:
-        required: false
         type: string
       UBUNTU_REPOSITORIES:
-        required: false
         type: string
     secrets:
       PERSONAL_ACCESS_TOKEN:

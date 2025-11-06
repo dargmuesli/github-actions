@@ -4,15 +4,11 @@ on:
   workflow_call:
     inputs:
       CACHE:
-        required: false
         type: string
       IS_PUSH_ENABLED:
-        default: false
-        required: false
         type: boolean
       TARGET:
         default: production
-        required: false
         type: string
     secrets:
       DOCKER_HUB_ACCESS_TOKEN:

@@ -4,7 +4,6 @@ on:
   workflow_call:
     inputs:
       APT_PACKAGES:
-        required: false
         type: string
 
 jobs:
