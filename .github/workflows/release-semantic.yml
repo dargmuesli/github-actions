@@ -16,13 +16,13 @@ on:
       EXTRA_PLUGINS:
         required: false
         type: string
+      INSTALL_NODE_DEPENDENCIES:
+        type: boolean
       PACKAGE_MANAGER:
         default: pnpm
         required: false
         type: string
     secrets:
-      NPM_TOKEN:
-        required: false
       PERSONAL_ACCESS_TOKEN:
         required: true
     outputs:
@@ -50,15 +50,11 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: env.NPM_TOKEN != ''
+        if: inputs.INSTALL_NODE_DEPENDENCIES
         run: corepack enable
 
       - name: Install dependencies
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: env.NPM_TOKEN != ''
+        if: inputs.INSTALL_NODE_DEPENDENCIES
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
@@ -74,7 +70,6 @@ jobs:
           semantic_version: 24.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Beautify changelog
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
