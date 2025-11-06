@@ -4,15 +4,11 @@ on:
   workflow_call:
     inputs:
       CACHE:
-        required: false
         type: string
       IS_PUSH_ENABLED:
-        default: false
-        required: false
         type: boolean
       TARGET:
         default: production
-        required: false
         type: string
     secrets:
       DOCKER_HUB_ACCESS_TOKEN:
@@ -41,7 +37,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v5.9.0
+        uses: docker/metadata-action@318604b99e75e41977312d83839a89be02ca4893 # v5.9.0
         with:
           images: ${{ github.repository }}
           tags: |
@@ -49,7 +45,7 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: Docker cache
-        uses: dargmuesli/docker-build-cache-config-action@v1.14.0
+        uses: dargmuesli/docker-build-cache-config-action@43fbb9a6f14c0b5e05091af2f0a5c38cdb65c0e3 # v1.14.0
         id: cache
         with:
           image: ${{ github.repository }}
@@ -58,7 +54,7 @@ jobs:
             ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6.18.0
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           build-args: |
             CI=true

@@ -7,20 +7,15 @@ on:
   workflow_call:
     inputs:
       APT_PACKAGES:
-        required: false
         type: string
       DRY_RUN:
-        default: false
-        required: false
         type: boolean
       EXTRA_PLUGINS:
-        required: false
         type: string
       INSTALL_NODE_DEPENDENCIES:
         type: boolean
       PACKAGE_MANAGER:
         default: pnpm
-        required: false
         type: string
     secrets:
       PERSONAL_ACCESS_TOKEN:
