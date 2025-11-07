@@ -71,8 +71,6 @@ jobs:
     if: contains(inputs.IS_DEBOUNCED, 'false') || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
     name: Schedule release
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - name: Checkout git repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
