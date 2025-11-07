@@ -94,7 +94,7 @@ jobs:
       #       ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
 
       # - name: Docker cache
-      #   uses: int128/docker-build-cache-config-action@v1
+      #   uses: int128/docker-build-cache-config-action@v1.40.0
       #   id: cache_original
       #   with:
       #     image: ${{ env.IMAGE_ID }}/cache
