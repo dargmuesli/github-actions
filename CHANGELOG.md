@@ -1,3 +1,13 @@
+## [3.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.3...3.0.0-beta.4) (2025-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** drop cache variant
+
+### Features
+
+* **docker:** drop cache variant ([462bbbe](https://github.com/dargmuesli/github-actions/commit/462bbbe08e9d801101d19612c03281c28adc4ad0))
+
 ## [3.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.2...3.0.0-beta.3) (2025-11-06)
 
 ### Bug Fixes
