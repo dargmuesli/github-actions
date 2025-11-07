@@ -1,3 +1,9 @@
+## [3.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.5...3.0.0-beta.6) (2025-11-07)
+
+### Bug Fixes
+
+* **release-semantic:** only setup node on dependency installation ([8548a82](https://github.com/dargmuesli/github-actions/commit/8548a82e2c01f7357f76815730e9ae792a0cc569))
+
 ## [3.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.4...3.0.0-beta.5) (2025-11-07)
 
 ### ⚠ BREAKING CHANGES
