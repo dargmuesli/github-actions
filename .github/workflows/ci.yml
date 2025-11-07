@@ -19,7 +19,7 @@ jobs:
       pull-requests: read
   lint:
     needs: ci-optimization
-    if: needs.ci-optimization.outputs.continue == 'true'
+    if: needs.ci-optimization.outputs.continue
     name: Lint
     runs-on: ubuntu-latest
     permissions:
