@@ -53,7 +53,9 @@ jobs:
 
       - name: Setup package manager
         if: inputs.INSTALL_NODE_DEPENDENCIES
-        run: corepack enable
+        run: |
+          npm install -g corepack@latest
+          corepack enable
 
       - name: Setup Node
         if: inputs.INSTALL_NODE_DEPENDENCIES
