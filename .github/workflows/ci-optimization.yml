@@ -6,7 +6,7 @@ on:
   workflow_call:
     outputs:
       continue:
-        value: ${{ jobs.pr_analysis.outputs.pr_found == false || github.event_name == 'pull_request' }}
+        value: ${{ jobs.pr_analysis.outputs.pr_found == 'false' || github.event_name == 'pull_request' }}
 
 jobs:
   pr_analysis:
