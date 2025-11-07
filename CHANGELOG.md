@@ -1,3 +1,9 @@
+## [3.2.0](https://github.com/dargmuesli/github-actions/compare/3.1.0...3.2.0) (2025-11-07)
+
+### Features
+
+* **ci-optimization:** add personal access token secret ([20a4c0b](https://github.com/dargmuesli/github-actions/commit/20a4c0b98b028e568d1a89042857dbe1c3820178))
+
 ## [3.1.0](https://github.com/dargmuesli/github-actions/compare/3.0.0...3.1.0) (2025-11-07)
 
 ### Features
