@@ -1,3 +1,9 @@
+## [3.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.6...3.0.0-beta.7) (2025-11-07)
+
+### Features
+
+* install latest corepack ([61ac9d2](https://github.com/dargmuesli/github-actions/commit/61ac9d2a94ba9fbf5a1022b797c8d851980688fa))
+
 ## [3.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.5...3.0.0-beta.6) (2025-11-07)
 
 ### Bug Fixes
