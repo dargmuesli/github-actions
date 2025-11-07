@@ -35,11 +35,9 @@ jobs:
         run: |
           tar -xzvf build-artifact.tar
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@f0a1cd58cd66095dee69bfa18fa5efd1dde93bca # v1.5.0
+        uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ inputs.ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          branch: ${{ inputs.BRANCH }}
-          directory: ${{ inputs.DIRECTORY || '.' }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }} # set this to enable GitHub deployments
-          projectName: ${{ inputs.PROJECT_NAME }}
+          command: pages deploy ${{ inputs.DIRECTORY || '.' }} --project-name=${{ inputs.PROJECT_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
