@@ -1,3 +1,9 @@
+## [3.1.0-beta.1](https://github.com/dargmuesli/github-actions/compare/3.0.0...3.1.0-beta.1) (2025-11-07)
+
+### Features
+
+* **deploy-cloudflare-pages:** switch to wrangler action ([c5323a2](https://github.com/dargmuesli/github-actions/commit/c5323a29ab98a662a2addfeda73e3ca9338fab34))
+
 ## [3.0.0](https://github.com/dargmuesli/github-actions/compare/2.8.0...3.0.0) (2025-11-07)
 
 ### ⚠ BREAKING CHANGES
