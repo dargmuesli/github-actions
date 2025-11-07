@@ -51,16 +51,15 @@ jobs:
           packages: ${{ inputs.APT_PACKAGES }}
           version: 1.0
 
+      - name: Setup package manager
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           cache: ${{ inputs.PACKAGE_MANAGER }}
           node-version: ${{ inputs.NODE_VERSION }}
           node-version-file: ${{ inputs.NODE_VERSION_FILE }}
-
-      - name: Setup package manager
-        if: inputs.INSTALL_NODE_DEPENDENCIES
-        run: corepack enable
 
       - name: Install dependencies
         if: inputs.INSTALL_NODE_DEPENDENCIES
