@@ -4,6 +4,8 @@ permissions: {}
 
 on:
   workflow_call:
+    secrets:
+      PERSONAL_ACCESS_TOKEN:
     outputs:
       continue:
         value: ${{ jobs.pr_analysis.outputs.pr_found == 'false' || github.event_name == 'pull_request' }}
@@ -23,3 +25,4 @@ jobs:
         with:
           filterOutClosed: true
           filterOutDraft: true
+          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
