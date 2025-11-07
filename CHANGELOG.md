@@ -1,3 +1,21 @@
+## [3.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.4...3.0.0-beta.5) (2025-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** upgrade semantic release to v25.0.1
+* rework node setup
+
+### Features
+
+* **release-schedule:** drop content read permissions ([fddedb6](https://github.com/dargmuesli/github-actions/commit/fddedb6c72a4fea71d83b072261ca7b563bc540d))
+* **release-semantic:** upgrade semantic release to v25.0.1 ([305b1f5](https://github.com/dargmuesli/github-actions/commit/305b1f5397cea93dd47a856eccb9f883f8dca140))
+* rework node setup ([99b2c46](https://github.com/dargmuesli/github-actions/commit/99b2c469331b56d5be5ca655d4609434d94018a1))
+
+### Bug Fixes
+
+* **ci-optimization:** correct boolean output type ([8efba40](https://github.com/dargmuesli/github-actions/commit/8efba40a1e181d5055f0214da94ef25438881842))
+* revert corepack order ([9365045](https://github.com/dargmuesli/github-actions/commit/93650456739406008f9e137cfad5d00532334886))
+
 ## [3.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.3...3.0.0-beta.4) (2025-11-07)
 
 ### ⚠ BREAKING CHANGES
