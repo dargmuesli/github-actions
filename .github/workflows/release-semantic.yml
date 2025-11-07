@@ -13,6 +13,11 @@ on:
         type: string
       INSTALL_NODE_DEPENDENCIES:
         type: boolean
+      NODE_VERSION:
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
       PACKAGE_MANAGER:
         default: pnpm
         type: string
@@ -44,6 +49,13 @@ jobs:
         with:
           packages: ${{ inputs.APT_PACKAGES }}
           version: 1.0
+
+      - name: Setup Node
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
       - name: Setup package manager
         if: inputs.INSTALL_NODE_DEPENDENCIES
