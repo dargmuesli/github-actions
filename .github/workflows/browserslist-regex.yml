@@ -1,17 +1,18 @@
 name: 'Browserslist: Regex'
 
+permissions: {}
+
 on:
   workflow_call:
     inputs:
-      CACHE_PATH:
-        default: pnpm-lock.yaml
-        type: string
       DIRECTORY:
         default: ./
         type: string
       NODE_VERSION:
-        default: 24
-        type: number
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
       OUTPUT_PATH:
         default: supportedBrowsers.js
         type: string
@@ -38,14 +39,16 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
       - name: Setup package manager
-        run: corepack enable
+        run: |
+          npm install -g corepack@latest
+          corepack enable
 
       - name: Setup Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           cache: ${{ inputs.PACKAGE_MANAGER }}
-          cache-dependency-path: ${{ inputs.CACHE_PATH }}
           node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
       - name: Add Ubuntu repositories
         if: inputs.UBUNTU_REPOSITORIES != ''

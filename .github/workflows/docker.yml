@@ -1,5 +1,7 @@
 name: Docker
 
+permissions: {}
+
 on:
   workflow_call:
     inputs:
@@ -82,6 +84,21 @@ jobs:
             type=semver,pattern={{major}}.{{minor}},value=${{ inputs.TAG }}
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
 
+      # - name: Docker cache
+      #   uses: dargmuesli/docker-build-cache-config-action@43fbb9a6f14c0b5e05091af2f0a5c38cdb65c0e3 # v1.14.0
+      #   id: cache
+      #   with:
+      #     image: ${{ env.IMAGE_ID }}/cache
+      #     tag-prefix: |
+      #       ${{ inputs.BUILD_TARGET_RELEASE }}_
+      #       ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
+
+      # - name: Docker cache
+      #   uses: int128/docker-build-cache-config-action@v1
+      #   id: cache_original
+      #   with:
+      #     image: ${{ env.IMAGE_ID }}/cache
+
       - name: Build and push
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
@@ -91,8 +108,8 @@ jobs:
             ${{ inputs.BUILD_ARGUMENTS }}
             ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
-          # cache-from: ${{ env.IMAGE_ID }}:cache
-          # cache-to: ${{ steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' && format('{0}:{1}', env.IMAGE_ID, 'cache') || '' }}
+          # cache-from: ${{ steps.cache.outputs.cache-from }}
+          # cache-to: ${{ steps.cache.outputs.cache-to }}
           context: ${{ inputs.CONTEXT || '.' }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
@@ -109,7 +126,7 @@ jobs:
             ${{ inputs.BUILD_ARGUMENTS }}
             ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
-          # cache-from: ${{ env.IMAGE_ID }}:cache
+          # cache-from: ${{ steps.cache.outputs.cache-from }}
           context: ${{ inputs.CONTEXT || '.' }}
           load: true
           push: false

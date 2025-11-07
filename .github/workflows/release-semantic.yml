@@ -1,7 +1,6 @@
 name: 'Release: Semantic'
 
-permissions:
-  contents: write
+permissions: {}
 
 on:
   workflow_call:
@@ -12,11 +11,17 @@ on:
         type: boolean
       EXTRA_PLUGINS:
         type: string
+      INSTALL_NODE_DEPENDENCIES:
+        type: boolean
+      NODE_VERSION:
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
       PACKAGE_MANAGER:
         default: pnpm
         type: string
     secrets:
-      NPM_TOKEN:
       PERSONAL_ACCESS_TOKEN:
         required: true
     outputs:
@@ -25,9 +30,12 @@ on:
 
 jobs:
   semantic-release:
+    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name) # semantic-release does not run on pull requests, so accounting for `github.head_ref` in addition to `github.ref_name` does not make sense
     name: Semantic Release
     runs-on: ubuntu-latest
-    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name) # semantic-release does not run on pull requests, so accounting for `github.head_ref` in addition to `github.ref_name` does not make sense
+    permissions:
+      contents: write
+      id-token: write
     outputs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
@@ -44,15 +52,21 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: env.NPM_TOKEN != ''
-        run: corepack enable
+        if: inputs.INSTALL_NODE_DEPENDENCIES
+        run: |
+          npm install -g corepack@latest
+          corepack enable
+
+      - name: Setup Node
+        if: inputs.INSTALL_NODE_DEPENDENCIES
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
       - name: Install dependencies
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: env.NPM_TOKEN != ''
+        if: inputs.INSTALL_NODE_DEPENDENCIES
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
@@ -65,10 +79,9 @@ jobs:
             @semantic-release/git
             conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
-          semantic_version: 24.0.0
+          semantic_version: 25.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Beautify changelog
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'

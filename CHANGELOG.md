@@ -1,3 +1,70 @@
+## [3.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.6...3.0.0-beta.7) (2025-11-07)
+
+### Features
+
+* install latest corepack ([61ac9d2](https://github.com/dargmuesli/github-actions/commit/61ac9d2a94ba9fbf5a1022b797c8d851980688fa))
+
+## [3.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.5...3.0.0-beta.6) (2025-11-07)
+
+### Bug Fixes
+
+* **release-semantic:** only setup node on dependency installation ([8548a82](https://github.com/dargmuesli/github-actions/commit/8548a82e2c01f7357f76815730e9ae792a0cc569))
+
+## [3.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.4...3.0.0-beta.5) (2025-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** upgrade semantic release to v25.0.1
+* rework node setup
+
+### Features
+
+* **release-schedule:** drop content read permissions ([fddedb6](https://github.com/dargmuesli/github-actions/commit/fddedb6c72a4fea71d83b072261ca7b563bc540d))
+* **release-semantic:** upgrade semantic release to v25.0.1 ([305b1f5](https://github.com/dargmuesli/github-actions/commit/305b1f5397cea93dd47a856eccb9f883f8dca140))
+* rework node setup ([99b2c46](https://github.com/dargmuesli/github-actions/commit/99b2c469331b56d5be5ca655d4609434d94018a1))
+
+### Bug Fixes
+
+* **ci-optimization:** correct boolean output type ([8efba40](https://github.com/dargmuesli/github-actions/commit/8efba40a1e181d5055f0214da94ef25438881842))
+* revert corepack order ([9365045](https://github.com/dargmuesli/github-actions/commit/93650456739406008f9e137cfad5d00532334886))
+
+## [3.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.3...3.0.0-beta.4) (2025-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** drop cache variant
+
+### Features
+
+* **docker:** drop cache variant ([462bbbe](https://github.com/dargmuesli/github-actions/commit/462bbbe08e9d801101d19612c03281c28adc4ad0))
+
+## [3.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.2...3.0.0-beta.3) (2025-11-06)
+
+### Bug Fixes
+
+* **release-semantic:** reenable content write permissions ([f1e3fb9](https://github.com/dargmuesli/github-actions/commit/f1e3fb9d01781a2407eb84883cb9f5057a8cb686))
+
+## [3.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/3.0.0-beta.1...3.0.0-beta.2) (2025-11-06)
+
+### ⚠ BREAKING CHANGES
+
+* tweak permissions
+
+### Features
+
+* **ci:** extract optimization ([d4230e2](https://github.com/dargmuesli/github-actions/commit/d4230e25e1925027b086c2bb6e72ab6fd70acc01))
+* tweak permissions ([0b70e8a](https://github.com/dargmuesli/github-actions/commit/0b70e8a7185627943143b663a06b92a4ca58d1ab))
+
+## [3.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/2.7.0...3.0.0-beta.1) (2025-11-06)
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** drop npm token
+
+### Features
+
+* **release-semantic:** drop npm token ([41670e0](https://github.com/dargmuesli/github-actions/commit/41670e0bb0859e02541491c3b0b1c43ddd0256e1))
+
 ## [2.8.0](https://github.com/dargmuesli/github-actions/compare/2.7.0...2.8.0) (2025-11-06)
 
 ### Features

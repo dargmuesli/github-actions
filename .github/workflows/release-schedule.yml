@@ -1,5 +1,7 @@
 name: 'Release: Scheduled'
 
+permissions: {}
+
 on:
   schedule:
     - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
@@ -65,12 +67,10 @@ jobs:
           echo "contains(inputs.IS_DEBOUNCED, 'false') || steps.diff.outputs.timestamp-diff > 604800: ${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
 
   schedule-release:
-    name: Schedule release
-    runs-on: ubuntu-latest
     needs: analyze-tags
     if: contains(inputs.IS_DEBOUNCED, 'false') || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
-    permissions:
-      contents: read
+    name: Schedule release
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0

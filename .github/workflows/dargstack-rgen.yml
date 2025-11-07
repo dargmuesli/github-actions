@@ -1,19 +1,27 @@
 name: 'DargStack: rgen'
 
+permissions: {}
+
 on:
   workflow_call:
     inputs:
       APT_PACKAGES:
+        type: string
+      NODE_VERSION:
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
+      PACKAGE_MANAGER:
+        default: pnpm
         type: string
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [24]
+    permissions:
+      contents: read
     steps:
       - name: Checkout git repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -25,19 +33,22 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
-        run: corepack enable
+        run: |
+          npm install -g corepack@latest
+          corepack enable
 
       - name: Setup Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
-          cache: pnpm
-          node-version: ${{ matrix.node }}
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
       - name: Install dependencies
-        run: pnpm install
+        run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: dargstack rgen
-        run: pnpm dargstack_rgen --validate
+        run: ${{ inputs.PACKAGE_MANAGER }} exec dargstack_rgen --validate
 
       - name: dargstack derive
         run: |
