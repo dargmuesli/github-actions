@@ -70,7 +70,7 @@ jobs:
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
-        uses: cycjimmy/semantic-release-action@9cc899c47e6841430bbaedb43de1560a568dfd16 # v5.0.0
+        uses: cycjimmy/semantic-release-action@ba330626c4750c19d8299de843f05c7aa5574f62 # v5.0.2
         id: semantic-release
         with:
           dry_run: ${{ inputs.DRY_RUN }}
