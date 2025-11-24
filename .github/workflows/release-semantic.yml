@@ -79,7 +79,6 @@ jobs:
             @semantic-release/git
             conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
-          semantic_version: 25.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
 
