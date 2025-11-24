@@ -70,7 +70,7 @@ jobs:
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
-        uses: cycjimmy/semantic-release-action@ba330626c4750c19d8299de843f05c7aa5574f62 # v5.0.2
+        uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
         id: semantic-release
         with:
           dry_run: ${{ inputs.DRY_RUN }}
@@ -79,7 +79,6 @@ jobs:
             @semantic-release/git
             conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
-          semantic_version: 25.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
 
