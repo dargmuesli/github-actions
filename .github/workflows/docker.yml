@@ -106,7 +106,6 @@ jobs:
             ${{ inputs.BUILD_ADD_HOSTS }}
           build-args: |
             ${{ inputs.BUILD_ARGUMENTS }}
-            ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ steps.cache.outputs.cache-from }}
           # cache-to: ${{ steps.cache.outputs.cache-to }}
@@ -114,6 +113,8 @@ jobs:
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
           push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
           tags: ${{ steps.docker_meta.outputs.tags }}
 
       - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
@@ -124,12 +125,13 @@ jobs:
             ${{ inputs.BUILD_ADD_HOSTS }}
           build-args: |
             ${{ inputs.BUILD_ARGUMENTS }}
-            ${{ secrets.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
           # cache-from: ${{ steps.cache.outputs.cache-from }}
           context: ${{ inputs.CONTEXT || '.' }}
           load: true
           push: false
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
           tags: stage_build
           target: ${{ inputs.BUILD_TARGET_RELEASE }}
 
