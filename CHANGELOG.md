@@ -1,3 +1,13 @@
+## [4.0.0](https://github.com/dargmuesli/github-actions/compare/3.2.3...4.0.0) (2025-12-12)
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** properly set build secrets
+
+### Bug Fixes
+
+* **docker:** properly set build secrets ([6b7b210](https://github.com/dargmuesli/github-actions/commit/6b7b210e819a456abfe4c7929f884ca8ca305520))
+
 ## [4.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/3.2.3...4.0.0-beta.1) (2025-12-11)
 
 ### ⚠ BREAKING CHANGES
