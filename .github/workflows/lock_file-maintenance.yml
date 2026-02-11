@@ -4,12 +4,6 @@ permissions: {}
 
 on:
   workflow_call:
-    inputs:
-      NODE_VERSION:
-        type: string
-      NODE_VERSION_FILE:
-        default: .nvmrc
-        type: string
     secrets:
       PERSONAL_ACCESS_TOKEN:
   workflow_dispatch:
@@ -80,21 +74,6 @@ jobs:
               echo "install_cmd=$install"
             } >> "$GITHUB_OUTPUT"
           fi
-
-      - name: Setup Node.js (npm/yarn/pnpm)
-        if: steps.lock-file.outputs.package_manager != 'bun'
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-        with:
-          cache: ${{ steps.lock-file.outputs.package_manager }}
-          node-version: ${{ inputs.NODE_VERSION }}
-          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
-
-      - name: Setup Node.js (bun)
-        if: steps.lock-file.outputs.package_manager == 'bun'
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-        with:
-          node-version: ${{ inputs.NODE_VERSION }}
-          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
       - name: Enable Corepack
         if: steps.lock-file.outputs.package_manager != 'bun'
