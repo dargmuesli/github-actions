@@ -1,3 +1,9 @@
+## [4.0.7](https://github.com/dargmuesli/github-actions/compare/4.0.6...4.0.7) (2026-02-11)
+
+### Bug Fixes
+
+* schedule release ([6acdf25](https://github.com/dargmuesli/github-actions/commit/6acdf259cc8ae178063d4ff1092f78462d78894b))
+
 ## [4.0.6](https://github.com/dargmuesli/github-actions/compare/4.0.5...4.0.6) (2026-02-04)
 
 ### Bug Fixes
