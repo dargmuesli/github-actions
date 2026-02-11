@@ -1,0 +1,121 @@
+name: "Lock File: Maintenance"
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      NODE_VERSION:
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
+    secrets:
+      PERSONAL_ACCESS_TOKEN:
+  workflow_dispatch:
+
+jobs:
+  lock_file-maintenance:
+    name: Lock File Maintenance
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Detect package manager
+        id: lock-file
+        run: |
+          count=0
+          pm=""
+          path=""
+          install=""
+          found=""
+
+          if [ -f "bun.lockb" ]; then
+            count=$((count + 1))
+            pm="bun"
+            path="bun.lockb"
+            install="bun install --lockfile-only"
+            found="${found:+$found, }bun.lockb"
+          fi
+
+          if [ -f "package-lock.json" ]; then
+            count=$((count + 1))
+            pm="npm"
+            path="package-lock.json"
+            install="npm install --package-lock-only"
+            found="${found:+$found, }package-lock.json"
+          fi
+
+          if [ -f "pnpm-lock.yaml" ]; then
+            count=$((count + 1))
+            pm="pnpm"
+            path="pnpm-lock.yaml"
+            install="pnpm install --lockfile-only"
+            found="${found:+$found, }pnpm-lock.yaml"
+          fi
+
+          if [ -f "yarn.lock" ]; then
+            count=$((count + 1))
+            pm="yarn"
+            path="yarn.lock"
+            install="yarn install"
+            found="${found:+$found, }yarn.lock"
+          fi
+
+          if [ "$count" -eq 0 ]; then
+            echo "No lock file found" >&2
+            exit 1
+          elif [ "$count" -gt 1 ]; then
+            echo "Multiple lock files found at repository root: $found" >&2
+            echo "Refusing to proceed to avoid updating the wrong lock file." >&2
+            exit 1
+          else
+            {
+              echo "package_manager=$pm"
+              echo "path=$path"
+              echo "install_cmd=$install"
+            } >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js (npm/yarn/pnpm)
+        if: steps.lock-file.outputs.package_manager != 'bun'
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          cache: ${{ steps.lock-file.outputs.package_manager }}
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
+
+      - name: Setup Node.js (bun)
+        if: steps.lock-file.outputs.package_manager == 'bun'
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
+
+      - name: Enable Corepack
+        if: steps.lock-file.outputs.package_manager != 'bun'
+        run: corepack enable
+
+      - name: Install bun
+        if: steps.lock-file.outputs.package_manager == 'bun'
+        uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2.1.2
+
+      - name: Remove lock file
+        run: rm -f ${{ steps.lock-file.outputs.path }}
+
+      - name: Install dependencies
+        run: ${{ steps.lock-file.outputs.install_cmd }}
+
+      - name: Create Pull Request
+        id: pull-request
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          body: |
+            🔧 This Pull Request updates lock files to use the latest dependency versions.
+          branch: chore/deps/lock_file-maintenance
+          commit-message: "chore(deps): lock file maintenance"
+          title: "chore(deps): lock file maintenance"
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
