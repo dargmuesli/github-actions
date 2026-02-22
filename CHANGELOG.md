@@ -1,3 +1,10 @@
+## [4.3.0](https://github.com/dargmuesli/github-actions/compare/4.2.3...4.3.0) (2026-02-22)
+
+### Features
+
+* **browserlist-regex-app:** add ([b676ca8](https://github.com/dargmuesli/github-actions/commit/b676ca8f562f7af474ff67bce9fb84909e78fd30))
+* **release-schedule-app:** add ([4dc4e75](https://github.com/dargmuesli/github-actions/commit/4dc4e75d11367867dc5aa2c061775cf44dab878a))
+
 ## [4.2.3](https://github.com/dargmuesli/github-actions/compare/4.2.2...4.2.3) (2026-02-22)
 
 ### Bug Fixes
