@@ -1,3 +1,9 @@
+## [4.2.3](https://github.com/dargmuesli/github-actions/compare/4.2.2...4.2.3) (2026-02-22)
+
+### Bug Fixes
+
+* **ci:** test app ([e919cfe](https://github.com/dargmuesli/github-actions/commit/e919cfe5cfcddcf30aefe88e530d4d2bc8dfb281))
+
 ## [4.2.2](https://github.com/dargmuesli/github-actions/compare/4.2.1...4.2.2) (2026-02-22)
 
 ### Bug Fixes
