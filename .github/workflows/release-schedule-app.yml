@@ -1,0 +1,97 @@
+name: 'Release: Scheduled'
+
+permissions: {}
+
+on:
+  schedule:
+    - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
+  workflow_call:
+    inputs:
+      APP_ID:
+        required: true
+        type: string
+      IS_DEBOUNCED:
+        default: ${{ github.event_name != 'workflow_dispatch' }}
+        type: boolean
+    secrets:
+      APP_PRIVATE_KEY:
+        required: true
+      PERSONAL_ACCESS_TOKEN:
+        required: true
+  workflow_dispatch:
+    inputs:
+      IS_DEBOUNCED:
+        default: true
+        type: boolean
+
+jobs:
+  analyze-tags:
+    name: Analyze tags
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      previous-tag: ${{ steps.previoustag.outputs.tag }}
+      timestamp-diff: ${{ steps.diff.outputs.timestamp-diff }}
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0 # fetch complete history to find the last git tag
+
+      - name: Get previous tag
+        id: previoustag
+        uses: WyriHaximus/github-action-get-previous-tag@61819f33034117e6c686e6a31dba995a85afc9de # v2.0.0
+
+      - name: Get seconds from previous tag to now
+        id: diff
+        shell: bash
+        env:
+          TIMESTAMP_TAG: ${{ steps.previoustag.outputs.timestamp }}
+        run: |
+          echo "$(($(printf '%(%s)T') - TIMESTAMP_TAG))"
+          echo "timestamp-diff=$(($(printf '%(%s)T') - TIMESTAMP_TAG))" >> "$GITHUB_OUTPUT"
+
+      - name: Debug
+        env:
+          TIMESTAMP_DIFF: ${{ steps.diff.outputs.timestamp-diff }}
+        run: |
+          echo "$TIMESTAMP_DIFF"
+          echo "-"
+          echo "inputs.IS_DEBOUNCED: ${{ inputs.IS_DEBOUNCED }}"
+          echo "inputs.IS_DEBOUNCED == '': ${{ inputs.IS_DEBOUNCED == '' }}"
+          echo "inputs.IS_DEBOUNCED == null: ${{ inputs.IS_DEBOUNCED == null }}"
+          echo "inputs.IS_DEBOUNCED > '': ${{ inputs.IS_DEBOUNCED > '' }}"
+          echo "-"
+          echo "inputs.IS_DEBOUNCED == false: ${{ inputs.IS_DEBOUNCED == false }}"
+          echo "inputs.IS_DEBOUNCED == 'false': ${{ inputs.IS_DEBOUNCED == 'false' }}"
+          echo "inputs.IS_DEBOUNCED == true: ${{ inputs.IS_DEBOUNCED == true }}"
+          echo "inputs.IS_DEBOUNCED == 'true': ${{ inputs.IS_DEBOUNCED == 'true' }}"
+          echo "-"
+          echo "steps.diff.outputs.timestamp-diff > 604800: ${{ steps.diff.outputs.timestamp-diff > 604800 }}"
+          echo "contains(inputs.IS_DEBOUNCED, 'false') || steps.diff.outputs.timestamp-diff > 604800: ${{ inputs.IS_DEBOUNCED == false || steps.diff.outputs.timestamp-diff > 604800 }}"
+
+  schedule-release:
+    needs: analyze-tags
+    if: contains(inputs.IS_DEBOUNCED, 'false') || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
+    name: Schedule release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ inputs.APP_ID || vars.APP_ID }}
+          permission-contents: write
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Checkout git repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ steps.app-token.outputs.token }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list, and is required to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        with:
+          commit_message: 'fix: schedule release'
+          commit_options: '--allow-empty'
+          skip_dirty_check: true
