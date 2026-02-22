@@ -1,3 +1,9 @@
+## [4.3.1](https://github.com/dargmuesli/github-actions/compare/4.3.0...4.3.1) (2026-02-22)
+
+### Bug Fixes
+
+* schedule release ([9ba62c5](https://github.com/dargmuesli/github-actions/commit/9ba62c536fb00bd3db3d8ea7c1bd9d2dbbec2a2b))
+
 ## [4.3.0](https://github.com/dargmuesli/github-actions/compare/4.2.3...4.3.0) (2026-02-22)
 
 ### Features
