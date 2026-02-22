@@ -1,3 +1,9 @@
+## [4.1.0](https://github.com/dargmuesli/github-actions/compare/4.0.8...4.1.0) (2026-02-22)
+
+### Features
+
+* **release-semantic-app:** add ([175f90a](https://github.com/dargmuesli/github-actions/commit/175f90a76ecd9603f86daa432bf6279997247160))
+
 ## [4.0.8](https://github.com/dargmuesli/github-actions/compare/4.0.7...4.0.8) (2026-02-22)
 
 ### Bug Fixes
