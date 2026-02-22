@@ -1,3 +1,9 @@
+## [4.1.1](https://github.com/dargmuesli/github-actions/compare/4.1.0...4.1.1) (2026-02-22)
+
+### Bug Fixes
+
+* **ci:** test app ([ffcc74f](https://github.com/dargmuesli/github-actions/commit/ffcc74fc1c4b83d8e42b063809ae612f46ee226e))
+
 ## [4.1.0](https://github.com/dargmuesli/github-actions/compare/4.0.8...4.1.0) (2026-02-22)
 
 ### Features
