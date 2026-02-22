@@ -1,3 +1,9 @@
+## [4.2.0](https://github.com/dargmuesli/github-actions/compare/4.1.1...4.2.0) (2026-02-22)
+
+### Features
+
+* **release-semantic-app:** use access token for semantic release ([dc09002](https://github.com/dargmuesli/github-actions/commit/dc0900292334b53025934291d2d70cc11fe5c7e5))
+
 ## [4.1.1](https://github.com/dargmuesli/github-actions/compare/4.1.0...4.1.1) (2026-02-22)
 
 ### Bug Fixes
