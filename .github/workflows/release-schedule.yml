@@ -7,12 +7,16 @@ on:
     - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
   workflow_call:
     inputs:
+      GH_APP_ID:
+        type: string
       IS_DEBOUNCED:
         default: ${{ github.event_name != 'workflow_dispatch' }}
         type: boolean
     secrets:
+      GH_APP_PRIVATE_KEY:
+        required: false
       PERSONAL_ACCESS_TOKEN:
-        required: true
+        required: false
   workflow_dispatch:
     inputs:
       IS_DEBOUNCED:
@@ -72,10 +76,19 @@ jobs:
     name: Schedule release
     runs-on: ubuntu-latest
     steps:
+      - name: Create app token
+        id: app-token
+        if: inputs.GH_APP_ID != ''
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: ${{ inputs.GH_APP_ID || vars.GH_APP_ID }}
+          permission-contents: write
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout git repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # personal access token required for `stefanzweifel/git-auto-commit-action` to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
+          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list, and is required to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
