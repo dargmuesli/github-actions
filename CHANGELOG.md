@@ -1,3 +1,9 @@
+## [4.0.8](https://github.com/dargmuesli/github-actions/compare/4.0.7...4.0.8) (2026-02-22)
+
+### Bug Fixes
+
+* **release-semantic:** use token for checkout ([9b05fb6](https://github.com/dargmuesli/github-actions/commit/9b05fb61bd2df03510d2af123efd2e4e6c8399da))
+
 ## [4.0.7](https://github.com/dargmuesli/github-actions/compare/4.0.6...4.0.7) (2026-02-11)
 
 ### Bug Fixes
