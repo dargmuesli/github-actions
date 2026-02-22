@@ -1,0 +1,101 @@
+name: 'Release: Semantic'
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      APP_ID:
+        required: true
+        type: string
+      APT_PACKAGES:
+        type: string
+      DRY_RUN:
+        type: boolean
+      EXTRA_PLUGINS:
+        type: string
+      INSTALL_NODE_DEPENDENCIES:
+        type: boolean
+      NODE_VERSION:
+        type: string
+      NODE_VERSION_FILE:
+        default: .nvmrc
+        type: string
+      PACKAGE_MANAGER:
+        default: pnpm
+        type: string
+    secrets:
+      APP_PRIVATE_KEY:
+        required: true
+      PERSONAL_ACCESS_TOKEN:
+        required: false
+    outputs:
+      new_release_version:
+        value: ${{ jobs.semantic-release.outputs.new_release_version }}
+
+jobs:
+  semantic-release:
+    if: inputs.DRY_RUN || github.ref_type == 'branch' && contains(fromJSON('["main", "master", "next", "next-major", "beta", "alpha"]'), github.ref_name) # semantic-release does not run on pull requests, so accounting for `github.head_ref` in addition to `github.ref_name` does not make sense
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
+    steps:
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ inputs.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Checkout git repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0 # fetch all history for all branches and tags
+          persist-credentials: false # allow to work around branch protection in the `cycjimmy/semantic-release-action` job if the app is in the bypass list
+          # token: ${{ steps.app-token.outputs.token }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list
+
+      - uses: awalsh128/cache-apt-pkgs-action@acb598e5ddbc6f68a970c5da0688d2f3a9f04d05 # v1.6.0
+        if: inputs.APT_PACKAGES != ''
+        with:
+          packages: ${{ inputs.APT_PACKAGES }}
+          version: 1.0
+
+      - name: Setup package manager
+        if: inputs.INSTALL_NODE_DEPENDENCIES
+        run: |
+          npm install -g corepack@latest
+          corepack enable
+
+      - name: Setup Node
+        if: inputs.INSTALL_NODE_DEPENDENCIES
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          cache: ${{ inputs.PACKAGE_MANAGER }}
+          node-version: ${{ inputs.NODE_VERSION }}
+          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
+
+      - name: Install dependencies
+        if: inputs.INSTALL_NODE_DEPENDENCIES
+        run: ${{ inputs.PACKAGE_MANAGER }} install
+
+      - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
+        uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
+        id: semantic-release
+        with:
+          dry_run: ${{ inputs.DRY_RUN }}
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
+            ${{ inputs.EXTRA_PLUGINS }}
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }} # required to create releases & comments on behalf of a custom user
+
+      - name: Beautify changelog
+        if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
+        run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
