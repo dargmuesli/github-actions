@@ -11,6 +11,8 @@ on:
         type: boolean
       EXTRA_PLUGINS:
         type: string
+      GH_APP_ID:
+        type: string
       INSTALL_NODE_DEPENDENCIES:
         type: boolean
       NODE_VERSION:
@@ -22,8 +24,10 @@ on:
         default: pnpm
         type: string
     secrets:
+      GH_APP_PRIVATE_KEY:
+        required: false
       PERSONAL_ACCESS_TOKEN:
-        required: true
+        required: false
     outputs:
       new_release_version:
         value: ${{ jobs.semantic-release.outputs.new_release_version }}
@@ -39,11 +43,23 @@ jobs:
     outputs:
       new_release_version: ${{ steps.semantic-release.outputs.new_release_version }}
     steps:
+      - name: Create app token
+        id: app-token
+        if: inputs.GH_APP_ID != ''
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: ${{ inputs.GH_APP_ID }}
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout git repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # will be used by git commits too, allows to work around branch protection if the user is in the bypass list
+          # persist-credentials: false # allow to work around branch protection in the `cycjimmy/semantic-release-action` job if the app is in the bypass list
+          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list
 
       - uses: awalsh128/cache-apt-pkgs-action@acb598e5ddbc6f68a970c5da0688d2f3a9f04d05 # v1.6.0
         if: inputs.APT_PACKAGES != ''
@@ -80,7 +96,7 @@ jobs:
             conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || steps.app-token.outputs.token }} # required to create releases & comments on behalf of a custom user
 
       - name: Beautify changelog
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
