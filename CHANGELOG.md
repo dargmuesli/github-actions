@@ -1,3 +1,13 @@
+## [5.0.0](https://github.com/dargmuesli/github-actions/compare/4.3.1...5.0.0) (2026-02-26)
+
+### ⚠ BREAKING CHANGES
+
+* drop app duplicates
+
+### Features
+
+* drop app duplicates ([5c7d6e4](https://github.com/dargmuesli/github-actions/commit/5c7d6e4bbe788369f4655b0f53a3b5f485b80585))
+
 ## [5.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/4.3.1...5.0.0-beta.1) (2026-02-22)
 
 ### ⚠ BREAKING CHANGES
