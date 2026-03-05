@@ -1,3 +1,9 @@
+## [5.1.0-beta.1](https://github.com/dargmuesli/github-actions/compare/5.0.0...5.1.0-beta.1) (2026-03-05)
+
+### Features
+
+* **deploy-cloudflare-pages:** install wrangler v4 ([5f8260e](https://github.com/dargmuesli/github-actions/commit/5f8260ec709ff6138a24e9d8b38eea68855308cb))
+
 ## [5.0.0](https://github.com/dargmuesli/github-actions/compare/4.3.1...5.0.0) (2026-02-26)
 
 ### ⚠ BREAKING CHANGES
