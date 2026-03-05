@@ -1,3 +1,9 @@
+## [5.1.0-beta.3](https://github.com/dargmuesli/github-actions/compare/5.1.0-beta.2...5.1.0-beta.3) (2026-03-05)
+
+### Bug Fixes
+
+* **deploy-cloudflare-pages:** set branch ([30d1f27](https://github.com/dargmuesli/github-actions/commit/30d1f2785f560697c42edbfdcbac0bad577da195))
+
 ## [5.1.0-beta.2](https://github.com/dargmuesli/github-actions/compare/5.1.0-beta.1...5.1.0-beta.2) (2026-03-05)
 
 ### Bug Fixes
