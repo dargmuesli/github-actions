@@ -1,3 +1,21 @@
+## [5.1.0-beta.3](https://github.com/dargmuesli/github-actions/compare/5.1.0-beta.2...5.1.0-beta.3) (2026-03-05)
+
+### Bug Fixes
+
+* **deploy-cloudflare-pages:** set branch ([30d1f27](https://github.com/dargmuesli/github-actions/commit/30d1f2785f560697c42edbfdcbac0bad577da195))
+
+## [5.1.0-beta.2](https://github.com/dargmuesli/github-actions/compare/5.1.0-beta.1...5.1.0-beta.2) (2026-03-05)
+
+### Bug Fixes
+
+* **deploy-cloudflare-pages:** set environment ([ae7b2a7](https://github.com/dargmuesli/github-actions/commit/ae7b2a775f9721bc26e5e4906186cf60fd1e0c81))
+
+## [5.1.0-beta.1](https://github.com/dargmuesli/github-actions/compare/5.0.0...5.1.0-beta.1) (2026-03-05)
+
+### Features
+
+* **deploy-cloudflare-pages:** install wrangler v4 ([5f8260e](https://github.com/dargmuesli/github-actions/commit/5f8260ec709ff6138a24e9d8b38eea68855308cb))
+
 ## [5.0.0](https://github.com/dargmuesli/github-actions/compare/4.3.1...5.0.0) (2026-02-26)
 
 ### ⚠ BREAKING CHANGES
