@@ -41,6 +41,5 @@ jobs:
         with:
           accountId: ${{ inputs.ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy ${{ inputs.DIRECTORY || '.' }} --project-name=${{ inputs.PROJECT_NAME }}
-          environment: ${{ inputs.BRANCH == github.event.repository.default_branch && 'production' || 'preview' }}
+          command: pages deploy ${{ inputs.DIRECTORY || '.' }} --branch ${{ inputs.BRANCH }} --project-name=${{ inputs.PROJECT_NAME }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
