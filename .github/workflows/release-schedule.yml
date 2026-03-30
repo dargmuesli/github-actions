@@ -78,7 +78,7 @@ jobs:
     steps:
       - name: Create app token
         id: app-token
-        if: inputs.GH_APP_ID != ''
+        if: inputs.GH_APP_ID != '' || vars.GH_APP_ID != ''
         uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
         with:
           app-id: ${{ inputs.GH_APP_ID || vars.GH_APP_ID }}
