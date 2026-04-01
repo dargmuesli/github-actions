@@ -1,3 +1,9 @@
+## [5.1.1](https://github.com/dargmuesli/github-actions/compare/5.1.0...5.1.1) (2026-04-01)
+
+### Bug Fixes
+
+* schedule release ([ada75fa](https://github.com/dargmuesli/github-actions/commit/ada75faeb60838814060054b4264988e56723496))
+
 ## [5.1.0](https://github.com/dargmuesli/github-actions/compare/5.0.0...5.1.0) (2026-03-05)
 
 ### Features
