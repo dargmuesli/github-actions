@@ -98,7 +98,7 @@ jobs:
       #     image: ${{ env.IMAGE_ID }}/cache
 
       - name: Build and push
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -117,7 +117,7 @@ jobs:
 
       - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
         if: inputs.ARTIFACT_PATH != ''
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -142,7 +142,7 @@ jobs:
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: build-artifact
           path: build-artifact.tar
