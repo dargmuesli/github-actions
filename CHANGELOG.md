@@ -1,3 +1,9 @@
+## [5.2.1](https://github.com/dargmuesli/github-actions/compare/5.2.0...5.2.1) (2026-04-27)
+
+### Bug Fixes
+
+* **docker:** correct app token condition ([a359647](https://github.com/dargmuesli/github-actions/commit/a359647405ce99de7b2dcd257714322205f096fe))
+
 ## [5.2.0](https://github.com/dargmuesli/github-actions/compare/5.1.3...5.2.0) (2026-04-27)
 
 ### Features
