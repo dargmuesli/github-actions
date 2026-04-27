@@ -1,3 +1,9 @@
+## [5.2.0](https://github.com/dargmuesli/github-actions/compare/5.1.3...5.2.0) (2026-04-27)
+
+### Features
+
+* **docker:** add app token ([70bf300](https://github.com/dargmuesli/github-actions/commit/70bf3007b0367391f20eadf6e1cdd9e8d2e1497d))
+
 ## [5.1.3](https://github.com/dargmuesli/github-actions/compare/5.1.2...5.1.3) (2026-04-22)
 
 ### Bug Fixes
