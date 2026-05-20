@@ -1,3 +1,9 @@
+## [5.2.4](https://github.com/dargmuesli/github-actions/compare/5.2.3...5.2.4) (2026-05-20)
+
+### Bug Fixes
+
+* schedule release ([bc68292](https://github.com/dargmuesli/github-actions/commit/bc68292fddb6159389b52b095ce6928fdf671496))
+
 ## [5.2.3](https://github.com/dargmuesli/github-actions/compare/5.2.2...5.2.3) (2026-05-13)
 
 ### Bug Fixes
