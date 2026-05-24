@@ -1,3 +1,9 @@
+## [5.2.6](https://github.com/dargmuesli/github-actions/compare/5.2.5...5.2.6) (2026-05-24)
+
+### Bug Fixes
+
+* **semantic-release:** use pnpm dlx over pnx ([4e12883](https://github.com/dargmuesli/github-actions/commit/4e12883d971c3f1bacba0a2edfd9ef9653e78d32))
+
 ## [5.2.5](https://github.com/dargmuesli/github-actions/compare/5.2.4...5.2.5) (2026-05-24)
 
 ### Bug Fixes
