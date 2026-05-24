@@ -9,6 +9,8 @@ on:
         type: string
       DRY_RUN:
         type: boolean
+      COREPACK_ENABLED:
+        type: boolean
       EXTRA_PLUGINS:
         type: string
       GH_APP_ID:
@@ -68,7 +70,7 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
-        if: inputs.INSTALL_NODE_DEPENDENCIES
+        if: inputs.INSTALL_NODE_DEPENDENCIES || inputs.COREPACK_ENABLED
         run: |
           npm install -g corepack@latest
           corepack enable

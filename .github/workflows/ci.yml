@@ -39,4 +39,5 @@ jobs:
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
     with:
+      COREPACK_ENABLED: true
       GH_APP_ID: ${{ vars.GH_APP_ID }}
