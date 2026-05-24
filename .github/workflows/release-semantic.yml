@@ -100,6 +100,13 @@ jobs:
 
       - name: Beautify changelog
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
-        run: npx changelogithub
+        run: |
+          if [ "${{ inputs.PACKAGE_MANAGER }}" = "pnpm" ]; then
+            pnx changelogithub
+          elif [ "${{ inputs.PACKAGE_MANAGER }}" = "yarn" ]; then
+            yarn dlx changelogithub
+          else
+            npx changelogithub
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
