@@ -102,7 +102,7 @@ jobs:
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
         run: |
           if [ "${{ inputs.PACKAGE_MANAGER }}" = "pnpm" ]; then
-            pnx changelogithub
+            pnpm dlx changelogithub
           elif [ "${{ inputs.PACKAGE_MANAGER }}" = "yarn" ]; then
             yarn dlx changelogithub
           else
