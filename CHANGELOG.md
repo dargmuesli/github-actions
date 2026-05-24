@@ -1,3 +1,9 @@
+## [5.3.0](https://github.com/dargmuesli/github-actions/compare/5.2.6...5.3.0) (2026-05-24)
+
+### Features
+
+* **release-semantic:** allow to enable corepack without installing dependencies ([f2f7a56](https://github.com/dargmuesli/github-actions/commit/f2f7a56ebb58a383c7bd51552abeed73c54b7a4a))
+
 ## [5.2.6](https://github.com/dargmuesli/github-actions/compare/5.2.5...5.2.6) (2026-05-24)
 
 ### Bug Fixes
