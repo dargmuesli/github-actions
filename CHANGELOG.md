@@ -1,3 +1,9 @@
+## [5.2.5](https://github.com/dargmuesli/github-actions/compare/5.2.4...5.2.5) (2026-05-24)
+
+### Bug Fixes
+
+* **release-semantic:** adapt to package manager for release changelog ([103d60d](https://github.com/dargmuesli/github-actions/commit/103d60dd29078fa361b3c7fbc808329804910ada))
+
 ## [5.2.4](https://github.com/dargmuesli/github-actions/compare/5.2.3...5.2.4) (2026-05-20)
 
 ### Bug Fixes
