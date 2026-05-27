@@ -1,3 +1,10 @@
+## [5.4.0](https://github.com/dargmuesli/github-actions/compare/5.3.0...5.4.0) (2026-05-27)
+
+### Features
+
+* **release-semantic:** enable corepack by default ([9f49622](https://github.com/dargmuesli/github-actions/commit/9f49622b37abaef843e1d3ed3c31ef90de2b2d5c))
+* **release-semantic:** enable exec plugin by default ([4f3edce](https://github.com/dargmuesli/github-actions/commit/4f3edcee027d4e6513b88881403d271b3d709592))
+
 ## [5.3.0](https://github.com/dargmuesli/github-actions/compare/5.2.6...5.3.0) (2026-05-24)
 
 ### Features
