@@ -95,6 +95,7 @@ jobs:
           dry_run: ${{ inputs.DRY_RUN }}
           extra_plugins: |
             @semantic-release/changelog
+            @semantic-release/exec
             @semantic-release/git
             conventional-changelog-conventionalcommits
             ${{ inputs.EXTRA_PLUGINS }}
