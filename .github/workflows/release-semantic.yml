@@ -10,6 +10,7 @@ on:
       DRY_RUN:
         type: boolean
       COREPACK_ENABLED:
+        default: true
         type: boolean
       EXTRA_PLUGINS:
         type: string
