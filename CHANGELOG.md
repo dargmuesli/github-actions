@@ -1,3 +1,14 @@
+## [5.5.0](https://github.com/dargmuesli/github-actions/compare/5.4.1...5.5.0) (2026-06-17)
+
+### Features
+
+* **docker:** enable caching ([43f1b25](https://github.com/dargmuesli/github-actions/commit/43f1b258f8ea9a566d793c9b045543e7f31f00ec))
+
+### Bug Fixes
+
+* **docker:** correct pull request check ([3375267](https://github.com/dargmuesli/github-actions/commit/33752671cef32c0a858ee88d5181b9c4eb1f8a6e))
+* schedule release ([f4925eb](https://github.com/dargmuesli/github-actions/commit/f4925eb8efd3056c7de942084d4122bd0665d5da))
+
 ## [5.4.1](https://github.com/dargmuesli/github-actions/compare/5.4.0...5.4.1) (2026-06-10)
 
 ### Bug Fixes
