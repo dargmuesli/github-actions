@@ -1,3 +1,9 @@
+## [5.5.1](https://github.com/dargmuesli/github-actions/compare/5.5.0...5.5.1) (2026-06-17)
+
+### Bug Fixes
+
+* **docker-caching:** do not cache docker target build ([afa4a12](https://github.com/dargmuesli/github-actions/commit/afa4a12da9a1978769eece18020e4ef1f6b44435))
+
 ## [5.5.0](https://github.com/dargmuesli/github-actions/compare/5.4.1...5.5.0) (2026-06-17)
 
 ### Features
