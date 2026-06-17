@@ -123,7 +123,6 @@ jobs:
           build-args: |
             ${{ inputs.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
-          cache-from: type=registry,ref=${{ format('{0}:buildcache', steps.vars.outputs.image-id) }}
           context: ${{ inputs.CONTEXT || '.' }}
           load: true
           push: false
