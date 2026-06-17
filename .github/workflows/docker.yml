@@ -72,21 +72,23 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ inputs.REGISTRY }}
 
-      - run: |
+      - name: Setup variables
+        id: vars
+        run: |
           IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
 
           if [ -n "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
             IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
           fi
 
-          echo "IMAGE_ID=$IMAGE_ID" >> "$GITHUB_ENV"
+          echo "image-id=$IMAGE_ID" >> "$GITHUB_OUTPUT"
 
       - name: Docker meta
         id: docker_meta
         uses: docker/metadata-action@80c7e94dd9b9319bd5eb7a0e0fe9291e23a2a2e9 # v6.1.0
         with:
           images: |
-            ${{ env.IMAGE_ID }}
+            ${{ steps.vars.outputs.image-id }}
           tags: |
             type=schedule
             type=raw,value=latest,enable={{is_default_branch}}
