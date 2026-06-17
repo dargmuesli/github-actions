@@ -65,7 +65,7 @@ jobs:
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5 # v4.1.0
 
       - name: Registry login
-        if: github.event_name != 'pull_request'
+        if: ${{ !startsWith(github.ref, 'refs/pull/') }}
         uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4.2.0
         with:
           username: ${{ github.actor }}
@@ -124,7 +124,7 @@ jobs:
           context: ${{ inputs.CONTEXT || '.' }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
-          push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && github.event_name != 'pull_request' }}
+          push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/') }}
           secrets: |
             ${{ secrets.BUILD_ARGUMENTS }}
           tags: ${{ steps.docker_meta.outputs.tags }}
