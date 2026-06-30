@@ -26,7 +26,7 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
+      - uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
         if: inputs.APT_PACKAGES != ''
         with:
           packages: ${{ inputs.APT_PACKAGES }}
