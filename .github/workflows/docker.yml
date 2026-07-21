@@ -28,10 +28,12 @@ on:
       PUSH:
         default: true
         type: boolean
-      TAG:
-        type: string
       REGISTRY:
         default: ghcr.io
+        type: string
+      SMOKE_TEST_SCRIPT:
+        type: string
+      TAG:
         type: string
     secrets:
       BUILD_ARGUMENTS:
@@ -110,6 +112,29 @@ jobs:
       #   id: cache_original
       #   with:
       #     image: ${{ env.IMAGE_ID }}/cache
+
+      - name: Build for smoke test
+        if: inputs.SMOKE_TEST_SCRIPT != ''
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        with:
+          add-hosts: |
+            ${{ inputs.BUILD_ADD_HOSTS }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ${{ inputs.CONTEXT || '.' }}
+          load: true
+          platforms: linux/amd64
+          push: false
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
+          tags: ${{ steps.vars.outputs.image-id }}:smoke-test
+
+      - name: Smoke test
+        if: inputs.SMOKE_TEST_SCRIPT != ''
+        env:
+          SMOKE_TEST_IMAGE: ${{ steps.vars.outputs.image-id }}:smoke-test
+        run: bash "${{ inputs.SMOKE_TEST_SCRIPT }}"
 
       - name: Build and push
         uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
