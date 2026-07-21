@@ -1,0 +1,172 @@
+name: Docker
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      ARTIFACT_PATH:
+        type: string
+      BUILD_ADD_HOSTS:
+        type: string
+      BUILD_ARGUMENTS:
+        type: string
+      BUILD_TARGET_RELEASE:
+        default: build
+        type: string
+      CONTEXT:
+        type: string
+      GH_APP_ID:
+        type: string
+      IMAGE_ID:
+        type: string
+      IMAGE_ID_SUFFIX:
+        type: string
+      PLATFORMS:
+        default: linux/amd64
+        type: string
+      PUSH:
+        default: true
+        type: boolean
+      REGISTRY:
+        default: ghcr.io
+        type: string
+      SMOKE_TEST_SCRIPT:
+        type: string
+      TAG:
+        type: string
+    secrets:
+      BUILD_ARGUMENTS:
+      GH_APP_PRIVATE_KEY:
+      PERSONAL_ACCESS_TOKEN:
+
+jobs:
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - name: Create app token
+        id: app-token
+        if: inputs.GH_APP_ID != ''
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ inputs.GH_APP_ID }}
+          permission-contents: write
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Checkout git repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # fetch all history for all branches and tags
+          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+
+      - name: Setup Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+
+      - name: Registry login
+        if: ${{ !startsWith(github.ref, 'refs/pull/') }}
+        uses: docker/login-action@af1e73f918a031802d376d3c8bbc3fe56130a9b0 # v4.4.0
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ${{ inputs.REGISTRY }}
+
+      - name: Setup variables
+        id: vars
+        run: |
+          IMAGE_ID=${{ inputs.IMAGE_ID || format('{0}/{1}', inputs.REGISTRY, github.repository) }}
+
+          if [ -n "${{ inputs.IMAGE_ID_SUFFIX }}" ]; then
+            IMAGE_ID="$IMAGE_ID-${{ inputs.IMAGE_ID_SUFFIX }}"
+          fi
+
+          echo "image-id=$IMAGE_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
+        with:
+          images: |
+            ${{ steps.vars.outputs.image-id }}
+          tags: |
+            type=schedule
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=semver,pattern={{version}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ inputs.TAG }}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
+
+      - name: Build for smoke test
+        if: inputs.SMOKE_TEST_SCRIPT != ''
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        with:
+          add-hosts: |
+            ${{ inputs.BUILD_ADD_HOSTS }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+          builder: ${{ steps.buildx.outputs.name }}
+          cache-from: type=gha,key=${{ github.ref_name }}
+          context: ${{ inputs.CONTEXT || '.' }}
+          load: true
+          platforms: linux/amd64
+          push: false
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
+          tags: ${{ steps.vars.outputs.image-id }}:smoke-test
+
+      - name: Smoke test
+        if: inputs.SMOKE_TEST_SCRIPT != ''
+        env:
+          SMOKE_TEST_IMAGE: ${{ steps.vars.outputs.image-id }}:smoke-test
+        run: bash "${{ inputs.SMOKE_TEST_SCRIPT }}"
+
+      - name: Build and push
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        with:
+          add-hosts: |
+            ${{ inputs.BUILD_ADD_HOSTS }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+          builder: ${{ steps.buildx.outputs.name }}
+          cache-from: type=gha,key=${{ github.ref_name }}
+          cache-to: ${{ inputs.PUSH && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && format('type=gha,mode=max,key={0}', github.ref_name) || '' }}
+          context: ${{ inputs.CONTEXT || '.' }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          platforms: ${{ inputs.PLATFORMS }}
+          push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/') }}
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+
+      - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
+        if: inputs.ARTIFACT_PATH != ''
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        with:
+          add-hosts: |
+            ${{ inputs.BUILD_ADD_HOSTS }}
+          build-args: |
+            ${{ inputs.BUILD_ARGUMENTS }}
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ${{ inputs.CONTEXT || '.' }}
+          load: true
+          push: false
+          secrets: |
+            ${{ secrets.BUILD_ARGUMENTS }}
+          tags: stage_build
+          target: ${{ inputs.BUILD_TARGET_RELEASE }}
+
+      - name: Create artifact
+        if: inputs.ARTIFACT_PATH != ''
+        run: |
+          docker container create --name extract stage_build
+          docker container cp extract:/srv/app/${{ inputs.ARTIFACT_PATH }} /tmp/actions/
+          tar -C /tmp/actions/ -czvf build-artifact.tar .
+
+      - name: Upload artifact
+        if: inputs.ARTIFACT_PATH != ''
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: build-artifact
+          path: build-artifact.tar
