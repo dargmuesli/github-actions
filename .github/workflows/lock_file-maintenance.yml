@@ -32,7 +32,7 @@ jobs:
             count=$((count + 1))
             pm="bun"
             path="bun.lockb"
-            install="bun install --lockfile-only"
+            install="bun install"
             found="${found:+$found, }bun.lockb"
           fi
 

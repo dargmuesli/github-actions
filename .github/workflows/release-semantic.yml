@@ -71,10 +71,14 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
-        if: inputs.INSTALL_NODE_DEPENDENCIES || inputs.COREPACK_ENABLED
+        if: (inputs.INSTALL_NODE_DEPENDENCIES || inputs.COREPACK_ENABLED) && inputs.PACKAGE_MANAGER != 'bun'
         run: |
           npm install -g corepack@latest
           corepack enable
+
+      - name: Setup bun
+        if: (inputs.INSTALL_NODE_DEPENDENCIES || inputs.COREPACK_ENABLED) && inputs.PACKAGE_MANAGER == 'bun'
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       - name: Setup Node
         if: inputs.INSTALL_NODE_DEPENDENCIES
@@ -105,12 +109,11 @@ jobs:
       - name: Beautify changelog
         if: inputs.DRY_RUN == false && steps.semantic-release.outputs.new_release_published == 'true'
         run: |
-          if [ "${{ inputs.PACKAGE_MANAGER }}" = "pnpm" ]; then
-            pnpm dlx changelogithub
-          elif [ "${{ inputs.PACKAGE_MANAGER }}" = "yarn" ]; then
-            yarn dlx changelogithub
-          else
-            npx changelogithub
-          fi
+          case "${{ inputs.PACKAGE_MANAGER }}" in
+            pnpm)   pnpm dlx changelogithub ;;
+            yarn)   yarn dlx changelogithub ;;
+            bun)    bunx changelogithub ;;
+            *)      npx changelogithub ;;
+          esac
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
