@@ -1,3 +1,5 @@
+## [5.9.0](https://github.com/dargmuesli/github-actions/compare/5.8.3...5.9.0) (2026-07-24)
+
 ## [5.8.3](https://github.com/dargmuesli/github-actions/compare/5.8.2...5.8.3) (2026-07-24)
 
 ## [5.8.2](https://github.com/dargmuesli/github-actions/compare/5.8.1...5.8.2) (2026-07-24)
