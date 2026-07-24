@@ -125,10 +125,19 @@ jobs:
           npm install -g corepack@latest
           corepack enable
 
+      - name: Detect lockfile
+        id: lockfile
+        run: |
+          case "${{ inputs.PACKAGE_MANAGER }}" in
+            yarn) LOCKFILE="yarn.lock" ;;
+            pnpm) LOCKFILE="pnpm-lock.yaml" ;;
+          esac
+          [ -n "$LOCKFILE" ] && [ -f "$LOCKFILE" ] && echo "file=$LOCKFILE" >> "$GITHUB_OUTPUT"
+
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          cache: ${{ inputs.PACKAGE_MANAGER }}
+          cache: ${{ inputs.PACKAGE_MANAGER == 'npm' && 'npm' || steps.lockfile.outputs.file && inputs.PACKAGE_MANAGER || '' }}
           node-version: ${{ inputs.NODE_VERSION }}
           node-version-file: ${{ inputs.NODE_VERSION_FILE }}
 
