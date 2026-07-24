@@ -52,9 +52,14 @@ jobs:
           token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list, and is required to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
       - name: Setup package manager
+        if: inputs.PACKAGE_MANAGER != 'bun'
         run: |
           npm install -g corepack@latest
           corepack enable
+
+      - name: Setup bun
+        if: inputs.PACKAGE_MANAGER == 'bun'
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -90,8 +95,29 @@ jobs:
         shell: bash
         run: |
           set -e
+
+          run_bin() {
+            case "$PACKAGE_MANAGER" in
+              npm)    npx --no-install "$@" ;;
+              pnpm)   pnpm exec "$@" ;;
+              yarn)   yarn "$@" ;;
+              bun)    bunx "$@" ;;
+              *)      echo "Unsupported package manager: $PACKAGE_MANAGER" >&2; exit 1 ;;
+            esac
+          }
+
+          frozen_install() {
+            case "$PACKAGE_MANAGER" in
+              npm)    npm ci ;;
+              pnpm)   pnpm install --frozen-lockfile ;;
+              yarn)   yarn install --frozen-lockfile ;;
+              bun)    bun install --frozen-lockfile ;;
+              *)      echo "Unsupported package manager: $PACKAGE_MANAGER" >&2; exit 1 ;;
+            esac
+          }
+
           cd "$DIRECTORY"
-          "$PACKAGE_MANAGER" install --frozen-lockfile
+          frozen_install
 
           if [ "${{ steps.type.outputs.value }}" = "module" ]; then
             prefix="export default"
@@ -99,10 +125,10 @@ jobs:
             prefix="module.exports ="
           fi
 
-          echo "$prefix $("$PACKAGE_MANAGER" browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
+          echo "$prefix $(run_bin browserslist-useragent-regexp --allowHigherVersions);" > "$OUTPUT_PATH"
 
           if [ -f "node_modules/.bin/eslint" ]; then
-            "$PACKAGE_MANAGER" eslint --fix "$OUTPUT_PATH"
+            run_bin eslint --fix "$OUTPUT_PATH"
           fi
 
       - name: Commit changes

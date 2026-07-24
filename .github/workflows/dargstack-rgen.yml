@@ -33,9 +33,14 @@ jobs:
           version: 1.0
 
       - name: Setup package manager
+        if: inputs.PACKAGE_MANAGER != 'bun'
         run: |
           npm install -g corepack@latest
           corepack enable
+
+      - name: Setup bun
+        if: inputs.PACKAGE_MANAGER == 'bun'
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -48,7 +53,15 @@ jobs:
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: dargstack rgen
-        run: ${{ inputs.PACKAGE_MANAGER }} exec dargstack_rgen --validate
+        shell: bash
+        run: |
+          case "${{ inputs.PACKAGE_MANAGER }}" in
+            npm)    npx --no-install dargstack_rgen --validate ;;
+            pnpm)   pnpm exec dargstack_rgen --validate ;;
+            yarn)   yarn dargstack_rgen --validate ;;
+            bun)    bunx dargstack_rgen --validate ;;
+            *)      echo "Unsupported package manager: ${{ inputs.PACKAGE_MANAGER }}" >&2; exit 1 ;;
+          esac
 
       - name: dargstack derive
         run: |
