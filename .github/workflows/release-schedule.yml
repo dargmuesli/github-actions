@@ -7,24 +7,11 @@ on:
     - cron: '0 0 * * 3' # Every Wednesday at 00:00 AM UTC on the default branch
   workflow_call:
     inputs:
-      EXTRA_PLUGINS:
-        type: string
       GH_APP_ID:
         type: string
       IS_DEBOUNCED:
         default: ${{ github.event_name != 'workflow_dispatch' }}
         type: boolean
-      NODE_VERSION:
-        default: '22'
-        type: string
-      NODE_VERSION_FILE:
-        type: string
-      PACKAGE_MANAGER:
-        default: npm
-        type: string
-      RELEASE_AS:
-        default: patch
-        type: string
     secrets:
       GH_APP_PRIVATE_KEY:
         required: false
@@ -32,22 +19,9 @@ on:
         required: false
   workflow_dispatch:
     inputs:
-      EXTRA_PLUGINS:
-        type: string
       IS_DEBOUNCED:
         default: true
         type: boolean
-      NODE_VERSION:
-        default: '22'
-        type: string
-      NODE_VERSION_FILE:
-        type: string
-      PACKAGE_MANAGER:
-        default: npm
-        type: string
-      RELEASE_AS:
-        default: patch
-        type: string
 
 jobs:
   analyze-tags:
@@ -101,9 +75,6 @@ jobs:
     if: contains(inputs.IS_DEBOUNCED, 'false') || needs.analyze-tags.outputs.timestamp-diff > 604800 # 604800 equal one week.
     name: Schedule release
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
     steps:
       - name: Create app token
         id: app-token
@@ -117,56 +88,11 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 0
-          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list, and is required to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
-      - name: Setup package manager
-        run: |
-          npm install -g corepack@latest
-          corepack enable
-
-      - name: Detect lockfile
-        id: lockfile
-        run: |
-          case "${{ inputs.PACKAGE_MANAGER }}" in
-            yarn) LOCKFILE="yarn.lock" ;;
-            pnpm) LOCKFILE="pnpm-lock.yaml" ;;
-          esac
-          if [ -n "$LOCKFILE" ] && [ -f "$LOCKFILE" ]; then
-            echo "file=$LOCKFILE" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Setup Node
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
-          cache: ${{ inputs.PACKAGE_MANAGER == 'npm' && 'npm' || steps.lockfile.outputs.file && inputs.PACKAGE_MANAGER || '' }}
-          node-version: ${{ inputs.NODE_VERSION }}
-          node-version-file: ${{ inputs.NODE_VERSION_FILE }}
-
-      - name: Release (forced)
-        run: |
-          PACKAGES=" \
-            @semantic-release/changelog \
-            @semantic-release/commit-analyzer \
-            @semantic-release/exec \
-            @semantic-release/git \
-            @semantic-release/github \
-            @semantic-release/release-notes-generator \
-            conventional-changelog-conventionalcommits \
-            $EXTRA_PLUGINS \
-            semantic-release"
-          if [ "$PACKAGE_MANAGER" = "pnpm" ]; then
-            pnpm add --dev $PACKAGES
-            pnpm exec semantic-release --release-as "$RELEASE_AS"
-          elif [ "$PACKAGE_MANAGER" = "yarn" ]; then
-            yarn add -D $PACKAGES
-            yarn semantic-release --release-as "$RELEASE_AS"
-          else
-            npm install --save-dev $PACKAGES
-            npx semantic-release --release-as "$RELEASE_AS"
-          fi
-        env:
-          EXTRA_PLUGINS: ${{ inputs.EXTRA_PLUGINS }}
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || steps.app-token.outputs.token || github.token }}
-          PACKAGE_MANAGER: ${{ inputs.PACKAGE_MANAGER }}
-          RELEASE_AS: ${{ inputs.RELEASE_AS }}
+          commit_message: 'fix: schedule release'
+          commit_options: '--allow-empty'
+          skip_dirty_check: true
