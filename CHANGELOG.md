@@ -1,3 +1,10 @@
+## [5.9.3](https://github.com/dargmuesli/github-actions/compare/5.9.2...5.9.3) (2026-08-19)
+
+### Bug Fixes
+
+* **release-semantic:** pin conventional-changelog-conventionalcommits to v9 ([#110](https://github.com/dargmuesli/github-actions/issues/110)) ([9b9f0b5](https://github.com/dargmuesli/github-actions/commit/9b9f0b52c671d77ae4d0c6660f0e24d5bed7fcc4))
+* schedule release ([361d73e](https://github.com/dargmuesli/github-actions/commit/361d73ed70f659a41d20354440cf8c27c819454f))
+
 ## [5.9.2](https://github.com/dargmuesli/github-actions/compare/5.9.1...5.9.2) (2026-08-09)
 
 ## [5.9.1](https://github.com/dargmuesli/github-actions/compare/5.9.0...5.9.1) (2026-08-05)
