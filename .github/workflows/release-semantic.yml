@@ -97,11 +97,12 @@ jobs:
         id: semantic-release
         with:
           dry_run: ${{ inputs.DRY_RUN }}
+          # conventional-changelog-conventionalcommits@10 requires conventional-changelog-writer@9+, newer than what @semantic-release/release-notes-generator currently bundles
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/exec
             @semantic-release/git
-            conventional-changelog-conventionalcommits@9 # v10 requires conventional-changelog-writer@9+, newer than what @semantic-release/release-notes-generator currently bundles
+            conventional-changelog-conventionalcommits@9
             ${{ inputs.EXTRA_PLUGINS }}
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || steps.app-token.outputs.token }} # required to create releases & comments on behalf of a custom user
