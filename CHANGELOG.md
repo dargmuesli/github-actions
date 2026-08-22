@@ -1,3 +1,9 @@
+## [5.9.4](https://github.com/dargmuesli/github-actions/compare/5.9.3...5.9.4) (2026-08-22)
+
+### Bug Fixes
+
+* **release-semantic:** move comment ([79d80a1](https://github.com/dargmuesli/github-actions/commit/79d80a1d158d6c2c1a3c89cf3f433307bb6533da))
+
 ## [5.9.3](https://github.com/dargmuesli/github-actions/compare/5.9.2...5.9.3) (2026-08-19)
 
 ### Bug Fixes
