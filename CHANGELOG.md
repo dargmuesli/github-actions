@@ -1,3 +1,9 @@
+## [5.9.11](https://github.com/dargmuesli/github-actions/compare/5.9.10...5.9.11) (2026-10-28)
+
+### Bug Fixes
+
+* schedule release ([5a38a58](https://github.com/dargmuesli/github-actions/commit/5a38a58d668be31e9435beeb6d4bb5dabab735b8))
+
 ## [5.9.10](https://github.com/dargmuesli/github-actions/compare/5.9.9...5.9.10) (2026-10-21)
 
 ### Bug Fixes
