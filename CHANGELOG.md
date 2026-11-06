@@ -1,3 +1,9 @@
+## [5.9.13](https://github.com/dargmuesli/github-actions/compare/5.9.12...5.9.13) (2026-11-06)
+
+### Bug Fixes
+
+* **ci-optimization:** replace node20 pr lookup action ([#113](https://github.com/dargmuesli/github-actions/issues/113)) ([eedec9a](https://github.com/dargmuesli/github-actions/commit/eedec9a8494f14979a5d72b12f5466e0c18e933a))
+
 ## [5.9.12](https://github.com/dargmuesli/github-actions/compare/5.9.11...5.9.12) (2026-11-04)
 
 ### Bug Fixes
