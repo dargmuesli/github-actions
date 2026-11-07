@@ -1,0 +1,35 @@
+name: GHCR Cleanup
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      DRY_RUN:
+        default: false
+        type: boolean
+      KEEP_UNTAGGED_FOR:
+        default: 14 days
+        type: string
+      PACKAGE:
+        type: string
+    secrets:
+      PERSONAL_ACCESS_TOKEN:
+        required: false
+
+jobs:
+  ghcr-cleanup:
+    name: GHCR cleanup
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      # Keeps the platform manifests and attestations that tagged images still reference.
+      - name: Delete untagged images
+        uses: dataaxiom/ghcr-cleanup-action@d52806a0dc70b430571a37da1fde39733ffd640f # v1.2.2
+        with:
+          delete-untagged: true
+          dry-run: ${{ inputs.DRY_RUN }}
+          older-than: ${{ inputs.KEEP_UNTAGGED_FOR }}
+          package: ${{ inputs.PACKAGE || github.event.repository.name }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
