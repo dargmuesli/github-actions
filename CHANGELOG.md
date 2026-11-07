@@ -1,3 +1,81 @@
+## [5.10.0](https://github.com/dargmuesli/github-actions/compare/5.9.13...5.10.0) (2026-11-07)
+
+### Features
+
+* **docker:** add opt-in signed build provenance ([#117](https://github.com/dargmuesli/github-actions/issues/117)) ([941f9b6](https://github.com/dargmuesli/github-actions/commit/941f9b66749bf964f9065eb6c2a909fff519b2c1))
+* **ghcr:** add cleanup workflow ([#115](https://github.com/dargmuesli/github-actions/issues/115)) ([8ec1c65](https://github.com/dargmuesli/github-actions/commit/8ec1c655559e3b3d2de738e95b6c1af50c0d68ba))
+
+## [5.9.13](https://github.com/dargmuesli/github-actions/compare/5.9.12...5.9.13) (2026-11-06)
+
+### Bug Fixes
+
+* **ci-optimization:** replace node20 pr lookup action ([#113](https://github.com/dargmuesli/github-actions/issues/113)) ([eedec9a](https://github.com/dargmuesli/github-actions/commit/eedec9a8494f14979a5d72b12f5466e0c18e933a))
+
+## [5.9.12](https://github.com/dargmuesli/github-actions/compare/5.9.11...5.9.12) (2026-11-04)
+
+### Bug Fixes
+
+* schedule release ([02dd9bc](https://github.com/dargmuesli/github-actions/commit/02dd9bc7efa3b893afee905980ede94d2b1a0148))
+
+## [5.9.11](https://github.com/dargmuesli/github-actions/compare/5.9.10...5.9.11) (2026-10-28)
+
+### Bug Fixes
+
+* schedule release ([5a38a58](https://github.com/dargmuesli/github-actions/commit/5a38a58d668be31e9435beeb6d4bb5dabab735b8))
+
+## [5.9.10](https://github.com/dargmuesli/github-actions/compare/5.9.9...5.9.10) (2026-10-21)
+
+### Bug Fixes
+
+* schedule release ([8da9646](https://github.com/dargmuesli/github-actions/commit/8da9646b022af26f1cf46cf5d1bcc2167aaca672))
+
+## [5.9.9](https://github.com/dargmuesli/github-actions/compare/5.9.8...5.9.9) (2026-10-07)
+
+### Bug Fixes
+
+* schedule release ([cdc7ab9](https://github.com/dargmuesli/github-actions/commit/cdc7ab9f7cf05f9d712a93b4344d8368d585e996))
+
+## [5.9.8](https://github.com/dargmuesli/github-actions/compare/5.9.7...5.9.8) (2026-09-30)
+
+### Bug Fixes
+
+* schedule release ([120838f](https://github.com/dargmuesli/github-actions/commit/120838f32126edcc417a5207030ecb3fb1291377))
+
+## [5.9.7](https://github.com/dargmuesli/github-actions/compare/5.9.6...5.9.7) (2026-09-16)
+
+### Bug Fixes
+
+* schedule release ([624f3f3](https://github.com/dargmuesli/github-actions/commit/624f3f3b9819194e0a20695397905ddebd51cf80))
+
+## [5.9.6](https://github.com/dargmuesli/github-actions/compare/5.9.5...5.9.6) (2026-09-09)
+
+### Bug Fixes
+
+* schedule release ([3e7b485](https://github.com/dargmuesli/github-actions/commit/3e7b485f40ed8141f169f714118c0f7515c903b3))
+
+## [5.9.5](https://github.com/dargmuesli/github-actions/compare/5.9.4...5.9.5) (2026-09-02)
+
+### Bug Fixes
+
+* schedule release ([bcab221](https://github.com/dargmuesli/github-actions/commit/bcab221e2625532e0ddaf5c1f37ab316d3c5d9c4))
+
+## [5.9.4](https://github.com/dargmuesli/github-actions/compare/5.9.3...5.9.4) (2026-08-22)
+
+### Bug Fixes
+
+* **release-semantic:** move comment ([79d80a1](https://github.com/dargmuesli/github-actions/commit/79d80a1d158d6c2c1a3c89cf3f433307bb6533da))
+
+## [5.9.3](https://github.com/dargmuesli/github-actions/compare/5.9.2...5.9.3) (2026-08-19)
+
+### Bug Fixes
+
+* **release-semantic:** pin conventional-changelog-conventionalcommits to v9 ([#110](https://github.com/dargmuesli/github-actions/issues/110)) ([9b9f0b5](https://github.com/dargmuesli/github-actions/commit/9b9f0b52c671d77ae4d0c6660f0e24d5bed7fcc4))
+* schedule release ([361d73e](https://github.com/dargmuesli/github-actions/commit/361d73ed70f659a41d20354440cf8c27c819454f))
+
+## [5.9.2](https://github.com/dargmuesli/github-actions/compare/5.9.1...5.9.2) (2026-08-09)
+
+## [5.9.1](https://github.com/dargmuesli/github-actions/compare/5.9.0...5.9.1) (2026-08-05)
+
 ## [6.0.0-beta.1](https://github.com/dargmuesli/github-actions/compare/5.9.0...6.0.0-beta.1) (2026-07-26)
 
 ## [5.9.0](https://github.com/dargmuesli/github-actions/compare/5.8.3...5.9.0) (2026-07-24)

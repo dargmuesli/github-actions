@@ -19,10 +19,14 @@ jobs:
     permissions:
       pull-requests: read
     steps:
+      # Replaces 8BitJonny/gh-get-current-pr 4.0.0 (filterOutClosed, filterOutDraft), which still
+      # declares node20 with no release in sight (8BitJonny/gh-get-current-pr#354). Only pr_found
+      # was ever read, so this reproduces just that output.
       - name: Get current PR
         id: pr
-        uses: 8BitJonny/gh-get-current-pr@4056877062a1f3b624d5d4c2bedefa9cf51435c9 # 4.0.0
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
-          filterOutClosed: true
-          filterOutDraft: true
           github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+          script: |
+            const { data } = await github.rest.repos.listPullRequestsAssociatedWithCommit({ ...context.repo, commit_sha: context.sha })
+            core.setOutput('pr_found', data.some(pr => pr.state === 'open' && !pr.draft))

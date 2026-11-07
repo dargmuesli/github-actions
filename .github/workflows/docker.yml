@@ -39,18 +39,28 @@ on:
       BUILD_ARGUMENTS:
       GH_APP_PRIVATE_KEY:
       PERSONAL_ACCESS_TOKEN:
+    outputs:
+      digest:
+        description: Digest of the pushed image, empty when nothing was pushed
+        value: ${{ jobs.docker.outputs.digest }}
+      image-id:
+        description: Image name without tag
+        value: ${{ jobs.docker.outputs.image-id }}
 
 jobs:
   docker:
     name: Docker
     runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ (inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/')) && steps.build.outputs.digest || '' }}
+      image-id: ${{ steps.vars.outputs.image-id }}
     permissions:
       packages: write
     steps:
       - name: Create app token
         id: app-token
         if: inputs.GH_APP_ID != ''
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         with:
           client-id: ${{ inputs.GH_APP_ID }}
           permission-contents: write
@@ -60,15 +70,16 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0 # fetch all history for all branches and tags
+          lfs: true
           token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN || github.token }}
 
       - name: Setup Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
 
       - name: Registry login
         if: ${{ !startsWith(github.ref, 'refs/pull/') }}
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4.5.1
+        uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -100,7 +111,7 @@ jobs:
 
       - name: Build for smoke test
         if: inputs.SMOKE_TEST_SCRIPT != ''
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -122,7 +133,8 @@ jobs:
         run: bash "${{ inputs.SMOKE_TEST_SCRIPT }}"
 
       - name: Build and push
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        id: build
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -139,7 +151,7 @@ jobs:
 
       - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
         if: inputs.ARTIFACT_PATH != ''
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           add-hosts: |
             ${{ inputs.BUILD_ADD_HOSTS }}
@@ -163,7 +175,7 @@ jobs:
 
       - name: Upload artifact
         if: inputs.ARTIFACT_PATH != ''
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: build-artifact
           path: build-artifact.tar

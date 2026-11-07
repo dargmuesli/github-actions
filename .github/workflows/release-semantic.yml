@@ -49,7 +49,7 @@ jobs:
       - name: Create app token
         id: app-token
         if: inputs.GH_APP_ID != ''
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         with:
           client-id: ${{ inputs.GH_APP_ID }}
           permission-contents: write
@@ -82,7 +82,7 @@ jobs:
 
       - name: Setup Node
         if: inputs.INSTALL_NODE_DEPENDENCIES
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: ${{ inputs.PACKAGE_MANAGER }}
           node-version: ${{ inputs.NODE_VERSION }}
@@ -93,15 +93,16 @@ jobs:
         run: ${{ inputs.PACKAGE_MANAGER }} install
 
       - name: Release # TODO: replace with docker stage, ensuring outputs don't break (https://github.com/semantic-release/semantic-release/issues/753, https://github.com/semantic-release/semantic-release/issues/1647)
-        uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
+        uses: cycjimmy/semantic-release-action@ad51787758d9654d5a75150a89a6fa9b3ccef95e # v8.1.4
         id: semantic-release
         with:
           dry_run: ${{ inputs.DRY_RUN }}
+          # conventional-changelog-conventionalcommits@10 requires conventional-changelog-writer@9+, newer than what @semantic-release/release-notes-generator currently bundles
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/exec
             @semantic-release/git
-            conventional-changelog-conventionalcommits
+            conventional-changelog-conventionalcommits@9
             ${{ inputs.EXTRA_PLUGINS }}
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || steps.app-token.outputs.token }} # required to create releases & comments on behalf of a custom user
