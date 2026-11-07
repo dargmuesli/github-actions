@@ -1,3 +1,13 @@
+## [6.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.2...6.0.0-beta.3) (2026-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **docker:** always sign build provenance (#121)
+
+### Features
+
+* **docker:** always sign build provenance ([#121](https://github.com/dargmuesli/github-actions/issues/121)) ([fc02469](https://github.com/dargmuesli/github-actions/commit/fc0246957acece86ff38a4b6ba473929e662fcf6))
+
 ## [6.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.1...6.0.0-beta.2) (2026-11-07)
 
 ### Features
