@@ -2,7 +2,7 @@
 
 A collection of GitHub Action workflows to extend from.
 
-- `attest`: signs build provenance for an image pushed by `docker`, requiring the `attestations: write` and `id-token: write` permissions
+- `attest`: signs build provenance for an image pushed by `docker` in a public GitHub repository, verifiable with `gh attestation verify oci://<image> --owner <owner> --signer-repo dargmuesli/github-actions`, requiring the `attestations: write` and `id-token: write` permissions
 - `browserslist-regex`: creates a useragent regular expression matching [browserslist](https://github.com/browserslist) targets
 - `ci-optimization`: optimizes CI by analyzing pull requests
 - `dargstack-rgen`: validates the README of a [dargstack](https://github.com/dargstack) project
