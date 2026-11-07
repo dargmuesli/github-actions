@@ -1,3 +1,27 @@
+## [6.0.0-beta.2](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.1...6.0.0-beta.2) (2026-11-07)
+
+### Features
+
+* **docker:** add opt-in signed build provenance ([#117](https://github.com/dargmuesli/github-actions/issues/117)) ([941f9b6](https://github.com/dargmuesli/github-actions/commit/941f9b66749bf964f9065eb6c2a909fff519b2c1))
+* **ghcr:** add cleanup workflow ([#115](https://github.com/dargmuesli/github-actions/issues/115)) ([8ec1c65](https://github.com/dargmuesli/github-actions/commit/8ec1c655559e3b3d2de738e95b6c1af50c0d68ba))
+
+### Bug Fixes
+
+* **ci-optimization:** replace node20 pr lookup action ([#113](https://github.com/dargmuesli/github-actions/issues/113)) ([eedec9a](https://github.com/dargmuesli/github-actions/commit/eedec9a8494f14979a5d72b12f5466e0c18e933a))
+* **docker:** fetch lfs objects during checkout ([5a1dddc](https://github.com/dargmuesli/github-actions/commit/5a1dddc690401d5b086090d17956767d8bcc47f2))
+* **release-semantic:** move comment ([79d80a1](https://github.com/dargmuesli/github-actions/commit/79d80a1d158d6c2c1a3c89cf3f433307bb6533da))
+* **release-semantic:** pin conventional-changelog-conventionalcommits to v9 ([#110](https://github.com/dargmuesli/github-actions/issues/110)) ([9b9f0b5](https://github.com/dargmuesli/github-actions/commit/9b9f0b52c671d77ae4d0c6660f0e24d5bed7fcc4))
+* schedule release ([02dd9bc](https://github.com/dargmuesli/github-actions/commit/02dd9bc7efa3b893afee905980ede94d2b1a0148))
+* schedule release ([5a38a58](https://github.com/dargmuesli/github-actions/commit/5a38a58d668be31e9435beeb6d4bb5dabab735b8))
+* schedule release ([8da9646](https://github.com/dargmuesli/github-actions/commit/8da9646b022af26f1cf46cf5d1bcc2167aaca672))
+* schedule release ([cdc7ab9](https://github.com/dargmuesli/github-actions/commit/cdc7ab9f7cf05f9d712a93b4344d8368d585e996))
+* schedule release ([120838f](https://github.com/dargmuesli/github-actions/commit/120838f32126edcc417a5207030ecb3fb1291377))
+* schedule release ([624f3f3](https://github.com/dargmuesli/github-actions/commit/624f3f3b9819194e0a20695397905ddebd51cf80))
+* schedule release ([3e7b485](https://github.com/dargmuesli/github-actions/commit/3e7b485f40ed8141f169f714118c0f7515c903b3))
+* schedule release ([bcab221](https://github.com/dargmuesli/github-actions/commit/bcab221e2625532e0ddaf5c1f37ab316d3c5d9c4))
+* schedule release ([361d73e](https://github.com/dargmuesli/github-actions/commit/361d73ed70f659a41d20354440cf8c27c819454f))
+* schedule release ([380347b](https://github.com/dargmuesli/github-actions/commit/380347be49e19ea2b2a806c88dca106399d86c0d))
+
 ## [5.10.0](https://github.com/dargmuesli/github-actions/compare/5.9.13...5.10.0) (2026-11-07)
 
 ### Features
