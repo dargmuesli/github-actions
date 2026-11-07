@@ -1,0 +1,40 @@
+name: GHCR Cleanup
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      DRY_RUN:
+        default: false
+        type: boolean
+      KEEP_N_UNTAGGED:
+        default: 3
+        type: number
+      PACKAGE:
+        type: string
+    secrets:
+      PERSONAL_ACCESS_TOKEN:
+        required: false
+
+jobs:
+  ghcr-cleanup:
+    name: GHCR cleanup
+    runs-on: ubuntu-latest
+    # The action is not safe to run in parallel against the same package.
+    concurrency:
+      group: ghcr-cleanup-${{ inputs.PACKAGE || github.event.repository.name }}
+    permissions:
+      packages: write
+    steps:
+      # Untagging does not change an image's `updated_at`, so `older-than` would not protect images that lost
+      # their tag recently, like a digest an in-flight build pinned before the tag moved on. Keeping the newest
+      # untagged images does.
+      - name: Delete untagged images
+        uses: dataaxiom/ghcr-cleanup-action@d52806a0dc70b430571a37da1fde39733ffd640f # v1.2.2
+        with:
+          dry-run: ${{ inputs.DRY_RUN }}
+          keep-n-untagged: ${{ inputs.KEEP_N_UNTAGGED }}
+          package: ${{ inputs.PACKAGE || github.event.repository.name }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+          validate: true
