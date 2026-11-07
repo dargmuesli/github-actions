@@ -39,11 +39,21 @@ on:
       BUILD_ARGUMENTS:
       GH_APP_PRIVATE_KEY:
       PERSONAL_ACCESS_TOKEN:
+    outputs:
+      digest:
+        description: Digest of the pushed image, empty when nothing was pushed
+        value: ${{ jobs.docker.outputs.digest }}
+      image-id:
+        description: Image name without tag
+        value: ${{ jobs.docker.outputs.image-id }}
 
 jobs:
   docker:
     name: Docker
     runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ (inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/')) && steps.build.outputs.digest || '' }}
+      image-id: ${{ steps.vars.outputs.image-id }}
     permissions:
       packages: write
     steps:
@@ -138,6 +148,7 @@ jobs:
         run: bash "${{ inputs.SMOKE_TEST_SCRIPT }}"
 
       - name: Build and push
+        id: build
         uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           add-hosts: |
