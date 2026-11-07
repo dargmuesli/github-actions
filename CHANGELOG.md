@@ -1,3 +1,10 @@
+## [5.10.0](https://github.com/dargmuesli/github-actions/compare/5.9.13...5.10.0) (2026-11-07)
+
+### Features
+
+* **docker:** add opt-in signed build provenance ([#117](https://github.com/dargmuesli/github-actions/issues/117)) ([941f9b6](https://github.com/dargmuesli/github-actions/commit/941f9b66749bf964f9065eb6c2a909fff519b2c1))
+* **ghcr:** add cleanup workflow ([#115](https://github.com/dargmuesli/github-actions/issues/115)) ([8ec1c65](https://github.com/dargmuesli/github-actions/commit/8ec1c655559e3b3d2de738e95b6c1af50c0d68ba))
+
 ## [5.9.13](https://github.com/dargmuesli/github-actions/compare/5.9.12...5.9.13) (2026-11-06)
 
 ### Bug Fixes
