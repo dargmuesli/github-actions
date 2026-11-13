@@ -55,6 +55,8 @@ jobs:
       digest: ${{ (inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/')) && steps.build.outputs.digest || '' }}
       image-id: ${{ steps.vars.outputs.image-id }}
     permissions:
+      attestations: write
+      id-token: write
       packages: write
     steps:
       - name: Create app token
@@ -109,21 +111,6 @@ jobs:
             type=semver,pattern={{major}}.{{minor}},value=${{ inputs.TAG }}
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/0.') }},value=${{ inputs.TAG }}
 
-      # - name: Docker cache
-      #   uses: dargmuesli/docker-build-cache-config-action@43fbb9a6f14c0b5e05091af2f0a5c38cdb65c0e3 # v1.14.0
-      #   id: cache
-      #   with:
-      #     image: ${{ env.IMAGE_ID }}/cache
-      #     tag-prefix: |
-      #       ${{ inputs.BUILD_TARGET_RELEASE }}_
-      #       ${{ inputs.CACHE && format('{0}_', inputs.CACHE) }}
-
-      # - name: Docker cache
-      #   uses: int128/docker-build-cache-config-action@v1.40.0
-      #   id: cache_original
-      #   with:
-      #     image: ${{ env.IMAGE_ID }}/cache
-
       - name: Build for smoke test
         if: inputs.SMOKE_TEST_SCRIPT != ''
         uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
@@ -156,15 +143,23 @@ jobs:
           build-args: |
             ${{ inputs.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
-          # cache-from: ${{ steps.cache.outputs.cache-from }}
-          # cache-to: ${{ steps.cache.outputs.cache-to }}
           context: ${{ inputs.CONTEXT || '.' }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           platforms: ${{ inputs.PLATFORMS }}
+          provenance: false # superseded by the signed attestation below
           push: ${{ inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/') }}
           secrets: |
             ${{ secrets.BUILD_ARGUMENTS }}
           tags: ${{ steps.docker_meta.outputs.tags }}
+
+      # Artifact attestations need GitHub's OIDC issuer, which other forges like Forgejo lack, and GitHub Enterprise
+      # Cloud for private repositories.
+      - name: Attest build provenance
+        if: inputs.PUSH && steps.docker_meta.outputs.tags != '' && !startsWith(github.ref, 'refs/pull/') && github.server_url == 'https://github.com' && github.event.repository.visibility == 'public'
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-digest: ${{ steps.build.outputs.digest }}
+          subject-name: ${{ steps.vars.outputs.image-id }}
 
       - name: Build target "${{ inputs.BUILD_TARGET_RELEASE }}"
         if: inputs.ARTIFACT_PATH != ''
@@ -175,7 +170,6 @@ jobs:
           build-args: |
             ${{ inputs.BUILD_ARGUMENTS }}
           builder: ${{ steps.buildx.outputs.name }}
-          # cache-from: ${{ steps.cache.outputs.cache-from }}
           context: ${{ inputs.CONTEXT || '.' }}
           load: true
           push: false
