@@ -1,0 +1,88 @@
+name: Image scan
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      DOCKERFILE:
+        default: Dockerfile
+        type: string
+      GH_APP_ID:
+        type: string
+      IMAGE_ID:
+        description: Image name without tag, defaults to the repository's image on ghcr.io
+        type: string
+    secrets:
+      GH_APP_PRIVATE_KEY:
+        required: false
+      PERSONAL_ACCESS_TOKEN:
+        required: false
+
+env:
+  # renovate: datasource=docker depName=aquasec/trivy
+  TRIVY_VERSION: "0.76.2"
+
+jobs:
+  image-scan:
+    name: Image scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Create app token
+        id: app-token
+        if: inputs.GH_APP_ID != '' || vars.GH_APP_ID != ''
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ inputs.GH_APP_ID || vars.GH_APP_ID }}
+          permission-contents: write
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Checkout git repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # pushes the release commit, and a commit pushed with the default token would not trigger the release workflow
+
+      # Only OS packages count: Renovate's vulnerability alerts already fix the application's own dependencies.
+      - name: Scan the released image
+        id: scan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IMAGE_ID: ${{ inputs.IMAGE_ID || format('ghcr.io/{0}', github.repository) }}
+          TRIVY_PASSWORD: ${{ github.token }}
+          TRIVY_USERNAME: ${{ github.actor }}
+        run: |
+          image="${IMAGE_ID,,}:$(gh release view --json tagName -q .tagName)"
+          docker run --rm --env TRIVY_PASSWORD --env TRIVY_USERNAME "aquasec/trivy:$TRIVY_VERSION" image \
+            --cache-dir /tmp/trivy --format json --ignore-unfixed --pkg-types os --quiet --severity HIGH,CRITICAL "$image" > "$RUNNER_TEMP/scan.json"
+          ids="$(jq -r '[.Results[]?.Vulnerabilities[]?.VulnerabilityID] | unique | join(", ")' "$RUNNER_TEMP/scan.json")"
+          echo "Fixable vulnerabilities in $image: ${ids:-none}"
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+
+      # A release only helps once upstream rebuilt a base image, and an unchanged digest makes the next step commit nothing, so a missing upstream fix never causes empty releases.
+      - name: Refresh base image digests
+        if: steps.scan.outputs.ids != ''
+        env:
+          DOCKERFILE: ${{ inputs.DOCKERFILE }}
+        run: |
+          { grep -oE '^FROM[[:space:]]+[^[:space:]]+@sha256:[0-9a-f]{64}' "$DOCKERFILE" || true; } | awk '{ print $2 }' | sort -u | while read -r reference; do
+            image="${reference%@*}"
+            digest="$(docker buildx imagetools inspect "$image" --format '{{json .Manifest}}' | jq -r .digest)"
+            sed -i "s|$reference|$image@$digest|g" "$DOCKERFILE"
+          done
+          if git diff --quiet "$DOCKERFILE"; then
+            echo "::notice::No base image has been rebuilt upstream yet, so a release would not fix anything."
+          fi
+
+      - name: Release
+        if: steps.scan.outputs.ids != ''
+        uses: stefanzweifel/git-auto-commit-action@d0b01107b5db882071f96de5dd4b54961ea93f4c # v7.2.1
+        with:
+          commit_message: |
+            fix(docker): refresh base images
+
+            Fixes ${{ steps.scan.outputs.ids }} in the released image.
+          file_pattern: ${{ inputs.DOCKERFILE }}
