@@ -78,6 +78,9 @@ jobs:
       - name: Setup Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+        with:
+          # GitHub-hosted runners are discarded after the job, so removing the builder only costs up to a minute there
+          cleanup: ${{ runner.environment != 'github-hosted' }}
 
       - name: Registry login
         if: ${{ !startsWith(github.ref, 'refs/pull/') }}
