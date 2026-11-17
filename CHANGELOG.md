@@ -1,3 +1,9 @@
+## [6.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.3...6.0.0-beta.4) (2026-11-17)
+
+### Performance Improvements
+
+* **docker:** skip the builder teardown on github-hosted runners ([#124](https://github.com/dargmuesli/github-actions/issues/124)) ([908aa50](https://github.com/dargmuesli/github-actions/commit/908aa50879707112ceaf6856260b2414656a639a))
+
 ## [6.0.0-beta.3](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.2...6.0.0-beta.3) (2026-11-07)
 
 ### ⚠ BREAKING CHANGES
