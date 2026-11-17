@@ -1,3 +1,9 @@
+## [5.11.0](https://github.com/dargmuesli/github-actions/compare/5.10.0...5.11.0) (2026-11-17)
+
+### Features
+
+* **image-scan:** release when a base image rebuild fixes a vulnerability ([#126](https://github.com/dargmuesli/github-actions/issues/126)) ([17d462a](https://github.com/dargmuesli/github-actions/commit/17d462afc158ffc24a130841ead06fddb0ce5dfa))
+
 ## [5.10.0](https://github.com/dargmuesli/github-actions/compare/5.9.13...5.10.0) (2026-11-07)
 
 ### Features
