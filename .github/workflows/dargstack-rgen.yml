@@ -32,9 +32,20 @@ jobs:
           packages: ${{ inputs.APT_PACKAGES }}
           version: 1.0
 
+      - name: Detect pnpm pin
+        id: pnpm-pin
+        if: inputs.PACKAGE_MANAGER == 'pnpm'
+        run: |
+          if jq -e '.packageManager // .devEngines.packageManager' package.json >/dev/null 2>&1; then
+            echo "pinned=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup pnpm
         if: inputs.PACKAGE_MANAGER == 'pnpm'
         uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+        with:
+          # without a pin the action fails, where corepack used to fall back to the latest pnpm
+          version: ${{ steps.pnpm-pin.outputs.pinned != 'true' && 'latest' || '' }}
 
       - name: Setup package manager
         if: inputs.PACKAGE_MANAGER != 'bun' && inputs.PACKAGE_MANAGER != 'pnpm'
