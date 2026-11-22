@@ -1,3 +1,13 @@
+## [6.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.4...6.0.0-beta.5) (2026-11-22)
+
+### Features
+
+* set up pnpm without corepack ([#127](https://github.com/dargmuesli/github-actions/issues/127)) ([6c9fe8c](https://github.com/dargmuesli/github-actions/commit/6c9fe8c046fcaf7fbf2ec551adc6ebb99fed45c7))
+
+### Bug Fixes
+
+* fall back to latest pnpm without a version pin ([#128](https://github.com/dargmuesli/github-actions/issues/128)) ([1f41211](https://github.com/dargmuesli/github-actions/commit/1f41211716ffccc5eb7d9d2f73719e2ca44cd23e))
+
 ## [6.0.0-beta.4](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.3...6.0.0-beta.4) (2026-11-17)
 
 ### Performance Improvements
