@@ -1,3 +1,13 @@
+## [6.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.5...6.0.0-beta.6) (2026-11-22)
+
+### ⚠ BREAKING CHANGES
+
+* **release-semantic:** rename COREPACK_ENABLED to SETUP_PACKAGE_MANAGER (#129)
+
+### Features
+
+* **release-semantic:** rename COREPACK_ENABLED to SETUP_PACKAGE_MANAGER ([#129](https://github.com/dargmuesli/github-actions/issues/129)) ([cd49ee4](https://github.com/dargmuesli/github-actions/commit/cd49ee436a95a97cd43baec385ce1aad5d41f9ab))
+
 ## [6.0.0-beta.5](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.4...6.0.0-beta.5) (2026-11-22)
 
 ### Features
