@@ -75,8 +75,12 @@ jobs:
             } >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Setup pnpm
+        if: steps.lock-file.outputs.package_manager == 'pnpm'
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
       - name: Enable Corepack
-        if: steps.lock-file.outputs.package_manager != 'bun'
+        if: steps.lock-file.outputs.package_manager != 'bun' && steps.lock-file.outputs.package_manager != 'pnpm'
         run: corepack enable
 
       - name: Install bun

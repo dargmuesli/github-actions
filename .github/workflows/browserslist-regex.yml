@@ -51,8 +51,12 @@ jobs:
           fetch-depth: 0 # fetch all history for all branches and tags
           token: ${{ steps.app-token.outputs.token || secrets.PERSONAL_ACCESS_TOKEN }} # will be used to push git commits too, allows to work around branch protection if the app is in the bypass list, and is required to trigger workflows on the new commit (https://github.com/stefanzweifel/git-auto-commit-action#commits-made-by-this-action-do-not-trigger-new-workflow-runs)
 
+      - name: Setup pnpm
+        if: inputs.PACKAGE_MANAGER == 'pnpm'
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
       - name: Setup package manager
-        if: inputs.PACKAGE_MANAGER != 'bun'
+        if: inputs.PACKAGE_MANAGER != 'bun' && inputs.PACKAGE_MANAGER != 'pnpm'
         run: |
           npm install -g corepack@latest
           corepack enable
