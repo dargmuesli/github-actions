@@ -57,6 +57,17 @@
 * schedule release ([bcab221](https://github.com/dargmuesli/github-actions/commit/bcab221e2625532e0ddaf5c1f37ab316d3c5d9c4))
 * schedule release ([361d73e](https://github.com/dargmuesli/github-actions/commit/361d73ed70f659a41d20354440cf8c27c819454f))
 * schedule release ([380347b](https://github.com/dargmuesli/github-actions/commit/380347be49e19ea2b2a806c88dca106399d86c0d))
+## [5.11.1](https://github.com/dargmuesli/github-actions/compare/5.11.0...5.11.1) (2026-11-27)
+
+### Bug Fixes
+
+* **release-semantic:** fall back to the github token ([#130](https://github.com/dargmuesli/github-actions/issues/130)) ([62c3eb3](https://github.com/dargmuesli/github-actions/commit/62c3eb3390166b9eb7496702d846e623c4d4735d))
+
+## [5.11.0](https://github.com/dargmuesli/github-actions/compare/5.10.0...5.11.0) (2026-11-17)
+
+### Features
+
+* **image-scan:** release when a base image rebuild fixes a vulnerability ([#126](https://github.com/dargmuesli/github-actions/issues/126)) ([17d462a](https://github.com/dargmuesli/github-actions/commit/17d462afc158ffc24a130841ead06fddb0ce5dfa))
 
 ## [5.10.0](https://github.com/dargmuesli/github-actions/compare/5.9.13...5.10.0) (2026-11-07)
 

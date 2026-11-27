@@ -8,6 +8,7 @@ A collection of GitHub Action workflows to extend from.
 - `deploy-cloudflare-pages`: deploys a build artifact to [Cloudflare pages](https://pages.cloudflare.com/)
 - `docker`: builds a Docker project and, for public repositories on GitHub, signs the pushed image's build provenance (verifiable with `gh attestation verify oci://<image> --owner <owner> --signer-repo dargmuesli/github-actions`), optionally uploading artifacts, requiring the `attestations: write`, `id-token: write` and `packages: write` permissions
 - `ghcr-cleanup`: deletes all but the newest untagged images from the GitHub Container Registry, keeping images a tag still references, requiring the calling repository to have the Admin role under the package's "Manage Actions access" settings, and best scheduled at least weekly so its manifest cache stays warm
+- `image-scan`: scans the newest released image for fixable vulnerabilities in OS packages and, when one is found and an upstream base image has been rebuilt since, pushes a release commit that refreshes the base image digests pinned in the Dockerfile
 - `lock_file-maintenance`: maintains lock files for package managers
 - `release-schedule`: pushes a release commit if no other commits have been pushed for a week
 - `release-semantic`: run a [semantic release](https://github.com/semantic-release)
