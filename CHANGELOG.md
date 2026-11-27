@@ -1,3 +1,9 @@
+## [5.11.1](https://github.com/dargmuesli/github-actions/compare/5.11.0...5.11.1) (2026-11-27)
+
+### Bug Fixes
+
+* **release-semantic:** fall back to the github token ([#130](https://github.com/dargmuesli/github-actions/issues/130)) ([62c3eb3](https://github.com/dargmuesli/github-actions/commit/62c3eb3390166b9eb7496702d846e623c4d4735d))
+
 ## [5.11.0](https://github.com/dargmuesli/github-actions/compare/5.10.0...5.11.0) (2026-11-17)
 
 ### Features
