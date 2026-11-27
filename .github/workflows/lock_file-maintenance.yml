@@ -75,8 +75,23 @@ jobs:
             } >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Detect pnpm pin
+        id: pnpm-pin
+        if: steps.lock-file.outputs.package_manager == 'pnpm'
+        run: |
+          if jq -e '.packageManager // .devEngines.packageManager' package.json >/dev/null 2>&1; then
+            echo "pinned=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup pnpm
+        if: steps.lock-file.outputs.package_manager == 'pnpm'
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+        with:
+          # without a pin the action fails, where corepack used to fall back to the latest pnpm
+          version: ${{ steps.pnpm-pin.outputs.pinned != 'true' && 'latest' || '' }}
+
       - name: Enable Corepack
-        if: steps.lock-file.outputs.package_manager != 'bun'
+        if: steps.lock-file.outputs.package_manager != 'bun' && steps.lock-file.outputs.package_manager != 'pnpm'
         run: corepack enable
 
       - name: Install bun
