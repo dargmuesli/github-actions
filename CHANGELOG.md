@@ -1,3 +1,13 @@
+## [6.0.0-beta.7](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.6...6.0.0-beta.7) (2026-11-27)
+
+### Features
+
+* **image-scan:** release when a base image rebuild fixes a vulnerability ([#126](https://github.com/dargmuesli/github-actions/issues/126)) ([17d462a](https://github.com/dargmuesli/github-actions/commit/17d462afc158ffc24a130841ead06fddb0ce5dfa))
+
+### Bug Fixes
+
+* **release-semantic:** fall back to the github token ([#130](https://github.com/dargmuesli/github-actions/issues/130)) ([62c3eb3](https://github.com/dargmuesli/github-actions/commit/62c3eb3390166b9eb7496702d846e623c4d4735d))
+
 ## [6.0.0-beta.6](https://github.com/dargmuesli/github-actions/compare/6.0.0-beta.5...6.0.0-beta.6) (2026-11-22)
 
 ### ⚠ BREAKING CHANGES
